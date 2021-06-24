@@ -1,0 +1,629 @@
+<!-- <div class="static-line">
+  &nbsp;
+</div> -->
+<div class="screen screen-1" >
+
+  <div class="main">
+    <div class="bg-cont">
+      <!-- <img src="/assets/img/main-bg-3.jpg" /> -->
+    </div>
+    <div class="cont-left">
+      <!-- <div class="sub-title-1">
+        сайт по подбору авто
+      </div> -->
+      <div class="title bold move" [class.move-right]="screenFirst">
+        EDDY CARS
+      </div>
+      <!-- <div class="title">
+        Авто из США<br>
+        с выгодой до -30%
+      </div> -->
+      <div class="sub-title-2 move" [class.move-right]="screenFirst">
+        Подбор, покупка, доставка,<br>
+        растаможка и ремонт<br>
+        автомобилей из США под ключ
+      </div>
+      <div class="button-cont mobile">
+        <button class="custom-4" mat-raised-button color="primary">Получить подбор</button>
+      </div>
+    </div>
+    <div class="stepper">
+      <ng-container *ngIf="!firstSubmit">
+        <div class="cont-title">
+          Получить бесплатный подбор актуальных лотов с аукционов с просчетом их стоимости
+        </div>
+
+        <div class="cont-input">
+          <mat-form-field class="custom custom-10">
+            <mat-label>Марка авто</mat-label>
+            <input matInput type="text" placeholder="Ford Focus" value="">
+          </mat-form-field>
+        </div>
+        <div class="cont-input">
+          <mat-form-field class="custom custom-10">
+            <mat-label>Год выпуска</mat-label>
+            <input matInput type="text" placeholder="2019" value="">
+          </mat-form-field>
+        </div>
+        <div class="cont-input">
+          <mat-form-field class="custom custom-10">
+            <mat-label>Ориентировочный бюджет</mat-label>
+            <input matInput type="text" value="">
+          </mat-form-field>
+        </div>
+        <div class="cont-input">
+          <mat-form-field class="custom custom-10">
+            <mat-label>Контакт для связи</mat-label>
+            <input matInput type="text" value="">
+          </mat-form-field>
+        </div>
+        <div class="cont-input">
+          <mat-form-field class="custom custom-10">
+            <mat-label>Ваш комментарий (опционально)</mat-label>
+            <input matInput type="text" value="">
+          </mat-form-field>
+        </div>
+        <div class="cont-button">
+          <button class="custom" mat-button (click)="firstSubmit = true">Получить подбор</button>
+        </div>
+      </ng-container>
+      <div *ngIf="firstSubmit" class="message">Спасибо за заявку! Наши менеджеры по подбору авто сформируют Вам подборку лучших вариантов с аукционов по Вашему запросу!</div>
+    </div>
+    <!-- <div class="cont-left"> -->
+      <!-- <div class="blurred">&nbsp;</div> -->
+      <!-- <div class="cont-img">
+        <img src="/assets/img/M4-Coupe-ModelCard 1.png" class="main-img" />
+      </div> -->
+      <!-- <div class="cont-socials">
+        <div class="item-social">
+          <img src="/assets/img/instagram.svg" />
+        </div>
+        <div class="item-social">
+          <img src="/assets/img/facebook.svg" />
+        </div>
+        <div class="item-social">
+          <img src="/assets/img/whatsapp.svg" />
+        </div>
+      </div> -->
+    <!-- </div> -->
+  </div>
+</div>
+<div class="screen screen-2">
+  <div class="screen-title mobile">
+    Услуги
+  </div>
+  <div class="service-cont">
+    <a class="item-service pop {{ 'delay-' + ((i + 1) * 100) }}" [class.move-right]="screenSecond" *ngFor="let item of service; let i = index;"  routerLink="/services" fragment="{{ item.fragment }}">
+      <div class="img-service-cont">
+        <img class="img-service" [src]="'assets/img/' + item.img" />
+      </div>
+      <div class="cont-right">
+        <div class="title-service">
+          {{ item.title }}
+        </div>
+        <div class="text-service">
+          <ng-container *ngFor="let text of item.text">
+            {{ text }}<br>
+          </ng-container>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="screen screen-3">
+  <div class="screen-title">
+    Получите подбор с просчетом желаемого авто всего за 5 минут
+  </div>
+  <div class="cont-stepper">
+    <mat-horizontal-stepper class="custom" [linear]="true" #stepper>
+      <mat-step [stepControl]="firstFormGroup" label="Авто">
+        <form [formGroup]="firstFormGroup">
+          <!-- <ng-template matStepLabel>Какой автомобиль вас интересует?</ng-template> -->
+          <div class="cont-title">
+            Какой автомобиль вас интересует?
+          </div>
+          <div class="cont-input">
+            <mat-form-field class="custom">
+              <!-- <mat-label>Name</mat-label> -->
+              <input matInput formControlName="firstCtrl">
+            </mat-form-field>
+          </div>
+          <div class="cont-button">
+            <button class="custom" class="custom" mat-button matStepperNext>Далее</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Год">
+        <form [formGroup]="secondFormGroup">
+          <div class="cont-title">
+            Какой год автомобиля?
+          </div>
+          <div class="cont-input">
+            <mat-form-field class="custom">
+              <!-- <mat-label>Какой год автомобиля?</mat-label> -->
+              <input matInput formControlName="secondCtrl">
+            </mat-form-field>
+          </div>
+
+          <div class="cont-button">
+            <button class="custom" class="custom" mat-button matStepperPrevious>Назад</button>
+            <button class="custom" class="custom" mat-button matStepperNext>Далее</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="firstFormGroup" label="Бюджет">
+        <form [formGroup]="firstFormGroup">
+          <div class="cont-title">
+            Ваш бюджет покупки
+          </div>
+          <div class="cont-input">
+            <mat-form-field class="custom">
+              <!-- <mat-label>Ваш бюджет покупки</mat-label> -->
+              <input matInput formControlName="firstCtrl">
+            </mat-form-field>
+          </div>
+
+          <div class="cont-button">
+            <button class="custom" class="custom" mat-button matStepperPrevious>Назад</button>
+            <button class="custom" class="custom" mat-button matStepperNext>Далее</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="firstFormGroup" label="Телефон">
+        <form [formGroup]="firstFormGroup">
+          <div class="cont-title">
+            Оставьте ваш номер телефона
+          </div>
+          <div class="cont-input">
+            <mat-form-field class="custom">
+              <!-- <mat-label>Оставьте ваш номер телефона</mat-label> -->
+              <input matInput formControlName="firstCtrl">
+            </mat-form-field>
+          </div>
+
+          <div class="cont-button">
+            <button class="custom" class="custom" mat-button matStepperPrevious>Назад</button>
+            <button class="custom" class="custom" mat-button matStepperNext>Далее</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="firstFormGroup" label="Сообщение">
+        <form [formGroup]="firstFormGroup">
+          <div class="cont-title">
+            Куда Вам лучше отправить подборку актуальных автомобилей?
+          </div>
+          <div class="cont-input">
+            <mat-form-field class="custom">
+              <!-- <mat-label>Куда Вам лучше отправить подборку актуальных автомобилей?</mat-label> -->
+              <input matInput formControlName="firstCtrl">
+            </mat-form-field>
+          </div>
+
+
+          <div class="cont-button">
+            <button class="custom" class="custom" mat-button matStepperPrevious>Назад</button>
+            <button class="custom" class="custom" mat-button matStepperNext>Далее</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Готово</ng-template>
+        <div class="cont-title">
+          Мы свяжемся с вами как только подберем вам лучшие машины!
+        </div>
+        <div class="cont-button">
+          <button class="custom" class="custom" mat-button matStepperPrevious>Назад</button>
+          <button class="custom" class="custom" mat-button (click)="stepper.reset()">Сброс</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
+  <!-- <div class="cont-left">
+    <div class="screen-title">
+      Услуги компании
+    </div>
+    <div class="screen-text">
+      Повседневная практика показывает, что реализация намеченных плановых заданий требуют от нас анализа новых предложений. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности способствует подготовки и реализации соответствующий условий активизации. Идейные соображения высшего порядка, а также консультация с широким активом влечет за собой процесс внедрения и модернизации форм развития.
+    </div>
+    <div class="screen-text">
+      Повседневная практика показывает, что реализация намеченных плановых заданий требуют от нас анализа новых предложений. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности способствует подготовки и реализации соответствующий условий активизации. Идейные соображения высшего порядка, а также консультация с широким активом влечет за собой процесс внедрения и модернизации форм развития.
+    </div>
+  </div>
+  <div class="cont-float">
+    <img src="/assets/img/img-float-1.png" class="img-float"/>
+  </div> -->
+</div>
+<app-calc-car></app-calc-car>
+<div class="screen screen-4" style="display: none !important;">
+  <div class="screen-title">
+    Калькулятор
+  </div>
+  <div class="cont-calc">
+    <!-- <div class="cont-tabs">
+      <div class="tab active">
+        Калькулятор растаможки
+      </div>
+      <div class="tab">
+        Калькулятор доставки
+      </div>
+    </div> -->
+    <div class="cont-inputs">
+      <!-- <div class="title">Калькулятор стоимости растаможки</div> -->
+      <!-- <div class="sub-tabs">
+        <div class="inputs-title active">
+          Автомобили
+        </div>
+        <div class="inputs-title">
+          Электромобили
+        </div>
+      </div> -->
+      <div class="body-inputs">
+        <div class="cont-left">
+          <div class="inputs">
+            <div class="input-label">Аукцион</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <mat-select name="volume" [(ngModel)]="auction" (ngModelChange)="calcCars()">
+                  <mat-option *ngFor="let item of auctions" [value]="item.value">
+                    {{ item.text }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Цена на аукционе, $</div>
+            <div class="cont-input">
+              <mat-form-field class="custom">
+                <input matInput type="number" name="costn" [(ngModel)]="costn"  (ngModelChange)="calcCars()">
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Тип двигателя</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <mat-select name="volume" [(ngModel)]="engineType" (ngModelChange)="calcCars()">
+                  <mat-option *ngFor="let item of engineTypes" [value]="item.value">
+                    {{ item.text }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">{{ engineType === 3 ? 'Ёмкость аккумулятора, кВт.ч' : 'Обьем двигателя, см3' }}</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <ng-container *ngIf="engineType === 3">
+                  <input matInput type="number" name="amountn"  [(ngModel)]="amountn" (ngModelChange)="calcCars()">
+                </ng-container>
+                <ng-container *ngIf="engineType !== 3">
+                  <mat-select name="amountn" [(ngModel)]="amountn" (ngModelChange)="calcCars()">
+                    <mat-option *ngFor="let item of volumes" [value]="item">
+                      {{ item }}
+                    </mat-option>
+                  </mat-select>
+                </ng-container>
+
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Год выпуска</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <mat-select name="year"  [(ngModel)]="yearn" (ngModelChange)="calcCars()">
+                  <mat-option *ngFor="let item of yearsProd" [value]="item.value" >
+                    {{ item.text }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Местоположение аукциона</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill" >
+                <mat-select name="volume" [(ngModel)]="state" (ngModelChange)="getFreight(state)" >
+                  <mat-option *ngFor="let item of getUnique(auction === 1 ? copart : iaai)" [value]="item">
+                    {{ item }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="cont-checkboxes">
+            <div class="cont-checkbox">
+              <div class="label" (click)="showDetails(1)">Услуга под ключ</div>
+              <div class="check">
+                <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="allInc"></mat-checkbox>
+              </div>
+            </div>
+            <div class="cont-checkbox">
+              <div class="label" (click)="showDetails(2)">Страховка груза</div>
+              <div class="check">
+                <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="insurance"></mat-checkbox>
+              </div>
+            </div>
+            <div class="cont-checkbox">
+              <div class="label" (click)="showDetails(3)">Сертификация</div>
+              <div class="check">
+                <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="cert"></mat-checkbox>
+              </div>
+            </div>
+            <div class="cont-checkbox">
+              <div class="label" (click)="showDetails(4)">Постановка на учет</div>
+              <div class="check">
+                <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="uchet"></mat-checkbox>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cont-right">
+          <!-- <div class="row title">Результаты *</div> -->
+          <!-- <div class="row sep">
+            <div class="title">Цена лота</div>
+            <div class="value total">0$</div>
+          </div> -->
+          <div class="row inlay">
+            <div class="title">Цена лота:</div>
+            <div class="value">0$</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Сборы аукциона:</div>
+            <div class="value">0$</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Доставка по суше / морю:</div>
+            <div class="value">0$</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Страховка груза:</div>
+            <div class="value">0$</div>
+          </div>
+          <!-- <div class="row inlay last">
+            <div class="title">Брокер / экспедитор / услуги порта :</div>
+            <div class="value">0$</div>
+          </div> -->
+          <div class="row inlay">
+            <div class="title">Брокер / экспедитор / услуги порта:</div>
+            <div class="value">0$</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Таможенные сборы:</div>
+            <div class="value">0$</div>
+          </div>
+
+
+          <div class="row inlay">
+            <div class="title">Услуги компании:</div>
+            <div class="value">0$</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Пенсионный фонд:</div>
+            <div class="value">0$</div>
+          </div>
+          <div class="row sep">
+            <div class="title total">Итого в Одессе за расстаможенный авто без ремонта:</div>
+            <div class="value total">0$</div>
+          </div>
+          <div class="row inlay" *ngIf="cert">
+            <div class="title">Сертификация:</div>
+            <div class="value">0$</div>
+          </div>
+          <div class="row inlay" *ngIf="uchet">
+            <div class="title">Постановка на учет:</div>
+            <div class="value">0$</div>
+          </div>
+          <div class="row sep" *ngIf="cert || uchet">
+            <div class="title total">Итого:</div>
+            <div class="value total">0$</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="screen screen-11">
+  <div class="cont-content">
+    <a class="cont-logo" href="https://www.copart.com/" target="_blank">
+      <img src="assets/img/copart.png"/>
+    </a>
+    <a class="cont-logo" href="https://www.iaai.com/" target="_blank">
+      <img src="assets/img/iaai.png"/>
+    </a>
+    <a class="cont-logo" href="https://www.manheim.com/" target="_blank">
+      <img src="assets/img/manheim.png"/>
+    </a>
+    <a class="cont-logo" href="https://www.msc.com/" target="_blank">
+      <img src="assets/img/msc.png"/>
+    </a>
+    <a class="cont-logo" href="https://www.maersk.com/" target="_blank">
+      <img src="assets/img/maersk.png"/>
+    </a>
+  </div>
+</div>
+<div class="screen screen-5">
+  <div class="screen-title mobile">
+    Немного о нас
+  </div>
+  <div class="screen-cont">
+    <div class="cont-content">
+      <div class="cont-left">
+        <!-- <img src="/assets/img/bmw-x6m-competition 1.png" /> -->
+        <div class="line">Профессиональный подбор и проверка авто опытными специалистами перед покупкой
+        </div>
+        <div class="line">Сотрудничество со всеми крупными аукционными площадками США
+        </div>
+        <div class="line">Максимально выгодные тарифы на логистику
+        </div>
+        <div class="line">Оказание комплекса услуг «под ключ» - от момента подбора авто в США до постановки на
+          украинский учет
+        </div>
+        <div class="line">Работа по договору, гарантии сохранности Вашего авто, материальная ответственность за груз
+        </div>
+      </div>
+      <div class="cont-right">
+
+      </div>
+    </div>
+    <div class="cont-bottom">
+      <div class="cont-item">
+        5+ <br>лет на рынке
+      </div>
+      <div class="cont-item">
+        500+<br> довольных клиентов
+      </div>
+      <div class="cont-item">
+        24/7<br>поддержка
+      </div>
+      <div class="cont-item">
+        300+<br>
+        восстановленных авто
+      </div>
+    </div>
+  </div>
+</div>
+<div class="screen screen-6" style="display: none !important;">
+  <div class="screen-title">
+    Отзывы наших клиентов
+  </div>
+  <div class="screen-cont">
+    <!-- <div class="arrow">
+      <img src="/assets/img/arrow-left.png" />
+    </div> -->
+    <div class="cont-review" *ngFor="let item of ['review-1.png','review-2.png','review-3.png']">
+      <div class="review">
+        <div class="cont-img">
+          <img [src]="'/assets/img/' + item" />
+        </div>
+        <!-- <div class="text">
+          Полностью доволен сотрудничеством с @eddycars_usa начиная от грамотных советов при подборе, заканчивая
+          рекомендациями по ремонту/сертификации и постановке на учёт. За время работы не возникло ни одного сомнения.
+        </div> -->
+        <!-- <div class="cont-button">
+          <button class="custom" mat-raised-button color="primary">Читать полностью</button>
+        </div> -->
+      </div>
+    </div>
+    <!-- <div class="arrow">
+      <img src="/assets/img/arrow-right.png" />
+    </div> -->
+  </div>
+  <!-- <div class="cont-icons">
+    <div class="review-icon" [class.active]="item === 2" *ngFor="let item of [1,2,3]">&nbsp;</div>
+  </div> -->
+</div>
+<div class="screen screen-10">
+  <div class="screen-sub-title">
+    Подписывайтесь на наш Instagram!
+  </div>
+  <div class="cont-content">
+    <div class="cont-mobile mobile">
+      <a class="cont-img" href="https://www.instagram.com/eddycars_usa/" target="_blank">
+        <img src="/assets/img/review-4.png"/>
+        <div class="hover-overlay">
+          <img src="/assets/img/ig-mobile.png" />
+        </div>
+      </a>
+    </div>
+    <div class="cont-images">
+      <a class="cont-img" href="https://www.instagram.com/eddycars_usa/" target="_blank">
+        <img src="/assets/img/review-1.jpg"/>
+        <div class="hover-overlay">
+          <img src="https://assets.website-files.com/5f3d427046c6a2c4b887b331/5f3eedf693095574344f689d_instagram.svg" />
+        </div>
+      </a>
+
+
+      <a class="cont-img" href="https://www.instagram.com/eddycars_usa/" target="_blank">
+        <img src="/assets/img/review-2.jpg"/>
+        <div class="hover-overlay">
+          <img src="https://assets.website-files.com/5f3d427046c6a2c4b887b331/5f3eedf693095574344f689d_instagram.svg" />
+        </div>
+      </a>
+
+
+      <a class="cont-img" href="https://www.instagram.com/eddycars_usa/" target="_blank">
+        <img src="/assets/img/review-3.jpg"/>
+        <div class="hover-overlay">
+          <img src="https://assets.website-files.com/5f3d427046c6a2c4b887b331/5f3eedf693095574344f689d_instagram.svg" />
+        </div>
+      </a>
+
+      <a class="cont-img" href="https://www.instagram.com/eddycars_usa/" target="_blank">
+        <img src="/assets/img/review-4.png"/>
+        <div class="hover-overlay">
+          <img src="https://assets.website-files.com/5f3d427046c6a2c4b887b331/5f3eedf693095574344f689d_instagram.svg" />
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="screen screen-7">
+  <div class="cont-content">
+    <div class="cont-left">
+      <ng-container *ngIf="showAfterCall">
+        <div class="screen-title">
+          Спасибо за обращение!
+        </div>
+        <div class="screen-sub-title">
+          Менеджер по подбору авто свяжется с Вами в ближайшее время!
+        </div>
+
+      </ng-container>
+
+      <ng-container *ngIf="!showAfterCall">
+        <div class="screen-title">
+          Заказать звонок
+        </div>
+        <div class="cont-side">
+          <!-- <div class="cont-input">
+            <mat-form-field class="custom" appearance="fill">
+              <mat-label>Имя</mat-label>
+              <input matInput placeholder="Имя" value="">
+            </mat-form-field>
+          </div>
+          <div class="cont-input">
+            <mat-form-field class="custom" appearance="fill">
+              <mat-label>Телефон</mat-label>
+              <input matInput placeholder="Телефон" value="">
+            </mat-form-field>
+          </div> -->
+          <div class="cont-input">
+            <mat-form-field class="custom custom-10">
+              <mat-label>Имя</mat-label>
+              <input matInput type="text" placeholder="Имя" value="">
+            </mat-form-field>
+          </div>
+          <div class="cont-input">
+            <mat-form-field class="custom custom-10">
+              <mat-label>Телефон</mat-label>
+              <input matInput type="text" placeholder="Телефон" value="">
+            </mat-form-field>
+          </div>
+          <button class="custom" mat-button color="primary"  (click)="showAfterCall = true;">Заказать звонок</button>
+        </div>
+      </ng-container>
+
+    </div>
+    <div class="cont-right">
+      <div class="screen-title mobile">
+        Как нас найти
+      </div>
+      <div class="cont-side">
+        <div class="img-cont">
+          <agm-map [latitude]="48.50236968470973" [longitude]="35.06383641088003" [mapTypeId]="'roadmap'" [zoom]='17'>
+            <agm-marker [latitude]="48.50236968470973" [longitude]="35.06383641088003"></agm-marker>
+          </agm-map>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="screen screen-8">
+  <div class="screen-title mobile">
+    Наши работы
+  </div>
+  <div class="cont-content">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+

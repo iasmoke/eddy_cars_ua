@@ -1,0 +1,57 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .cont-input {
+    height: 40px;
+    justify-content: flex-start;
+    padding: 0 15px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    background-color: #414141;
+    align-items: center;
+    display: flex;
+  }
+  p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    margin: 20px 0 20px 0;
+    color: #FFFFFF;
+  }
+  .cont-button {
+    margin-bottom: 20px;
+  }
+}
+h1 {
+  color: #fff;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  margin-bottom: 0;
+}
+@media (orientation: portrait) {
+  :host {
+    p {
+      font-size: 1.76vh;
+      line-height: 100%;
+      margin: 3.52vh 0;
+      width: 45.70vh;
+    }
+    button {
+      height: 7.03vh !important;
+      width: 23.73vh;
+      > .mat-button-wrapper {
+        font-size: 1.76vh !important;
+      }
+    }
+  }
+
+}

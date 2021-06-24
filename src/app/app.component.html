@@ -1,0 +1,159 @@
+<div class="header" [class.show-bg]="scrollPosition > 0">
+  <div class="cont-logo">
+    <img src="/assets/img/logo.png" class="logo" />
+  </div>
+  <div class="cont-menu">
+    <div class="cont-menu-icon">
+      <img src="/assets/img/menu-icon-burger.png" />
+    </div>
+    <div class="menu">
+      <ng-container *ngFor="let item of menu">
+        <ng-container *ngIf="item.children.length === 0">
+          <a class="menu-item" routerLink="{{ item.children.length > 0 ? '' : item.link }}">{{ item.text }}</a>
+        </ng-container>
+        <ng-container *ngIf="item.children.length > 0">
+          <a class="menu-item extra">{{ item.text }}<span class="material-icons">
+            expand_more
+            </span>
+            <ng-container *ngIf="item.children.length > 0">
+              <div class="cont-subs">
+                <div class="sub" *ngFor="let sub of item.children">
+                  <a routerLink="{{ sub.link }}">{{ sub.text }}</a>
+                </div>
+              </div>
+            </ng-container>
+          </a>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+  <div class="cont-button">
+    <button class="custom custom-4" mat-raised-button color="primary" (click)="openTel()">
+      <div class="inbutton">
+        <span class="material-icons">phone</span>
+        <div class="cont-tels">
+          (099) 559-35-39<br>
+          (093) 231-36-73
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<div class="screen screen-9">
+  <div class="cont-not-sure">
+    <div class="text">
+      Остались вопросы?
+    </div>
+    <div class="cont-button">
+      <button class="custom custom-4" mat-button  (click)="openTel()">
+        Связаться с нами
+      </button>
+    </div>
+  </div>
+  <div class="big-title">EDDY CARS</div>
+  <div class="cont-content">
+
+    <div class="cont-col">
+
+      <div class="item">Доставка и оформление<br> авто из США под ключ</div>
+      <div class="cont-socials">
+        <a class="cont-icon" href="https://www.instagram.com/eddycars_usa/" target="_blank">
+          <img src="assets/img/fb.svg"/>
+        </a>
+        <a class="cont-icon">
+          <img src="assets/img/ig.svg"/>
+        </a>
+        <a class="cont-icon">
+          <img src="assets/img/tg.svg"/>
+        </a>
+      </div>
+    </div>
+    <div class="cont-col">
+      <div class="title">
+        Страницы
+      </div>
+      <ng-container *ngFor="let item of menu">
+        <a class="item" *ngIf="item.text !== 'Калькуляторы'" [routerLink]="item.link">{{ item.text }}</a>
+      </ng-container>
+
+    </div>
+    <div class="cont-col">
+      <div class="title">
+        Калькуляторы
+      </div>
+      <a routerLink="/calc-all-inclusive" class="item">Под ключ</a>
+      <a routerLink="/calc-delivery" class="item">Доставка</a>
+      <a routerLink="/calc-customs" class="item">Растаможка</a>
+    </div>
+    <div class="cont-col">
+      <div class="title">
+        Контакты
+      </div>
+      <div class="item">info@eddycars.xyz</div>
+      <div class="item">+38 (066) 233-23-23</div>
+      <div class="item">+38 (066) 233-23-23</div>
+    </div>
+    <div class="cont-col">
+      <div class="title">
+        Адрес
+      </div>
+      <div class="item">
+        Украина, Днепр, 49000<br>
+        БЦ 'Алеф', офис 901
+      </div>
+    </div>
+
+    <!-- <div class="logo">
+      <img src="/assets/img/Frame 6.png" />
+    </div>
+    <div class="menu">
+      <div class="menu-item" *ngFor="let item of menu">{{ item.text }}</div>
+    </div>
+    <div class="contacts">
+      <div class="row bold">
+        +38 (096) 725-68-05
+      </div>
+      <div class="row">
+        Звонки принимаются в рабочие дни с 9:00 до 18:00<br>
+        и в субботу с 10:00 до 14:00
+      </div>
+      <button class="custom" mat-raised-button color="primary"  (click)="openDialog()">Заказать звонок</button>
+    </div> -->
+  </div>
+  <div class="cont-copyright">
+    <div class="left">
+      Powered by <a routerLink="/">EddyCars</a>
+    </div>
+    <div class="right">
+      All rights reserved. 2021.
+    </div>
+  </div>
+  <div class="cont-mobile">
+    <div class="cont-upper">
+      <div class="cont-img">
+        <img src="/assets/img/logo.png">
+      </div>
+      <div class="cont-right">
+        <div class="title">
+          EDDY CARS
+        </div>
+        <div class="text">
+          Доставка и оформление авто из США под ключ
+        </div>
+      </div>
+    </div>
+    <div class="cont-socials">
+      <a class="cont-icon" href="https://www.instagram.com/eddycars_usa/" target="_blank">
+        <img src="assets/img/fb.svg"/>
+      </a>
+      <a class="cont-icon">
+        <img src="assets/img/ig.svg"/>
+      </a>
+      <a class="cont-icon">
+        <img src="assets/img/tg.svg"/>
+      </a>
+    </div>
+  </div>
+</div>
+

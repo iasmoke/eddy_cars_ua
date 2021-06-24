@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Заказать звонок</h1>
+<div mat-dialog-content>
+  <p>Оставьте свой номер - вежливый и компетентный менеджер перезвонит вам в течении 5 минут (в рабочее время)</p>
+  <div class="cont-input">
+    <mat-form-field class="custom">
+      <!-- <mat-label>Ваше имя</mat-label> -->
+      <input matInput placeholder="Ваше имя">
+    </mat-form-field>
+  </div>
+
+  <div class="cont-input">
+    <mat-form-field class="custom">
+      <!-- <mat-label>Ваш номер телефона</mat-label> -->
+      <input matInput placeholder="Ваш номер телефона">
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <div class="cont-button">
+    <button class="custom" mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Заказать звонок</button>
+  </div>
+  <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+
+</div>

@@ -1,0 +1,193 @@
+<div class="screen screen-4">
+  <div class="screen-title">
+    Калькулятор
+  </div>
+  <div class="cont-calc">
+    <!-- <div class="cont-tabs">
+      <div class="tab active">
+        Калькулятор растаможки
+      </div>
+      <div class="tab">
+        Калькулятор доставки
+      </div>
+    </div> -->
+    <div class="cont-inputs">
+      <!-- <div class="title">Калькулятор стоимости растаможки</div> -->
+      <!-- <div class="sub-tabs">
+        <div class="inputs-title active">
+          Автомобили
+        </div>
+        <div class="inputs-title">
+          Электромобили
+        </div>
+      </div> -->
+      <div class="body-inputs">
+        <div class="cont-left">
+          <div class="inputs">
+            <div class="input-label">Аукцион</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <mat-select name="volume" [(ngModel)]="auction" (ngModelChange)="calcCarsNew()">
+                  <mat-option *ngFor="let item of auctions" [value]="item.value">
+                    {{ item.text }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Цена на аукционе, $</div>
+            <div class="cont-input">
+              <div class="cont-input">
+                <mat-form-field class="custom">
+                  <input matInput type="number" name="costn" [(ngModel)]="costn" (ngModelChange)="calcCarsNew()">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="input-label">Тип двигателя</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <mat-select name="volume" [(ngModel)]="engineType" (ngModelChange)="calcCarsNew()">
+                  <mat-option *ngFor="let item of engineTypes" [value]="item.value">
+                    {{ item.text }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">{{ engineType === 3 ? 'Ёмкость аккумулятора, кВт.ч' : 'Обьем двигателя, л' }}</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <ng-container *ngIf="engineType === 3">
+                  <input matInput type="number" name="amountn"  [(ngModel)]="amountn" (ngModelChange)="calcCarsNew()">
+                </ng-container>
+                <ng-container *ngIf="engineType !== 3">
+                  <mat-select name="amountn" [(ngModel)]="amountn" (ngModelChange)="calcCarsNew()">
+                    <mat-option *ngFor="let item of volumes" [value]="item.value">
+                      {{ item.text }}
+                    </mat-option>
+                  </mat-select>
+                </ng-container>
+
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Год выпуска</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <mat-select name="year"  [(ngModel)]="yearn" (ngModelChange)="calcCarsNew()">
+                  <mat-option *ngFor="let item of yearsProd" [value]="item.value" >
+                    {{ item.text }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Местоположение аукциона</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill" >
+                <mat-select name="volume" [(ngModel)]="state" (ngModelChange)="state ? calcCarsNew() : ''" >
+                  <mat-option *ngFor="let item of getUnique(auction === 1 ? copart : iaai)" [value]="item">
+                    {{ item }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <!-- <button class="custom" mat-raised-button color="primary">Рассчитать</button> -->
+          </div>
+          <div class="cont-checkboxes">
+            <div class="cont-checkbox">
+              <div class="label" (click)="showDetails(1)">Услуга под ключ</div>
+              <div class="check">
+                <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="allInc" (ngModelChange)="calcCarsNew()"></mat-checkbox>
+              </div>
+            </div>
+            <!-- <div class="cont-checkbox">
+              <div class="label" (click)="showDetails(2)">Страховка груза</div>
+              <div class="check">
+                <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="insurance" (ngModelChange)="calcCarsNew()"></mat-checkbox>
+              </div>
+            </div> -->
+            <div class="cont-checkbox">
+              <div class="label" (click)="showDetails(3)">Сертификация</div>
+              <div class="check">
+                <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="cert" (ngModelChange)="calcCarsNew()"></mat-checkbox>
+              </div>
+            </div>
+            <div class="cont-checkbox">
+              <div class="label" (click)="showDetails(4)">Постановка на учет</div>
+              <div class="check">
+                <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="uchet" (ngModelChange)="calcCarsNew()"></mat-checkbox>
+              </div>
+            </div>
+
+          </div>
+          <div class="cont-notice">
+            *Для максимально точного рассчета таможенных пошлин, в графе «стоимость автомобиля» необходимо ввести сумму, равную стоимости авто + стоимости аукционного сбора + 1000$ морского фрахта.
+          </div>
+        </div>
+        <div class="cont-right">
+          <!-- <div class="row title">Результаты *</div> -->
+          <!-- <div class="row sep">
+            <div class="title">Цена лота</div>
+            <div class="value total">0$</div>
+          </div> -->
+          <div class="row inlay">
+            <div class="title">Цена лота:</div>
+            <div class="value">{{ costn }} $</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Сборы аукциона:</div>
+            <div class="value">{{ twoFixed(auction_fee) }} $</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Доставка по суше / морю:</div>
+            <div class="value">{{ delivery_price }} $</div>
+          </div>
+          <div class="row inlay" *ngIf="insurance">
+            <div class="title">Страховка груза:</div>
+            <div class="value">{{ twoFixed(insuranceCost) }} $</div>
+          </div>
+          <!-- <div class="row inlay last">
+            <div class="title">Брокер / экспедитор / услуги порта :</div>
+            <div class="value">0$</div>
+          </div> -->
+          <!-- <div class="row inlay">
+            <div class="title">Брокер / экспедитор / услуги порта:</div>
+            <div class="value">{{ brokerage }} $</div>
+          </div> -->
+          <div class="row inlay">
+            <div class="title">Таможенные платежи:</div>
+            <div class="value">{{ twoFixed(customs_duty) }} $</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Услуги компании:</div>
+            <div class="value">{{ twoFixed(company_services) }} $</div>
+          </div>
+
+          <div class="row sep">
+            <div class="title total">Итого в Одессе за расстаможенный авто без ремонта:</div>
+            <div class="value total">{{ twoFixed(summary_price) }} $</div>
+          </div>
+          <div class="row inlay" *ngIf="cert">
+            <div class="title">Сертификация:</div>
+            <div class="value">{{ twoFixed(certification) }} $</div>
+          </div>
+          <div class="row inlay" *ngIf="uchet">
+            <div class="title">Постановка на учет:</div>
+            <div class="value">{{ twoFixed(first_registration) }} $</div>
+          </div>
+          <div class="row inlay" *ngIf="uchet">
+            <div class="title">Пенсионный фонд:</div>
+            <div class="value">0$</div>
+          </div>
+          <div class="row sep" *ngIf="cert || uchet">
+            <div class="title total">Итого:</div>
+            <div class="value total">{{ twoFixed(bigSum([summary_price, certification, first_registration])) }} $</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

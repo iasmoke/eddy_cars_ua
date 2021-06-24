@@ -1,0 +1,124 @@
+<div class="screen screen-4">
+  <div class="screen-title">
+    Калькулятор доставки
+  </div>
+  <div class="cont-maps">
+    <div echarts id="main" class="demo-chart"></div>
+    <!-- <div class="map-1">
+      <img src="/assets/img/europe-1.svg"/>
+    </div>
+    <div class="map-2">
+      <img src="/assets/img/us-map-silhouette-vector_f.svg"/>
+    </div>
+    <div class="map-3">
+      <img src="/assets/img/line-1.svg"/>
+    </div>
+    <div class="state" *ngIf="state === 'texas'" [style.top]="getLoc('texas').top" [style.left]="getLoc('texas').left"></div> -->
+  </div>
+  <div class="cont-calc">
+    <!-- <div class="cont-tabs">
+      <div class="tab active">
+        Калькулятор растаможки
+      </div>
+      <div class="tab">
+        Калькулятор доставки
+      </div>
+    </div> -->
+    <div class="cont-inputs">
+      <!-- <div class="title">Калькулятор стоимости растаможки</div> -->
+      <!-- <div class="sub-tabs">
+        <div class="inputs-title active">
+          Автомобили
+        </div>
+        <div class="inputs-title">
+          Электромобили
+        </div>
+      </div> -->
+      <div class="body-inputs">
+        <div class="cont-left">
+          <div class="inputs">
+            <div class="input-label">Аукцион</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <mat-select name="volume" [(ngModel)]="auction">
+                  <mat-option *ngFor="let item of auctions" [value]="item.value">
+                    {{ item.text }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Локация</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <!-- <mat-label>Обьем двигателя куб.дм</mat-label> -->
+                <mat-select name="volume" [(ngModel)]="port">
+                  <mat-option *ngFor="let item of filterPort(state)" [value]="item.value">
+                    {{ item.location }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Порт отправки</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill" >
+                <mat-select name="volume" [(ngModel)]="state" (ngModelChange)="getFreight(state)" >
+                  <mat-option *ngFor="let item of getUnique(auction === 1 ? copart : iaai)" [value]="item">
+                    {{ item }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="input-label">Порт прибытия</div>
+            <div class="cont-input">
+              <mat-form-field class="custom" appearance="fill">
+                <!-- <mat-label>Обьем двигателя куб.дм</mat-label> -->
+                <mat-select name="volume" [(ngModel)]="deliveryPort">
+                  <mat-option *ngFor="let item of deliveryPorts" [value]="item.value">
+                    {{ item.text }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+
+            <!-- <button class="custom" mat-raised-button color="primary">Рассчитать</button> -->
+          </div>
+
+        </div>
+        <div class="cont-right">
+          <!-- <div class="row title">Результаты *</div> -->
+          <!-- <div class="row sep">
+            <div class="title">Цена лота</div>
+            <div class="value total">0$</div>
+          </div> -->
+          <div class="row inlay">
+            <div class="title">Доставка по суше</div>
+            <div class="value">{{ port }} $</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Доставка по морю</div>
+            <div class="value">{{ portPrice }} $</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Страховка груза</div>
+            <div class="value">? $</div>
+          </div>
+          <div class="row inlay">
+            <div class="title">Брокер / экспедитор / услуги порта</div>
+            <div class="value">500 $</div>
+          </div>
+          <div class="row sep">
+            <div class="title total">Итого доствка в Одессу</div>
+            <div class="value total">{{ getSum([port, portPrice, 500]) }} $</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .cont-input {
+    height: 40px;
+    justify-content: flex-start;
+    padding: 0 15px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    background-color: #414141;
+    align-items: center;
+    display: flex;
+  }
+  p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    margin: 35px 0 45px 0;
+    color: #FFFFFF;
+  }
+  .cont-button {
+    margin-bottom: 60px;
+  }
+}
+h1 {
+  color: #fff;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  margin-bottom: 0;
+}
