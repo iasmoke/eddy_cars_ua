@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
   * {
     box-sizing: border-box;
     display: flex;
@@ -106,6 +107,11 @@
             > .cont-subs {
               display: flex;
             }
+          }
+          > .subtext {
+            opacity: 0.6;
+            font-size: 12px;
+            font-weight: 400;
           }
           > .cont-subs {
             z-index: 9999;

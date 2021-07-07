@@ -7,6 +7,7 @@ import {
 } from '@angular/material/dialog';
 import { ModalNoticeComponent } from '../modal-notice/modal-notice.component';
 import Big from 'big.js';
+import { NoopScrollStrategy } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-calc-car',
@@ -211,6 +212,8 @@ export class CalcCarComponent implements OnInit {
       }
     }
 
+    console.log(this.auction);
+
     if (this.auction === 1) {
       if (0.01 <= this.costn && this.costn <= 49.99) {
         this.auction_fee = 1;
@@ -288,81 +291,119 @@ export class CalcCarComponent implements OnInit {
         this.auction_fee = this.costn * 0.04 + 129;
       }
 
-      this.auction_fee = this.auction_fee + 30;
+      this.auction_fee = this.auction_fee + 59;
     } else if (this.auction === 2) {
       if (0.01 <= this.costn && this.costn <= 49.99) {
-        this.auction_fee = 25;
+        this.auction_fee = 1;
       } else if (50 <= this.costn && this.costn <= 99.99) {
-        this.auction_fee = 35;
+        this.auction_fee = 1;
       } else if (100 <= this.costn && this.costn <= 199.99) {
-        this.auction_fee = 50 + 29;
+        this.auction_fee = 40 + 39;
       } else if (200 <= this.costn && this.costn <= 299.99) {
-        this.auction_fee = 70 + 29;
+        this.auction_fee = 60 + 39;
       } else if (300 <= this.costn && this.costn <= 399.99) {
-        this.auction_fee = 90 + 29;
-      } else if (400 <= this.costn && this.costn <= 499.99) {
-        this.auction_fee = 105 + 29;
-      } else if (500 <= this.costn && this.costn <= 599.99) {
-        this.auction_fee = 125 + 39;
-      } else if (600 <= this.costn && this.costn <= 699.99) {
-        this.auction_fee = 140 + 39;
-      } else if (700 <= this.costn && this.costn <= 799.99) {
-        this.auction_fee = 155 + 39;
-      } else if (800 <= this.costn && this.costn <= 899.99) {
-        this.auction_fee = 170 + 39;
-      } else if (900 <= this.costn && this.costn <= 999.99) {
-        this.auction_fee = 185 + 39;
-      } else if (1000 <= this.costn && this.costn <= 1199.99) {
-        this.auction_fee = 200 + 49;
-      } else if (1200 <= this.costn && this.costn <= 1399.99) {
-        this.auction_fee = 225 + 49;
-      } else if (1400 <= this.costn && this.costn <= 1599.99) {
-        if (1400 <= this.costn && this.costn <= 1499.99) {
-          this.auction_fee = 250 + 49;
+        this.auction_fee = 39;
+        if (300 <= this.costn && this.costn <= 349.99) {
+          this.auction_fee += 75;
+        } else {
+          this.auction_fee += 90;
         }
+      } else if (400 <= this.costn && this.costn <= 499.99) {
+        this.auction_fee = 100 + 39;
+      } else if (500 <= this.costn && this.costn <= 599.99) {
+        this.auction_fee = 130 + 49;
+      } else if (600 <= this.costn && this.costn <= 699.99) {
+        this.auction_fee = 145 + 49;
+      } else if (700 <= this.costn && this.costn <= 799.99) {
+        this.auction_fee = 160 + 49;
+      } else if (800 <= this.costn && this.costn <= 899.99) {
+        this.auction_fee = 175 + 49;
+      } else if (900 <= this.costn && this.costn <= 999.99) {
+        this.auction_fee = 190 + 49;
+      } else if (1000 <= this.costn && this.costn <= 1199.99) {
+        this.auction_fee = 69;
+        if (1000 <= this.costn && this.costn <= 1099.99) {
+          this.auction_fee += 205;
+        } else {
+          this.auction_fee += 220;
+        }
+      } else if (1200 <= this.costn && this.costn <= 1399.99) {
+        this.auction_fee = 69;
+        if (1200 <= this.costn && this.costn <= 1299.99) {
+          this.auction_fee += 230;
+        } else {
+          this.auction_fee += 240;
+        }
+      } else if (1400 <= this.costn && this.costn <= 1499.99) {
+        this.auction_fee = 255 + 69;
       } else if (1500 <= this.costn && this.costn <= 1599.99) {
-        this.auction_fee = 250 + 59;
+        this.auction_fee = 270 + 79;
       } else if (1600 <= this.costn && this.costn <= 1799.99) {
-        this.auction_fee = 275 + 59;
+        this.auction_fee = 300 + 79;
       } else if (1800 <= this.costn && this.costn <= 1999.99) {
-        this.auction_fee = 300 + 59;
+        this.auction_fee = 310 + 79;
       } else if (2000 <= this.costn && this.costn <= 2399.99) {
-        this.auction_fee = 325 + 69;
-      } else if (2400 <= this.costn && this.costn <= 2699.99) {
-        this.auction_fee = 350 + 69;
+        this.auction_fee = 89;
+        if (2000 <= this.costn && this.costn <= 2199.99) {
+          this.auction_fee += 325;
+        } else {
+          this.auction_fee += 330;
+        }
+      } else if (2400 <= this.costn && this.costn <= 2499.99) {
+        this.auction_fee = 345 + 89;
+      } else if (2500 <= this.costn && this.costn <= 2699.99) {
+        this.auction_fee = 360 + 89;
       } else if (2700 <= this.costn && this.costn <= 2999.99) {
-        this.auction_fee = 375 + 69;
+        this.auction_fee = 360 + 89;
       } else if (3000 <= this.costn && this.costn <= 3999.99) {
-        this.auction_fee = 400 + 79;
-      } else if (4000 <= this.costn && this.costn <= 4999.99) {
-        this.auction_fee = 425 + 89;
-      } else if (5000 <= this.costn && this.costn <= 7499.99) {
-        this.auction_fee = 450 + 89;
+        this.auction_fee = 89;
+        if (3000 <= this.costn && this.costn <= 3499.99) {
+          this.auction_fee += 400;
+        } else {
+          this.auction_fee += 450;
+        }
+      } else if (4000 <= this.costn && this.costn <= 5999.99) {
+        this.auction_fee = 99;
+        if (4000 <= this.costn && this.costn <= 4499.99) {
+          this.auction_fee += 475;
+        } else if (4500 <= this.costn && this.costn <= 4999.99) {
+          this.auction_fee += 500;
+        } else {
+          this.auction_fee += 525;
+        }
+      } else if (6000 <= this.costn && this.costn <= 7499.99) {
+        this.auction_fee = 550 + 119;
       } else if (7500 <= this.costn && this.costn <= 9999.99) {
-        this.auction_fee = 475 + 89;
+        this.auction_fee = 500 + this.costn * 0.01;
+        if (8000 <= this.costn) {
+          this.auction_fee += 129;
+        } else {
+          this.auction_fee += 119;
+        }
       } else if (10000 <= this.costn && this.costn <= 14999.99) {
-        this.auction_fee = 500 + 89;
+        this.auction_fee = 500 + this.costn * 0.01 + 129;
       } else if (15000 <= this.costn && this.costn <= 19999.99) {
-        this.auction_fee = 550 + 89;
-      } else if (20000 <= this.costn && this.costn <= 24999.99) {
-        this.auction_fee = 600 + 89;
-      } else if (25000 <= this.costn && this.costn <= 29999.99) {
-        this.auction_fee = 650 + 89;
-      } else if (30000 <= this.costn && this.costn <= 34999.99) {
-        this.auction_fee = 700 + 89;
-      } else if (35000 <= this.costn) {
-        this.auction_fee = this.costn * 0.02 + 89;
+        this.auction_fee = 500 + this.costn * 0.01 + 129;
+      } else if (20000 <= this.costn) {
+        this.auction_fee = this.costn * 0.04 + 129;
       }
-      this.auction_fee = this.auction_fee + 55;
     }
+
+    this.auction_fee += 59;
 
     this.insuranceCost = this.insurance
       ? (this.costn + this.auction_fee) * 0.02
       : 0;
 
-    this.overland_delivery_price = (this.state
-      ? (auc.filter((r: any) => r.location === this.state)[0].value + 125)
-      : 0); // доставка по суше, Америка
+    if (auc.filter((r: any) => r.location === this.state).length > 0) {
+      this.overland_delivery_price = (this.state
+        ? (auc.filter((r: any) => r.location === this.state)[0].value + 125)
+        : 0); // доставка по суше, Америка
+    } else {
+      this.overland_delivery_price = 0;
+      this.state = '';
+    }
+
 
     this.state
       ? this.getFreight(
@@ -534,6 +575,7 @@ export class CalcCarComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalNoticeComponent, {
       width: '610px',
       data: { text },
+      scrollStrategy: new NoopScrollStrategy()
     });
 
     dialogRef.afterClosed().subscribe((result) => {

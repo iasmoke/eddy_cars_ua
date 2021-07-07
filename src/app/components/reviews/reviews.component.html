@@ -1,0 +1,61 @@
+<div class="screen screen-6">
+  <div class="screen-title">
+    Отзывы
+  </div>
+  <div class="screen-cont">
+    <div class="arrow">
+      <img src="/assets/img/arrow-left.png" />
+    </div>
+    <div class="cont-review" *ngFor="let item of ['review.png','review.png','review.png']">
+      <div class="review">
+        <div class="cont-img">
+          <img [src]="'/assets/img/' + item" />
+        </div>
+        <div class="text">
+          Полностью доволен сотрудничеством с @eddycars_usa начиная от грамотных советов при подборе, заканчивая
+          рекомендациями по ремонту/сертификации и постановке на учёт. За время работы не возникло ни одного сомнения.
+        </div>
+        <!-- <div class="cont-button">
+          <button class="custom" mat-raised-button color="primary">Читать полностью</button>
+        </div> -->
+      </div>
+    </div>
+    <div class="arrow">
+      <img src="/assets/img/arrow-right.png" />
+    </div>
+  </div>
+  <div class="screen-title">
+    Было / Стало
+  </div>
+  <div class="screen-cont screen-cont-2">
+    <div class="arrow">
+      <img src="/assets/img/arrow-left.png" />
+    </div>
+    <div class="cont-review">
+      <div class="review">
+        <div class="cont-img">
+          <img src="/assets/img/g-1.png" />
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="cont-review">
+      <div class="review">
+        <div class="cont-img">
+          <img src="/assets/img/g-2.png" />
+        </div>
+      </div>
+      </div>
+
+
+    <div class="arrow">
+      <img src="/assets/img/arrow-right.png" />
+    </div>
+  </div>
+
+  <!-- <div class="cont-icons">
+    <div class="review-icon" [class.active]="item === 2" *ngFor="let item of [1,2,3]">&nbsp;</div>
+  </div> -->
+</div>

@@ -1,3 +1,4 @@
+import { NoopScrollStrategy } from '@angular/cdk/overlay';
 import { Component, OnInit, AfterViewInit, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -143,7 +144,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
       img: 'service-img-5.svg',
       title: 'Подбор',
       text: [
-        'Подбор лучших вариантов на аукционе под запрос клиента'
+        'Поиск лучших вариантов на аукционе под запрос клиента'
       ],
       fragment: 'podbor'
     },
@@ -356,7 +357,8 @@ export class LandingComponent implements OnInit, AfterViewInit {
     }
     const dialogRef = this.dialog.open(ModalNoticeComponent, {
       width: '610px',
-      data: { text }
+      data: { text },
+      scrollStrategy: new NoopScrollStrategy()
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -368,7 +370,8 @@ export class LandingComponent implements OnInit, AfterViewInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalCallComponent, {
       width: '610px',
-      data: {name: 'wer', animal: 'wer'}
+      data: {name: 'wer', animal: 'wer'},
+      scrollStrategy: new NoopScrollStrategy()
     });
 
     dialogRef.afterClosed().subscribe(result => {

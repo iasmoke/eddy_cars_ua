@@ -60,10 +60,12 @@ export class CalcDeliveryComponent implements OnInit, AfterViewInit {
   iaai: any = [];
   usaJson: any = {};
 
-  state = '';
+  state = 0;
   port = 0;
   portText = '';
+  landPrice = 0;
   portPrice = 0;
+  location = '';
   deliveryPort = '';
 
   constructor() {
@@ -231,9 +233,20 @@ export class CalcDeliveryComponent implements OnInit, AfterViewInit {
   }
 
   getFreight(port: any) {
+
+    try {
+      // console.log((auction === 1 ? this.copart : this.iaai).filter((row: any) => ((row.location === this.location) && (row.port === this.port))));
+      this.landPrice = (this.auction === 1 ? this.copart : this.iaai).filter((row: any) => ((row.location === this.location) && (row.port === this.port)))[0].value;
+    } catch (e) {
+      this.landPrice = 0;
+    }
+
+    console.log(this.auction === 1 ? this.copart : this.iaai);
+
     switch (port) {
       case 'NJ':
         this.portPrice = 650;
+
         this.portText = '(Фрахт - NJ)';
         break;
       case 'GA':
@@ -249,16 +262,34 @@ export class CalcDeliveryComponent implements OnInit, AfterViewInit {
         this.portText = '(Фрахт - CA)';
         break;
     }
+
   }
 
-  getUnique(auction: number = this.copart) {
+  getUnique() {
 
-    const unique = (value: any, index: any, self: string | any[]) => {
-      return self.indexOf(value) === index
+    // const unique = (value: any, index: any, self: string | any[]) => {
+    //   return self.indexOf(value) === index
+    // }
+
+    let tmp = this.auction === 1 ? this.copart : this.iaai;
+
+    console.log(tmp);
+    // console.log(tmp.filter((row: any) => row.location === this.port));
+
+
+    if (tmp.filter((row: any) => row.location === this.location).length === 1) {
+      this.port = tmp.filter((row: any) => row.location === this.location)[0].port;
+      this.getFreight(this.port);
     }
 
-    let tmp = auction === 1 ? this.copart : this.iaai;
-    return tmp.map((_: any) => _.port).filter(unique);
+    console.log(tmp.map((row: any) => row.location));
+
+    console.log(tmp.filter((row: any) => row.location === this.location));
+
+
+
+    return tmp.filter((row: any) => row.location === this.location);
+
   }
 
   filterPort(state: string = 'TX') {
@@ -268,6 +299,9 @@ export class CalcDeliveryComponent implements OnInit, AfterViewInit {
     return tmp.filter((_: any) => _.port === state);
   }
 
+  getLength(arr: any) {
+    return arr ? arr.length : 0;
+  }
 
   getLoc(state: string) {
     return this.locs[state];

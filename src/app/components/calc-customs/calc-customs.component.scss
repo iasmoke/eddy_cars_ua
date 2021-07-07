@@ -141,6 +141,11 @@
             margin-right: 80px;
             justify-content: center;
             align-items: center;
+            > .cont-notice {
+              color: rgba(255, 255, 255, 0.5);
+              padding: 20px;
+              font-size: 12px;
+            }
             > .inputs {
               width: 350px;
               justify-content: center;
@@ -163,9 +168,7 @@
               }
 
               flex-direction: column;
-              .mat-form-field-appearance-fill .mat-form-field-flex {
 
-              }
               > * {
                 width: 100%;
                 margin-bottom: 20px;

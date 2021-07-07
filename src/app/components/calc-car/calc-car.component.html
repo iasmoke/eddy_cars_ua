@@ -103,12 +103,12 @@
                 <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="allInc" (ngModelChange)="calcCarsNew()"></mat-checkbox>
               </div>
             </div>
-            <!-- <div class="cont-checkbox">
+            <div class="cont-checkbox">
               <div class="label" (click)="showDetails(2)">Страховка груза</div>
               <div class="check">
                 <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="insurance" (ngModelChange)="calcCarsNew()"></mat-checkbox>
               </div>
-            </div> -->
+            </div>
             <div class="cont-checkbox">
               <div class="label" (click)="showDetails(3)">Сертификация</div>
               <div class="check">
@@ -123,9 +123,9 @@
             </div>
 
           </div>
-          <div class="cont-notice">
+          <!-- <div class="cont-notice">
             *Для максимально точного рассчета таможенных пошлин, в графе «стоимость автомобиля» необходимо ввести сумму, равную стоимости авто + стоимости аукционного сбора + 1000$ морского фрахта.
-          </div>
+          </div> -->
         </div>
         <div class="cont-right">
           <!-- <div class="row title">Результаты *</div> -->
@@ -153,13 +153,13 @@
             <div class="title">Брокер / экспедитор / услуги порта :</div>
             <div class="value">0$</div>
           </div> -->
-          <!-- <div class="row inlay">
+          <div class="row inlay">
             <div class="title">Брокер / экспедитор / услуги порта:</div>
             <div class="value">{{ brokerage }} $</div>
-          </div> -->
+          </div>
           <div class="row inlay">
             <div class="title">Таможенные платежи:</div>
-            <div class="value">{{ twoFixed(customs_duty) }} $</div>
+            <div class="value">{{ twoFixed(brokers_pay) }} $</div>
           </div>
           <div class="row inlay">
             <div class="title">Услуги компании:</div>
@@ -178,10 +178,10 @@
             <div class="title">Постановка на учет:</div>
             <div class="value">{{ twoFixed(first_registration) }} $</div>
           </div>
-          <div class="row inlay" *ngIf="uchet">
+          <!-- <div class="row inlay" *ngIf="uchet">
             <div class="title">Пенсионный фонд:</div>
             <div class="value">0$</div>
-          </div>
+          </div> -->
           <div class="row sep" *ngIf="cert || uchet">
             <div class="title total">Итого:</div>
             <div class="value total">{{ twoFixed(bigSum([summary_price, certification, first_registration])) }} $</div>

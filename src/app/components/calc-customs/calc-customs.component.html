@@ -28,16 +28,17 @@
             <div class="cont-input">
               <div class="cont-input">
                 <mat-form-field class="custom">
-                  <input matInput type="number" name="costn" [(ngModel)]="costn"  (ngModelChange)="calcCars()">
+                  <input matInput type="number" name="costn" [(ngModel)]="costn" (ngModelChange)="calcCars()">
                 </mat-form-field>
               </div>
             </div>
 
-            <div class="input-label">{{ engineType === 3 ? 'Ёмкость аккумулятора, кВт.ч' : 'Объем двигателя, куб.дм' }}</div>
+            <div class="input-label">{{ engineType === 3 ? 'Ёмкость аккумулятора, кВт.ч' : 'Объем двигателя, куб.дм' }}
+            </div>
             <div class="cont-input">
               <div class="cont-input">
                 <mat-form-field class="custom" appearance="fill">
-                  <input matInput type="number" name="amountn"  [(ngModel)]="amountn" (ngModelChange)="calcCars()">
+                  <input matInput type="number" name="amountn" [(ngModel)]="amountn" (ngModelChange)="calcCars()">
                 </mat-form-field>
               </div>
             </div>
@@ -56,8 +57,8 @@
             <div class="input-label">Год выпуска</div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
-                <mat-select name="year"  [(ngModel)]="yearn" (ngModelChange)="calcCars()">
-                  <mat-option *ngFor="let item of yearsProd" [value]="item.value" >
+                <mat-select name="year" [(ngModel)]="yearn" (ngModelChange)="calcCars()">
+                  <mat-option *ngFor="let item of yearsProd" [value]="item.value">
                     {{ item.text }}
                   </mat-option>
                 </mat-select>
@@ -67,7 +68,10 @@
 
             <!-- <button class="custom" mat-raised-button color="primary">Рассчитать</button> -->
           </div>
-
+          <div class="cont-notice">
+            *Для максимально точного рассчета таможенных пошлин, в графе «стоимость автомобиля» необходимо ввести
+            сумму, равную стоимости авто + стоимости аукционного сбора + 1000$ морского фрахта.
+          </div>
         </div>
         <div class="cont-right">
           <!-- <div class="row title">Результаты *</div> -->
@@ -87,10 +91,10 @@
             <div class="title">Акцизный сбор :</div>
             <div class="value">{{ getData('Акциз') }} $</div>
           </div>
-          <div class="row inlay">
+          <!-- <div class="row inlay">
             <div class="title">Пенсионный фонд :</div>
             <div class="value">? $</div>
-          </div>
+          </div> -->
           <div class="row sep">
             <div class="title total">Всего таможенных платежей :
             </div>

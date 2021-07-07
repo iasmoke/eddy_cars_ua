@@ -52,8 +52,8 @@
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
                 <!-- <mat-label>Обьем двигателя куб.дм</mat-label> -->
-                <mat-select name="volume" [(ngModel)]="port">
-                  <mat-option *ngFor="let item of filterPort(state)" [value]="item.value">
+                <mat-select name="volume" [(ngModel)]="location" (ngModelChange)="getUnique()">
+                  <mat-option *ngFor="let item of (auction === 1 ? copart : iaai)" [value]="item.location">
                     {{ item.location }}
                   </mat-option>
                 </mat-select>
@@ -63,25 +63,24 @@
             <div class="input-label">Порт отправки</div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill" >
-                <mat-select name="volume" [(ngModel)]="state" (ngModelChange)="getFreight(state)" >
-                  <mat-option *ngFor="let item of getUnique(auction === 1 ? copart : iaai)" [value]="item">
-                    {{ item }}
+                <mat-select name="volume" [(ngModel)]="port" (ngModelChange)="getFreight(port)" >
+                  <mat-option *ngFor="let item of getUnique()" [value]="item.port">
+                    {{ item.port }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
 
-            <div class="input-label">Порт прибытия</div>
+            <!-- <div class="input-label">Порт прибытия</div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
-                <!-- <mat-label>Обьем двигателя куб.дм</mat-label> -->
                 <mat-select name="volume" [(ngModel)]="deliveryPort">
                   <mat-option *ngFor="let item of deliveryPorts" [value]="item.value">
                     {{ item.text }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
-            </div>
+            </div> -->
 
 
             <!-- <button class="custom" mat-raised-button color="primary">Рассчитать</button> -->
@@ -96,23 +95,23 @@
           </div> -->
           <div class="row inlay">
             <div class="title">Доставка по суше</div>
-            <div class="value">{{ port }} $</div>
+            <div class="value">{{ landPrice }} $</div>
           </div>
           <div class="row inlay">
-            <div class="title">Доставка по морю</div>
-            <div class="value">{{ portPrice }} $</div>
+            <div class="title">Морской фрахт</div>
+            <div class="value">{{ portPrice + 500 }} $</div>
           </div>
-          <div class="row inlay">
+          <!-- <div class="row inlay">
             <div class="title">Страховка груза</div>
             <div class="value">? $</div>
           </div>
           <div class="row inlay">
             <div class="title">Брокер / экспедитор / услуги порта</div>
             <div class="value">500 $</div>
-          </div>
+          </div> -->
           <div class="row sep">
             <div class="title total">Итого доствка в Одессу</div>
-            <div class="value total">{{ getSum([port, portPrice, 500]) }} $</div>
+            <div class="value total">{{ getSum([landPrice, portPrice, 500]) }} $</div>
           </div>
         </div>
       </div>

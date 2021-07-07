@@ -1,22 +1,26 @@
 
 <h1>Услуги</h1>
 <div class="bottom">
-  <div class="cont-menu">
-    <a [class.active]="fragment === 'podbor' ||   scrollPosition < 1270" routerLink="/services" fragment="podbor">Подбор</a>
-    <a [class.active]="fragment === 'proverka' || (scrollPosition >= 1270 && scrollPosition < 1723)" routerLink="/services" fragment="proverka">Проверка</a>
-    <a [class.active]="fragment === 'torgi' ||    (scrollPosition >= 1723 && scrollPosition < 2180)" routerLink="/services" fragment="torgi">Торги</a>
-    <a [class.active]="fragment === 'pokupka' ||  (scrollPosition >= 2180 && scrollPosition < 2599)" routerLink="/services" fragment="pokupka">Покупка</a>
-    <a [class.active]="fragment === 'dostavka' || (scrollPosition >= 2599 && scrollPosition < 2945)" routerLink="/services" fragment="dostavka">Доставка к Порту</a>
-    <a [class.active]="fragment === 'freight' ||  (scrollPosition >= 2945 && scrollPosition < 3256)" routerLink="/services" fragment="freight">Морской фрахт</a>
-    <a [class.active]="fragment === 'odessa' ||   (scrollPosition >= 3256 && scrollPosition < 3583)" routerLink="/services" fragment="odessa">Прибытие в Украину</a>
-    <a [class.active]="fragment === 'customs' ||  (scrollPosition >= 3583 && scrollPosition < 3929)" routerLink="/services" fragment="customs">Таможенное оформление</a>
-    <a [class.active]="fragment === 'address' ||  (scrollPosition >= 3929 && scrollPosition < 4240)" routerLink="/services" fragment="address">Доставка из Одессы</a>
-    <a [class.active]="fragment === 'remont' ||   (scrollPosition >= 4240 && scrollPosition < 4662)" routerLink="/services" fragment="remont">Ремонт</a>
-    <a [class.active]="fragment === 'cert' ||     (scrollPosition >= 4662 && scrollPosition < 4935)" routerLink="/services" fragment="cert">Сертификация</a>
-    <a [class.active]="fragment === 'uchet' ||    (scrollPosition >= 4935)" routerLink="/services" fragment="uchet">Регистрация</a>
+  <div class="left">
+    <div class="cont-menu">
+      <a [class.active]="showId === 0" (click)="showId = 0">Подбор</a>
+      <a [class.active]="showId === 1" (click)="showId = 1">Проверка</a>
+      <a [class.active]="showId === 2" (click)="showId = 2">Торги</a>
+      <a [class.active]="showId === 3" (click)="showId = 3">Покупка</a>
+      <a [class.active]="showId === 4" (click)="showId = 4">Доставка к Порту</a>
+      <a [class.active]="showId === 5" (click)="showId = 5">Морской фрахт</a>
+      <a [class.active]="showId === 6" (click)="showId = 6">Прибытие в Украину</a>
+      <a [class.active]="showId === 7" (click)="showId = 7">Таможенное оформление</a>
+      <a [class.active]="showId === 8" (click)="showId = 8">Доставка из Одессы</a>
+      <a [class.active]="showId === 9" (click)="showId = 9">Ремонт</a>
+      <a [class.active]="showId === 10" (click)="showId = 10">Сертификация</a>
+      <a [class.active]="showId === 11" (click)="showId = 11">Регистрация</a>
+    </div>
+
   </div>
-  <div class="cont-articles" (scroll)="keepTrack()">
-    <div id="podbor" class="podbor">
+
+  <div class="cont-articles">
+    <div *ngIf="showId === 0" id="podbor" class="podbor">
       <p>В процессе подбора авто нами фиксируются все пожелания клиента, определяется круг поиска по маркам/моделям/комплектациям/пробегу желаемого автомобиля. Учитываются любые пожелания по цвету/объёму двигателя, отдельным опциям в авто.</p>
 
       <p>Утверждается оптимально приемлемый и выгодный для клиента бюджет на покупку.</p>
@@ -64,7 +68,7 @@
       </p>
     </div>
 
-    <div id="proverka">
+    <div *ngIf="showId === 1" id="proverka">
       <p>
         Сотрудниками нашей компании производится проверка всех лотов. В процессе проверки каждого лота мы определяем:
       </p>
@@ -84,7 +88,7 @@
       </p>
     </div>
 
-    <div id="torgi">
+    <div *ngIf="showId === 2" id="torgi">
       <p>
         После определения лотов, за которые клиент хочет бороться на торгах, проведения всех проверок, получения выписки из базы истории транспортных средств CarFax, определения и согласования с клиентом крайних ставок, можно брать участие в торгах.
 
@@ -99,7 +103,7 @@
       </p>
     </div>
 
-    <div id="pokupka">
+    <div *ngIf="showId === 3" id="pokupka">
 
       <p>
         После успешного проведения торгов и получения подтверждения от продавца, клиент становится обладателем выбранного авто.
@@ -115,7 +119,7 @@
       </p>
     </div>
 
-    <div id="dostavka">
+    <div *ngIf="showId === 4"  id="dostavka">
 
       <p>
         Наша компания занимается организацией процесса доставки автомобиля с площадки аукциона до порта отправки в США.
@@ -128,13 +132,13 @@
       </p>
     </div>
 
-    <div id="freight">
+    <div *ngIf="showId === 5" id="freight">
       <p>
         В порту отправки в США производится погрузка автомобиля в контейнер и загрузка судна. Далее судно отправляется в Украину, а клиенту предоставляется номер контейнера, и он имеет возможность отслеживать передвижение судна на сайте морской линии.
       </p>
     </div>
 
-    <div id="odessa">
+    <div *ngIf="showId === 6" id="odessa">
       <p>
         По прибытию в порт Одесса или Южный происходит разгрузка судна. После открытия контейнера производится фотоотчет автомобиля, который сразу отправляется клиенту.
 
@@ -145,7 +149,7 @@
       </p>
     </div>
 
-    <div id="customs">
+    <div *ngIf="showId === 7" id="customs">
       <p>
         После оплаты таможенных пошлин, нашим брокером оформляются все необходимые документы. Клиент производит оплату таможенных платежей на реквизиты таможни посредством перевода денежных средств в гривне по Украине.
 
@@ -156,14 +160,14 @@
       </p>
     </div>
 
-    <div id="address">
+    <div *ngIf="showId === 8" id="address">
       <p>
         После того, как автомобиль прошел таможенную очистку и готов к выдаче, наша компания организовывает адресную доставку автомобиля в любую точку Украины. При выдаче автомобиля клиент получает автомобиль и все необходимые документы для дальнейшей сертификации и постановки на учет.
 
       </p>
     </div>
 
-    <div id="remont">
+    <div *ngIf="showId === 9" id="remont">
       <p>
         В рамках существующей в нашей компании услуги «под ключ», мы доставим авто из Одессы на партнерскую станцию технического обслуживания, произведем дефектовку автомобиля, предварительно согласуем и закажем необходимые комплектующие для восстановления автомобиля.
 
@@ -174,12 +178,12 @@
       </p>
     </div>
 
-    <div id="cert">
+    <div *ngIf="showId === 10" id="cert">
       <p>Перед постановкой автомобиля на учет, необходимо получить сертификат соответствия украинским стандартам. Наша компания без проблем сделает это вместо клиента в рамках услуги «под ключ».</p>
 
     </div>
 
-    <div id="uchet">
+    <div *ngIf="showId === 11" id="uchet">
       <p>
         Финальным этапом покупки авто из США является регистрация транспортного средства в государственных органах Украины.
 
@@ -190,6 +194,25 @@
       </p>
     </div>
   </div>
+  <div class="bottom">
+    <div class="faq">
+      <div class="title">
+        Часто задаваемые вопросы
+      </div>
+      <div class="item" *ngFor="let item of arrFaq">
+        <div class="icon" (click)="item.show = !item.show">+</div>
+        <div class="text">
+          <div class="question" (click)="item.show = !item.show">{{ item.question }}</div>
+          <div [class.active]="item.show" class="answer" >
+            <div class="paragraph" *ngFor="let p of item.answer">
+              {{ p }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 

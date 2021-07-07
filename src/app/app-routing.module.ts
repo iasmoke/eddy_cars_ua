@@ -5,6 +5,7 @@ import { CalcCarComponent } from './components/calc-car/calc-car.component';
 import { CalcCustomsComponent } from './components/calc-customs/calc-customs.component';
 import { CalcDeliveryComponent } from './components/calc-delivery/calc-delivery.component';
 import { LandingComponent } from './components/landing/landing.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 import { ServicesComponent } from './components/services/services.component';
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'services',
     component: ServicesComponent
+  },
+  {
+    path: 'reviews',
+    component: ReviewsComponent
   },
   {
     path: 'about',
@@ -39,7 +44,9 @@ const routes: Routes = [
     anchorScrolling: 'enabled',
     preloadingStrategy: PreloadAllModules,
     scrollPositionRestoration: 'enabled',
-    relativeLinkResolution: 'legacy'
+    relativeLinkResolution: 'legacy',
+    scrollOffset: [0, 64], // [x, y] - adjust scroll offset
+    onSameUrlNavigation: 'reload'
 })],
   exports: [RouterModule]
 })

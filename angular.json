@@ -55,12 +55,12 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kb",
-                  "maximumError": "1mb"
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -74,8 +74,14 @@
           "configurations": {
             "production": {
               "browserTarget": "eddycars:build:production"
+            },
+            "development": {
+              "optimization": false,
+              "vendorChunk": true,
+              "sourceMap": true
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

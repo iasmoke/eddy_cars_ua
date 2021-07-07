@@ -52,9 +52,11 @@ import { CalcCarComponent } from './components/calc-car/calc-car.component';
 import { CalcDeliveryComponent } from './components/calc-delivery/calc-delivery.component';
 import { CalcCustomsComponent } from './components/calc-customs/calc-customs.component';
 import { ModalTelsComponent } from './components/modal-tels/modal-tels.component';
+import {RouterModule} from '@angular/router';
 
 import * as echarts from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 
 @NgModule({
@@ -69,6 +71,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     CalcDeliveryComponent,
     CalcCustomsComponent,
     ModalTelsComponent,
+    ReviewsComponent,
 
   ],
   imports: [

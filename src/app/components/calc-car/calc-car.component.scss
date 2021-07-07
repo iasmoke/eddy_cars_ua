@@ -166,9 +166,7 @@
               }
 
               flex-direction: column;
-              .mat-form-field-appearance-fill .mat-form-field-flex {
 
-              }
               > * {
                 width: 100%;
                 margin-bottom: 20px;
@@ -203,9 +201,6 @@
                 justify-content: space-between;
                 align-items: center;
                 flex-direction: row;
-                > * {
-                  // width: 100%;
-                }
                 > .label {
                   height: 35px;
                   font-family: Montserrat;
@@ -216,6 +211,7 @@
                   text-decoration-line: underline;
                   width: 190px;
                   color: rgba(255, 255, 255, 0.8);
+                  cursor: pointer;
                 }
                 > .check {
                   width: 16px;

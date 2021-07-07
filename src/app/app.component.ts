@@ -1,5 +1,6 @@
+import { NoopScrollStrategy } from '@angular/cdk/overlay';
 import { Component, HostListener } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ModalCallComponent } from './components/modal-call/modal-call.component';
 import { ModalTelsComponent } from './components/modal-tels/modal-tels.component';
 
@@ -48,21 +49,23 @@ export class AppComponent {
       children: []
     },
     {
-      text: 'Аукцион',
-      link: '/',
+      text: 'Отзывы',
+      link: 'reviews',
       children: []
     },
     {
-      text: 'Отзывы',
+      text: 'Аукцион',
+      subtext: '(скоро)',
       link: '/',
       children: []
     }
+
   ];
 
   @HostListener('window:scroll', ['$event'])
   scrollDetection(e: any) {
     this.scrollPosition = window.pageYOffset;
-    // console.log(this.scrollPosition);
+    console.log(this.scrollPosition);
   }
 
   constructor(
@@ -71,10 +74,16 @@ export class AppComponent {
 
   }
 
+  resetPosition() {
+    let myDiv: any = document.getElementById("body");
+    myDiv.scrollTop = 0;
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalCallComponent, {
       width: '610px',
-      data: {name: 'wer', animal: 'wer'}
+      data: { name: 'wer', animal: 'wer' },
+      scrollStrategy: new NoopScrollStrategy()
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -86,7 +95,8 @@ export class AppComponent {
   openTel(): void {
     const dialogRef = this.dialog.open(ModalTelsComponent, {
       width: 'auto',
-      data: {name: 'wer', animal: 'wer'}
+      data: { name: 'wer', animal: 'wer' },
+      scrollStrategy: new NoopScrollStrategy()
     });
 
     dialogRef.afterClosed().subscribe(result => {
