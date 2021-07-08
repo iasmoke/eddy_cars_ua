@@ -137,7 +137,7 @@ export class CalcCarComponent implements OnInit {
   certification: number = 0;
   customs_broker: number = 0;
   car_transporter: number = 0;
-  brokerage: any;
+  brokerage: any = 0;
   delivery_price: any = 0;
   customs_duty: number = 0;
   excise: number = 0;
@@ -200,15 +200,15 @@ export class CalcCarComponent implements OnInit {
 
     if (this.engineType == 2) {
       if (3500 < this.amountn) {
-        this.fuel_basic_excise = 150 * 1.11; // 1.11 - перевод из евро в доллары
+        this.fuel_basic_excise = 150 * 1.2; // 1.11 - перевод из евро в доллары
       } else {
-        this.fuel_basic_excise = 75 * 1.11; // 1.11 - перевод из евро в доллары
+        this.fuel_basic_excise = 75 * 1.2; // 1.11 - перевод из евро в доллары
       }
     } else if (this.engineType == 1) {
       if (3000 < this.amountn) {
-        this.fuel_basic_excise = 100 * 1.11; // 1.11 - перевод из евро в доллары
+        this.fuel_basic_excise = 100 * 1.2; // 1.11 - перевод из евро в доллары
       } else {
-        this.fuel_basic_excise = 50 * 1.11; // 1.11 - перевод из евро в доллары
+        this.fuel_basic_excise = 50 * 1.2; // 1.11 - перевод из евро в доллары
       }
     }
 
@@ -292,6 +292,7 @@ export class CalcCarComponent implements OnInit {
       }
 
       this.auction_fee = this.auction_fee + 59;
+      console.log(this.auction_fee)
     } else if (this.auction === 2) {
       if (0.01 <= this.costn && this.costn <= 49.99) {
         this.auction_fee = 1;
@@ -387,9 +388,12 @@ export class CalcCarComponent implements OnInit {
       } else if (20000 <= this.costn) {
         this.auction_fee = this.costn * 0.04 + 129;
       }
+      this.auction_fee += 59;
     }
 
-    this.auction_fee += 59;
+    console.log(this.auction_fee)
+
+    
 
     this.insuranceCost = this.insurance
       ? (this.costn + this.auction_fee) * 0.02
@@ -399,6 +403,7 @@ export class CalcCarComponent implements OnInit {
       this.overland_delivery_price = (this.state
         ? (auc.filter((r: any) => r.location === this.state)[0].value + 125)
         : 0); // доставка по суше, Америка
+        console.log(this.overland_delivery_price);
     } else {
       this.overland_delivery_price = 0;
       this.state = '';
@@ -411,12 +416,16 @@ export class CalcCarComponent implements OnInit {
       )
       : '';
 
+    // console.log(this.portPrice, this.overland_delivery_price);
+
     this.delivery_price = this.portPrice + this.overland_delivery_price;
-    this.customs_duty = (this.costn + this.auction_fee + this.delivery_price) * 0.1; // 400 - усредненная доставка
+    this.customs_duty = (this.costn + this.auction_fee + 1000) * 0.1; // 400 - усредненная доставка
     this.excise = this.fuel_basic_excise * (this.amountn / 1000) * this.yearn;
 
     this.nds =
-      (this.costn + this.auction_fee + this.customs_duty + this.excise) * 0.2;
+      (this.costn + this.auction_fee + this.customs_duty + this.excise + 1000) * 0.2;
+
+    console.log(this.customs_duty, this.excise, this.nds)
     this.brokers_pay = this.customs_duty + this.excise + this.nds;
 
 

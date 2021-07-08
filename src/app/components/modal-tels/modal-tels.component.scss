@@ -3,6 +3,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 500px;
+  * {
+    box-sizing: border-box;
+  }
   .cont-input {
     height: 40px;
     justify-content: flex-start;
@@ -13,19 +17,51 @@
     align-items: center;
     display: flex;
   }
-  p {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 23px;
-    text-align: center;
-    margin: 20px 0 20px 0;
-    color: #FFFFFF;
+  .modal-cont {
+    // width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .text {
+      display: flex;
+      width: calc(50% - 40px);
+      flex-direction: column;
+      > .title {
+        font-weight: 300;
+        font-size: 14px;
+        text-align: left;
+        opacity: 0.7;
+      }
+      > .value {
+        text-align: left;
+        > a {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 23px;
+          text-align: center;
+          color: #FFFFFF;
+          &:hover {
+            text-decoration: underline !important;
+          }
+        }
+      }
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 23px;
+      text-align: center;
+      margin: 20px;
+      color: #FFFFFF;
+    }
+    
   }
   .cont-button {
     margin-bottom: 20px;
   }
+  
 }
 h1 {
   color: #fff;

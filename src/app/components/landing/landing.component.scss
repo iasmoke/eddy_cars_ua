@@ -250,7 +250,7 @@
           margin-right: 15px;
           margin-left: 15px;
           padding: 40px 30px 25px;
-          border-radius: 6px;
+          border-radius: 8px;
           height: 257px;
           // background-color: rgba(214, 32, 32, 0.1);
           // background-color: #080808;
@@ -325,12 +325,15 @@
           // padding-right: 50px;
           // margin-bottom: 50px;
           padding: 20px;
-          transition: background-color 0.2s ease-in-out;
+          border-radius: 8px;
+          transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out !important;
           cursor: pointer;
           * {
             cursor: pointer;
           }
           &:hover {
+            transform: scale(1.05);
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out !important;
             background-color: rgba(255, 255, 255, 0.1);
           }
           &:nth-of-type(3n-1), &:nth-of-type(3n-2) {
@@ -902,6 +905,8 @@
         margin-bottom: 50px;
       }
       > .cont-content {
+        border-radius: 8px;
+        overflow: hidden;
         background: #1F1F1F;
         // border-radius: 100px;
         height: 660px;
@@ -925,19 +930,20 @@
       justify-content: center;
       align-items: center;
       > .screen-title {
-        color: #fff;
-        font-size: 17px;
-        line-height: 17px;
-        font-weight: 400;
-        margin-bottom: 20px;
+        // margin-left: 60px;
+        font-size: 32px;
+        color: rgb(255, 255, 255);
+        line-height: 1.344;
+        font-weight: bold;
+        // margin-top: 40px;
+        margin-bottom: 0px;
+        padding: 0 100px;
+        z-index: 1;
       }
       > .screen-sub-title {
-        margin-top: 15px;
-        margin-bottom: 40px;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 36px;
         color: #fff;
+        z-index: 2;
+        margin-bottom: 50px;
       }
       > .cont-content {
         justify-content: center;
@@ -949,6 +955,8 @@
           position: relative;
           justify-content: space-between;
           > .cont-img {
+            border-radius: 8px;
+            overflow: hidden;
             width: 270px;
             height: 270px;
             // margin: 20px;
@@ -991,6 +999,7 @@
         justify-content: space-between;
         flex-direction: row;
         > .cont-logo {
+          border-radius: 8px;
           width: calc((100% - 100px) / 5);
           justify-content: center;
           align-items: center;
@@ -1169,11 +1178,15 @@
     &.screen-10 {
       width: 45.70vh !important;
       padding: 5.27vh 0 !important;
+      > .screen-title {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
       > .screen-sub-title {
         font-size: 3.52vh !important;
         margin: 0 !important;
         margin-bottom: 5.27vh !important;
-
+        padding: 0 !important;
         width: 45.70vh !important;
         line-height: 100%;
       }
@@ -1379,9 +1392,10 @@
           }
         }
         > .item-service {
+          
           width: 100%;
           margin-bottom: 5.27vh;
-          padding: 0;
+          padding: 1vh;
           > .cont-right {
             padding: 0 3.52vh;
             border-radius: 4vh;

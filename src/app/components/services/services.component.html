@@ -1,5 +1,10 @@
 
-<h1>Услуги</h1>
+<div class="screen-title">
+  Наши услуги
+</div>
+<div class="screen-sub-title">
+  ознакомьтесь с самым полным описание всех возможных стадий доставки авто
+</div>
 <div class="bottom">
   <div class="left">
     <div class="cont-menu">
@@ -199,17 +204,35 @@
       <div class="title">
         Часто задаваемые вопросы
       </div>
-      <div class="item" *ngFor="let item of arrFaq">
-        <div class="icon" (click)="item.show = !item.show">+</div>
-        <div class="text">
-          <div class="question" (click)="item.show = !item.show">{{ item.question }}</div>
-          <div [class.active]="item.show" class="answer" >
-            <div class="paragraph" *ngFor="let p of item.answer">
-              {{ p }}
+      <div class="cont-items">
+        <div class="cont">
+          <div class="item" *ngFor="let item of sliceArr(0, arrFaq)">
+            <div class="icon" (click)="item.show = !item.show">+</div>
+            <div class="text">
+              <div class="question" (click)="item.show = !item.show">{{ item.question }}</div>
+              <div [class.active]="item.show" class="answer" >
+                <div class="paragraph" *ngFor="let p of item.answer">
+                  {{ p }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cont">
+          <div class="item" *ngFor="let item of sliceArr(1, arrFaq)">
+            <div class="icon" (click)="item.show = !item.show">+</div>
+            <div class="text">
+              <div class="question" (click)="item.show = !item.show">{{ item.question }}</div>
+              <div [class.active]="item.show" class="answer" >
+                <div class="paragraph" *ngFor="let p of item.answer">
+                  {{ p }}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 

@@ -1,3 +1,34 @@
+<div class="screen-title">
+  Отзывы о нас
+</div>
+<div class="screen-sub-title">
+  мы очень благодарны нашим клиентам
+</div>
+<div class="cont-imgs">
+  <div class="img-item" [class.active]="activeReview === i" [class.no-after]="activeReview === i" *ngFor="let item of reviews; let i = index" (click)="activeReview = i">
+    <img [src]="item.img">
+    <div class="text">
+      {{ item.text }}
+    </div>
+    
+  </div>
+  <div class="img-item no-after">
+    <img src="/assets/img/logo.png" class="logo">
+    <a href="https://www.instagram.com/eddycars_usa/">больше информации в нашем инстаграм-канале eddycars_usa</a>
+  </div>
+</div>
+<!-- <div class="cont-text">
+  
+</div>
+
+<div class="screen-title">
+  До и После
+</div>
+<div class="screen-sub-title">
+  мы всегда отда
+</div>
+
+
 <div class="screen screen-6">
   <div class="screen-title">
     Отзывы
@@ -15,9 +46,7 @@
           Полностью доволен сотрудничеством с @eddycars_usa начиная от грамотных советов при подборе, заканчивая
           рекомендациями по ремонту/сертификации и постановке на учёт. За время работы не возникло ни одного сомнения.
         </div>
-        <!-- <div class="cont-button">
-          <button class="custom" mat-raised-button color="primary">Читать полностью</button>
-        </div> -->
+
       </div>
     </div>
     <div class="arrow">
@@ -55,7 +84,5 @@
     </div>
   </div>
 
-  <!-- <div class="cont-icons">
-    <div class="review-icon" [class.active]="item === 2" *ngFor="let item of [1,2,3]">&nbsp;</div>
-  </div> -->
-</div>
+
+</div> -->

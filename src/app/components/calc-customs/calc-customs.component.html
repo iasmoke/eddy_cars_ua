@@ -28,25 +28,32 @@
             <div class="cont-input">
               <div class="cont-input">
                 <mat-form-field class="custom">
-                  <input matInput type="number" name="costn" [(ngModel)]="costn" (ngModelChange)="calcCars()">
+                  <input matInput type="number" name="costn" [(ngModel)]="costn" (ngModelChange)="calcCarsNew()">
                 </mat-form-field>
               </div>
             </div>
 
-            <div class="input-label">{{ engineType === 3 ? 'Ёмкость аккумулятора, кВт.ч' : 'Объем двигателя, куб.дм' }}
-            </div>
+            <div class="input-label">{{ engineType === 3 ? 'Ёмкость аккумулятора, кВт.ч' : 'Обьем двигателя, л' }}</div>
             <div class="cont-input">
-              <div class="cont-input">
-                <mat-form-field class="custom" appearance="fill">
-                  <input matInput type="number" name="amountn" [(ngModel)]="amountn" (ngModelChange)="calcCars()">
-                </mat-form-field>
-              </div>
+              <mat-form-field class="custom" appearance="fill">
+                <ng-container *ngIf="engineType === 3">
+                  <input matInput type="number" name="amountn"  [(ngModel)]="amountn" (ngModelChange)="calcCarsNew()">
+                </ng-container>
+                <ng-container *ngIf="engineType !== 3">
+                  <mat-select name="amountn" [(ngModel)]="amountn" (ngModelChange)="calcCarsNew()">
+                    <mat-option *ngFor="let item of volumes" [value]="item.value">
+                      {{ item.text }}
+                    </mat-option>
+                  </mat-select>
+                </ng-container>
+
+              </mat-form-field>
             </div>
 
             <div class="input-label">Тип двигателя</div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
-                <mat-select name="volume" [(ngModel)]="engineType" (ngModelChange)="calcCars()">
+                <mat-select name="volume" [(ngModel)]="engineType" (ngModelChange)="calcCarsNew()">
                   <mat-option *ngFor="let item of engineTypes" [value]="item.value">
                     {{ item.text }}
                   </mat-option>
@@ -57,7 +64,7 @@
             <div class="input-label">Год выпуска</div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
-                <mat-select name="year" [(ngModel)]="yearn" (ngModelChange)="calcCars()">
+                <mat-select name="year" [(ngModel)]="yearn" (ngModelChange)="calcCarsNew()">
                   <mat-option *ngFor="let item of yearsProd" [value]="item.value">
                     {{ item.text }}
                   </mat-option>
@@ -81,15 +88,15 @@
           </div> -->
           <div class="row inlay">
             <div class="title">НДС :</div>
-            <div class="value">{{ getData('НДС') }} $</div>
+            <div class="value">{{ bigSum([nds]) }} $</div>
           </div>
           <div class="row inlay">
             <div class="title">Пошлина :</div>
-            <div class="value">{{ getData('Пошлина') }} $</div>
+            <div class="value">{{ bigSum([customs_duty]) }} $</div>
           </div>
           <div class="row inlay">
             <div class="title">Акцизный сбор :</div>
-            <div class="value">{{ getData('Акциз') }} $</div>
+            <div class="value">{{ bigSum([excise]) }} $</div>
           </div>
           <!-- <div class="row inlay">
             <div class="title">Пенсионный фонд :</div>
@@ -98,7 +105,7 @@
           <div class="row sep">
             <div class="title total">Всего таможенных платежей :
             </div>
-            <div class="value total">{{ getData('ВСЕГО') }} $</div>
+            <div class="value total">{{ bigSum([nds, customs_duty, excise]) }} $</div>
           </div>
         </div>
       </div>

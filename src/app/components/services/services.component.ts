@@ -206,6 +206,10 @@ export class ServicesComponent implements OnInit {
 
   }
 
+  sliceArr(mode: number, arr: any[]) {
+    return mode === 0 ? arr.slice(0, 6) : arr.slice(7, 13);
+  }
+
 
 
   keepTrack() {

@@ -1,6 +1,9 @@
 <div class="screen screen-4">
   <div class="screen-title">
-    Калькулятор
+    Расчитайте стоимость своего авто под ключ
+  </div>
+  <div class="screen-sub-title">
+    в нашем калькуляторе учитываются актуальные стоимостные характеристики
   </div>
   <div class="cont-calc">
     <!-- <div class="cont-tabs">
@@ -166,9 +169,12 @@
             <div class="value">{{ twoFixed(company_services) }} $</div>
           </div>
 
-          <div class="row sep">
-            <div class="title total">Итого в Одессе за расстаможенный авто без ремонта:</div>
+          <div class="row sep total">
+            <div class="title total">Итоговая стоимость: <br><span>(в Одессе за расстаможенный авто без ремонта)</span>
+              </div>
             <div class="value total">{{ twoFixed(summary_price) }} $</div>
+          </div>
+          <div class="row inlay" style="min-height:20px">
           </div>
           <div class="row inlay" *ngIf="cert">
             <div class="title">Сертификация:</div>
@@ -182,8 +188,8 @@
             <div class="title">Пенсионный фонд:</div>
             <div class="value">0$</div>
           </div> -->
-          <div class="row sep" *ngIf="cert || uchet">
-            <div class="title total">Итого:</div>
+          <div class="row sep total" *ngIf="cert || uchet">
+            <div class="title total">Итоговая стоимость: <br><span>(с учетом выбранных опций)</span></div>
             <div class="value total">{{ twoFixed(bigSum([summary_price, certification, first_registration])) }} $</div>
           </div>
         </div>
