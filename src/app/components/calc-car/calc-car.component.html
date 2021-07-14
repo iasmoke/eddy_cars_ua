@@ -3,7 +3,7 @@
     Расчитайте стоимость своего авто под ключ
   </div>
   <div class="screen-sub-title">
-    в нашем калькуляторе учитываются актуальные стоимостные характеристики
+    в нашем калькуляторе вы сможете рассчитать стоимость любого лота с аукционов с учетом всех расходов до постановки на учет
   </div>
   <div class="cont-calc">
     <!-- <div class="cont-tabs">
@@ -113,17 +113,17 @@
               </div>
             </div>
             <div class="cont-checkbox">
-              <div class="label" (click)="showDetails(3)">Сертификация</div>
+              <div class="label" (click)="showDetails(3)">Сертификация и Постановка на учет</div>
               <div class="check">
                 <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="cert" (ngModelChange)="calcCarsNew()"></mat-checkbox>
               </div>
             </div>
-            <div class="cont-checkbox">
+            <!-- <div class="cont-checkbox">
               <div class="label" (click)="showDetails(4)">Постановка на учет</div>
               <div class="check">
                 <mat-checkbox class="custom" labelPosition="before" [(ngModel)]="uchet" (ngModelChange)="calcCarsNew()"></mat-checkbox>
               </div>
-            </div>
+            </div> -->
 
           </div>
           <!-- <div class="cont-notice">
@@ -180,7 +180,7 @@
             <div class="title">Сертификация:</div>
             <div class="value">{{ twoFixed(certification) }} $</div>
           </div>
-          <div class="row inlay" *ngIf="uchet">
+          <div class="row inlay" *ngIf="cert">
             <div class="title">Постановка на учет:</div>
             <div class="value">{{ twoFixed(first_registration) }} $</div>
           </div>
@@ -189,7 +189,7 @@
             <div class="value">0$</div>
           </div> -->
           <div class="row sep total" *ngIf="cert || uchet">
-            <div class="title total">Итоговая стоимость: <br><span>(с учетом выбранных опций)</span></div>
+            <div class="title total">Итоговая стоимость: <br><span>(под ключ со всеми расходами без учета ремонта)</span></div>
             <div class="value total">{{ twoFixed(bigSum([summary_price, certification, first_registration])) }} $</div>
           </div>
         </div>

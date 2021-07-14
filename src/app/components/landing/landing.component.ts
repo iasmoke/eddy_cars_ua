@@ -7,7 +7,7 @@ import { take, takeUntil } from 'rxjs/operators';
 import { ModalCallComponent } from '../modal-call/modal-call.component';
 import { ModalNoticeComponent } from '../modal-notice/modal-notice.component';
 import { copart, iaai } from './landing.constants';
-
+import { FormsService } from 'src/app/services/forms.service';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -21,6 +21,10 @@ export class LandingComponent implements OnInit, AfterViewInit {
     {type: 'НДС',      base: '', rate: '', sum: '' },
     {type: 'ВСЕГО',    base: '', rate: '', sum: '' }
   ];
+
+  mainForm: any = {
+
+  }
 
   auctions = [
     {
@@ -101,6 +105,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
   totalMessage = '';
 
   firstSubmit = false;
+  firstError = false;
 
   copart: any = [];
   iaai: any = [];
@@ -257,7 +262,8 @@ export class LandingComponent implements OnInit, AfterViewInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private serviceForms: FormsService
   ) {
 
     this.copart = copart;
@@ -467,5 +473,18 @@ export class LandingComponent implements OnInit, AfterViewInit {
     } catch(e) {
       console.log(e);
     }
+  }
+
+  submitForm() {
+    if (this.mainForm.contact) {
+      this.firstSubmit = true;
+      this.serviceForms.postMainForm(this.mainForm).subscribe(_ => {
+        console.log(_);
+      })
+    } else {
+      console.log('error');
+      this.firstError = true;
+    }
+
   }
 }

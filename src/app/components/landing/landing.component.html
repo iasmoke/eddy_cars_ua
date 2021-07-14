@@ -36,35 +36,36 @@
         <div class="cont-input">
           <mat-form-field class="custom custom-10">
             <mat-label>Марка авто</mat-label>
-            <input matInput type="text" placeholder="Ford Focus" value="">
+            <input matInput type="text" placeholder="Ford Focus" [(ngModel)]="mainForm.type">
           </mat-form-field>
         </div>
         <div class="cont-input">
           <mat-form-field class="custom custom-10">
             <mat-label>Год выпуска</mat-label>
-            <input matInput type="text" placeholder="2019" value="">
+            <input matInput type="text" placeholder="2019" [(ngModel)]="mainForm.year">
           </mat-form-field>
         </div>
         <div class="cont-input">
           <mat-form-field class="custom custom-10">
             <mat-label>Ориентировочный бюджет</mat-label>
-            <input matInput type="text" value="">
+            <input matInput type="text" [(ngModel)]="mainForm.money">
           </mat-form-field>
         </div>
         <div class="cont-input">
           <mat-form-field class="custom custom-10">
-            <mat-label>Контакт для связи</mat-label>
-            <input matInput type="text" value="">
+            <mat-label>Контакт для связи *</mat-label>
+            <input matInput type="text" [(ngModel)]="mainForm.contact">
+            <mat-hint *ngIf="firstError">Пожалуйста заполните это поле</mat-hint>
           </mat-form-field>
         </div>
         <div class="cont-input">
           <mat-form-field class="custom custom-10">
-            <mat-label>Ваш комментарий (опционально)</mat-label>
-            <input matInput type="text" value="">
+            <mat-label>Ваш комментарий</mat-label>
+            <input matInput type="text"  [(ngModel)]="mainForm.comment">
           </mat-form-field>
         </div>
         <div class="cont-button">
-          <button class="custom" mat-button (click)="firstSubmit = true">Получить подбор</button>
+          <button class="custom" mat-button (click)="submitForm()">Получить подбор</button>
         </div>
       </ng-container>
       <div *ngIf="firstSubmit" class="message">Спасибо за заявку! Наши менеджеры по подбору авто сформируют Вам подборку лучших вариантов с аукционов по Вашему запросу!</div>
@@ -487,7 +488,7 @@
     Подписывайтесь на наш instagram
   </div>
   <div class="screen-sub-title">
-    мы постим фото и видео автомобилей только привезенных нами лично
+    и получайте больше актуальной информации об автомобилях, которые покупают наши клиенты!
   </div>
   <div class="cont-content">
     <div class="cont-mobile mobile">

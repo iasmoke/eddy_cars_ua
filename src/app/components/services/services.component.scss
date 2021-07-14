@@ -29,7 +29,7 @@
     justify-content: center;
     flex-wrap: wrap;
     > .left {
-      width: calc(1170px / 2);
+      width: 50%;
       flex-direction: column;
       // position: sticky;
       top: 200px;
@@ -149,7 +149,7 @@
     }
 
     > .cont-articles {
-      width: calc(1170px / 2);
+      width: 50%;
       > .podbor {
         // margin-top: -200px;
       }

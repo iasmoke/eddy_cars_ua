@@ -75,6 +75,16 @@ h1 {
 }
 @media (orientation: portrait) {
   :host {
+    width: auto;
+    .full {
+      display: none !important;
+    }
+    .modal-cont {
+      flex-direction: column;
+      .text {
+        width: 100%;
+      }
+    }
     p {
       font-size: 1.76vh;
       line-height: 100%;

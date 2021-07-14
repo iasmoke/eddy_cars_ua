@@ -235,6 +235,11 @@
                   font-size: 24px;
                 }
               }
+              &.total {
+                border-radius: 0 8px 8px 0;
+                padding-bottom: 20px;
+                background-color: rgba(255, 255, 255, 0.1);
+              }
               > .title {
                 // width: 70%;
                 font-size: 16px;
@@ -244,7 +249,13 @@
                 flex-grow: 99;
                 font-weight: 600;
                 &.total {
-                  color: #D62020;
+                  // color: #D62020;
+                  margin-top: 20px;
+                  > span {
+                    line-height: 16px;
+                    font-size: 14px;
+                    font-weight: 400;
+                  }
                 }
               }
               > .value {
@@ -253,9 +264,13 @@
                 font-weight: bold;
                 font-size: 18px;
                 line-height: 22px;
+                white-space: nowrap;
+                padding-right: 50px;
                 color: rgba(255, 255, 255, 0.8);
                 &.total {
-                  color: #D62020;
+                  // color: #D62020;
+                  line-height: 30px;
+                  margin-top: 20px;
                 }
               }
               &.inlay {

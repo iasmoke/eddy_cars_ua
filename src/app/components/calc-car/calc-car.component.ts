@@ -432,14 +432,14 @@ export class CalcCarComponent implements OnInit {
     // постановка на учет
     if (this.uchet) {
       if ((this.costn + this.auction_fee) * 24 <= 316965) {
-        this.first_registration = (this.costn + this.auction_fee) * 0.03;
+        this.first_registration = (this.costn + this.auction_fee + 1000) * 0.03;
       } else if (
         316966 <= (this.costn + this.auction_fee) * 24 &&
         (this.costn + this.auction_fee) * 24 <= 557090
       ) {
-        this.first_registration = (this.costn + this.auction_fee) * 0.04;
+        this.first_registration = (this.costn + this.auction_fee + 1000) * 0.04;
       } else if (557091 <= (this.costn + this.auction_fee) * 24) {
-        this.first_registration = (this.costn + this.auction_fee) * 0.05;
+        this.first_registration = (this.costn + this.auction_fee + 1000) * 0.05;
       }
     } else {
       this.first_registration = 0;
@@ -576,7 +576,7 @@ export class CalcCarComponent implements OnInit {
       text =
         'Страхование авто от повреждений любого характера на всех этапах транспортировки.';
     } else if (mode === 3) {
-      text = 'Включить в калькуляцию получение сертификата соотвествия.';
+      text = 'Включить в калькуляцию прохождение сертификации (220$) и Налог в Пенсионный фонд при регистрации ТС';
     } else if (mode === 4) {
       text =
         'Включить в калькуляцию Налог в Пенсионный фонд при регистрации ТС.';

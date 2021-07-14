@@ -86,6 +86,10 @@
             <!-- <button class="custom" mat-raised-button color="primary">Рассчитать</button> -->
           </div>
 
+          <div class="cont-notice">
+            *В случае, если авто находится за пределами площадки аукциона (sublot), при транспортировке по США может взыматься дополнительная плата
+          </div>
+
         </div>
         <div class="cont-right">
           <!-- <div class="row title">Результаты *</div> -->
@@ -109,8 +113,8 @@
             <div class="title">Брокер / экспедитор / услуги порта</div>
             <div class="value">500 $</div>
           </div> -->
-          <div class="row sep">
-            <div class="title total">Итого доставка в Одессу</div>
+          <div class="row sep total">
+            <div class="title total">Итого доставка в Украину<br><span>(в стоимость доставки включены все платежи, в том числе погрузка в США)</span></div>
             <div class="value total">{{ getSum([landPrice, portPrice]) }} $</div>
           </div>
         </div>
