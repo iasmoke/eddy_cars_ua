@@ -11,7 +11,7 @@ export class FormsService {
 
   postMainForm(content: any) {
     return this.http.post(
-      'http://www.eddycars.com.ua/assets/php/post_main_form.php', 
+      'http://www.eddycars.com.ua/assets/php/post_main_form.php',
       JSON.stringify(content)
     ).pipe(
       map((res: any) => {
@@ -19,4 +19,29 @@ export class FormsService {
       })
     );
   }
+
+  postGetAuction() {
+    return this.http.post(
+      'http://www.eddycars.com.ua/assets/php/post_get_auction.php',
+      JSON.stringify({})
+    ).pipe(
+      map((res: any) => {
+        return res['data'];
+      })
+    );
+  }
+
+  postGetPhoto(lot_number: any) {
+    return this.http.post(
+      'http://www.eddycars.com.ua/assets/php/post_get_photo.php',
+      JSON.stringify({
+        lot_number
+      })
+    ).pipe(
+      map((res: any) => {
+        return res['data'];
+      })
+    );
+  }
+
 }

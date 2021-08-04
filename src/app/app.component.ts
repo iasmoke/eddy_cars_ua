@@ -56,7 +56,7 @@ export class AppComponent {
     {
       text: 'Аукцион',
       subtext: '(скоро)',
-      link: '/',
+      link: 'auction',
       children: []
     }
 

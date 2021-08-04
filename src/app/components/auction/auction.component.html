@@ -1,0 +1,93 @@
+<div class="screen screen-12">
+  <div class="screen-title">
+    Аукцион
+  </div>
+  <div class="screen-sub-title">
+    Подберите авто вашей мечты сами!
+  </div>
+  <div class="cont-list">
+    <div class="cont-filter">
+        <div class="filter-title">Параметры авто</div>
+        <div class="item-body">
+          <div class="body-item" *ngFor="let item of filters">
+            <div class="item-label">
+              {{ item.text }}
+            </div>
+            <div class="item-select">
+              <div class="cont-input">
+                <mat-form-field class="custom">
+                  <mat-select (ngModelChange)="filterChange(item.alias, $event)" [(ngModel)]="item.chosen">
+                    <mat-option *ngFor="let value of getSelectValues(item.alias)" [value]="value">
+                      {{ value }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="cont-cars">
+      <table mat-table [dataSource]="dataSource" class="custom">
+
+        <ng-container matColumnDef="details">
+          <!-- <th mat-header-cell *matHeaderCellDef> No. </th> -->
+          <td mat-cell *matCellDef="let element" class="flex">
+            <div class="cars-item">
+              <div class="item-left">
+                <div class="cont-img">
+                  <img [src]="element.tims"/>
+                </div>
+              </div>
+              <div class="item-right">
+                <div class="title">{{ element.ld }}</div>
+                <div class="sub-title">Дата аукциона: {{ getDate(element.ad) }}</div>
+                <div class="cont-stats">
+                  <div class="stats-item">
+                    <div class="item-img">
+                      <img src="/assets/img/car-icon-1.svg"/>
+                    </div>
+                    <div class="item-text">{{ element.orr }} миль</div>
+                  </div>
+                  <div class="stats-item">
+                    <div class="item-img">
+                      <img src="/assets/img/car-icon-2.svg"/>
+                    </div>
+                    <div class="item-text">{{ element.egn }}</div>
+                  </div>
+                  <div class="stats-item">
+                    <div class="item-img">
+                      <img src="/assets/img/car-icon-3.svg"/>
+                    </div>
+                    <div class="item-text">{{ element.ft }}</div>
+                  </div>
+                  <div class="stats-item">
+                    <div class="item-img">
+                      <img src="/assets/img/car-icon-4.svg"/>
+                    </div>
+                    <div class="item-text">{{ element.tmtp }}</div>
+                  </div>
+                  <div class="stats-item">
+                    <div class="item-img">
+                      <img src="/assets/img/car-icon-5.svg"/>
+                    </div>
+                    <div class="item-text">{{ element.drv }}</div>
+                  </div>
+                </div>
+                <div class="button-abs">
+                  <div class="current-bid">Текущая ставка {{ element.hb }}$</div>
+                  <button mat-button class="custom">Подробнее</button>
+                </div>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+
+        <tr mat-row *matRowDef="let row; columns: ['details'];"></tr>
+      </table>
+
+
+    </div>
+  </div>
+</div>

@@ -57,6 +57,7 @@ import {RouterModule} from '@angular/router';
 import * as echarts from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { AuctionComponent } from './components/auction/auction.component';
 
 
 @NgModule({
@@ -72,6 +73,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
     CalcCustomsComponent,
     ModalTelsComponent,
     ReviewsComponent,
+    AuctionComponent,
 
   ],
   imports: [

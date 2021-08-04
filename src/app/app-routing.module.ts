@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
+import { AuctionComponent } from './components/auction/auction.component';
 import { CalcCarComponent } from './components/calc-car/calc-car.component';
 import { CalcCustomsComponent } from './components/calc-customs/calc-customs.component';
 import { CalcDeliveryComponent } from './components/calc-delivery/calc-delivery.component';
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'reviews',
     component: ReviewsComponent
+  },
+  {
+    path: 'auction',
+    component: AuctionComponent
   },
   {
     path: 'about',

@@ -25,7 +25,11 @@ body {
 
   }
   .custom {
-
+    &.mat-table {
+      tr.mat-row, tr.mat-footer-row {
+        height: auto !important;
+      }
+    }
     &.custom-4 {
       button {
         background-color: #D62020 !important;
@@ -162,6 +166,7 @@ body {
     &.mat-button {
       font-size: 1.76vh !important;
     }
+
     &.mat-form-field {
       justify-content: center !important;
       background-color: #414141;

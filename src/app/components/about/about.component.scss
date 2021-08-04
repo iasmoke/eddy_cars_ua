@@ -76,7 +76,13 @@
         background-color: rgba(255, 255, 255, 0.2);
       }
       > .big-img {
-
+        max-height: 20vh;
+        height: 20vh;
+        overflow: hidden;
+        > img {
+          height: 100%;
+          object-fit: cover;
+        }
       }
       > .big-text {
         padding: 2vh;

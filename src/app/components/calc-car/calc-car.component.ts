@@ -393,7 +393,7 @@ export class CalcCarComponent implements OnInit {
 
     console.log(this.auction_fee)
 
-    
+
 
     this.insuranceCost = this.insurance
       ? (this.costn + this.auction_fee) * 0.02
@@ -430,7 +430,7 @@ export class CalcCarComponent implements OnInit {
 
 
     // постановка на учет
-    if (this.uchet) {
+    if (this.cert) {
       if ((this.costn + this.auction_fee) * 24 <= 316965) {
         this.first_registration = (this.costn + this.auction_fee + 1000) * 0.03;
       } else if (
