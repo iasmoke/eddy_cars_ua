@@ -24,6 +24,17 @@ export class FormsService {
     return this.http.post(
       'http://www.eddycars.com.ua/assets/php/post_get_auction.php',
       JSON.stringify({})
+      ).pipe(
+        map((res: any) => {
+          return res['data'];
+        })
+      );
+    }
+
+  postCallbackForm(content: any) {
+    return this.http.post(
+      'http://www.eddycars.com.ua/assets/php/post_callback_form.php',
+      JSON.stringify(content)
     ).pipe(
       map((res: any) => {
         return res['data'];

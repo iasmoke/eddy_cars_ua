@@ -22,14 +22,14 @@
         Подбор, покупка, доставка,<br>
         растаможка и ремонт<br>
         автомобилей из США под ключ
-      </div>
-      <div class="button-cont mobile">
+      </div>  
+      <!-- <div class="button-cont mobile">
         <button class="custom-4" mat-raised-button color="primary">Получить подбор</button>
-      </div>
+      </div> -->
     </div>
     <div class="stepper">
       <ng-container *ngIf="!firstSubmit">
-        <div class="cont-title">
+        <div class="cont-title desktop">
           Получить бесплатный подбор актуальных лотов с аукционов с просчетом их стоимости
         </div>
 
@@ -470,13 +470,13 @@
         5+ <br>лет на рынке
       </div>
       <div class="cont-item">
-        500+<br> довольных клиентов
+        900+<br> довольных клиентов
       </div>
       <div class="cont-item">
         24/7<br>поддержка
       </div>
-      <div class="cont-item">
-        300+<br>
+      <div class="cont-ite7m">
+        400+<br>
         восстановленных авто
       </div>
     </div>
@@ -565,16 +565,17 @@
           <div class="cont-input">
             <mat-form-field class="custom custom-10">
               <mat-label>Имя</mat-label>
-              <input matInput type="text" placeholder="Имя" value="">
+              <input matInput type="text" placeholder="Имя" [(ngModel)]="callbackForm.name">
             </mat-form-field>
           </div>
           <div class="cont-input">
             <mat-form-field class="custom custom-10">
-              <mat-label>Телефон</mat-label>
-              <input matInput type="text" placeholder="Телефон" value="">
+              <mat-label>Телефон *</mat-label>
+              <input matInput type="text" placeholder="Телефон" [(ngModel)]="callbackForm.tel">
+              <mat-hint *ngIf="callbackError">Пожалуйста заполните это поле</mat-hint>
             </mat-form-field>
           </div>
-          <button class="custom" mat-button color="primary"  (click)="showAfterCall = true;">Заказать звонок</button>
+          <button class="custom" mat-button color="primary"  (click)="submitCallback()">Заказать звонок</button>
         </div>
       </ng-container>
 
@@ -585,20 +586,20 @@
       </div>
       <div class="cont-side">
         <div class="img-cont">
-          <!-- <agm-map [latitude]="48.50236968470973" [longitude]="35.06383641088003" [mapTypeId]="'roadmap'" [zoom]='17'>
+          <agm-map [latitude]="48.50236968470973" [longitude]="35.06383641088003" [mapTypeId]="'roadmap'" [zoom]='17'>
             <agm-marker [latitude]="48.50236968470973" [longitude]="35.06383641088003"></agm-marker>
-          </agm-map> -->
+          </agm-map>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="screen screen-8">
+<!-- <div class="screen screen-8">
   <div class="screen-title mobile">
     Наши работы
   </div>
   <div class="cont-content">
-    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
-</div>
+</div> -->
 
