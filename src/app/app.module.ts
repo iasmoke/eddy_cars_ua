@@ -40,11 +40,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatBadgeModule } from '@angular/material/badge';
 
-// import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalNoticeComponent } from './components/modal-notice/modal-notice.component';
 
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, LAZY_MAPS_API_CONFIG } from '@agm/core';
 import { ServicesComponent } from './components/services/services.component';
 import { ModalCallComponent } from './components/modal-call/modal-call.component';
 import { AboutComponent } from './components/about/about.component';
@@ -113,7 +112,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
     ReactiveFormsModule,
     ClipboardModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDOq0Mfal9tHHNlj33ls6Orc2XFSbPRIZY'
+      apiKey: 'AIzaSyD4s6qg_wpiw5LIMWSk7y8D-d6QY-xCzDE'
     })
   ],
   entryComponents: [],

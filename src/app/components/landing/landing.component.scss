@@ -245,8 +245,8 @@
         }
         > .stepper {
           margin-bottom: -150px;
-          max-width: 1170px;
-          width: 1170px;
+          // max-width: 1170px;
+          // width: 1170px;
           margin-right: 15px;
           margin-left: 15px;
           padding: 40px 30px 25px;
@@ -303,7 +303,8 @@
     }
     &.screen-2 {
       justify-content: center;
-      height: 700px;
+      margin-top: 100px;
+      // height: 700px;
       flex-direction: column;
       // background-color: rgba(255,255,255,0.08);
       > .screen-title {
@@ -1032,6 +1033,10 @@
   //   width: 100% !important;
   // }
 
+  .desktop {
+    display: none;
+  }
+
   .mobile {
     display: flex;
   }
@@ -1482,7 +1487,11 @@
           background-position-x: 40%;
         }
         > .stepper {
-          display: none;
+          // display: none;
+          > .cont-input {
+            width: 100%;
+            height: auto;
+          }
         }
       }
 

@@ -22,9 +22,8 @@ export class LandingComponent implements OnInit, AfterViewInit {
     {type: 'ВСЕГО',    base: '', rate: '', sum: '' }
   ];
 
-  mainForm: any = {
-
-  }
+  mainForm: any = {};
+  callbackForm: any = {};
 
   auctions = [
     {
@@ -106,6 +105,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
 
   firstSubmit = false;
   firstError = false;
+  callbackError = false;
 
   copart: any = [];
   iaai: any = [];
@@ -485,6 +485,19 @@ export class LandingComponent implements OnInit, AfterViewInit {
       console.log('error');
       this.firstError = true;
     }
-
   }
+
+  submitCallback() {
+    if (this.callbackForm.tel) {
+      this.showAfterCall = true;
+      this.serviceForms.postCallbackForm(this.callbackForm).subscribe(_ => {
+        console.log(_);
+      })
+    } else {
+      console.log('error');
+      this.callbackError = true;
+    }
+  }
+
+  
 }
