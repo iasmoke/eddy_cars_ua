@@ -62,11 +62,11 @@ export class AppComponent {
 
   ];
 
-  // @HostListener('window:scroll', ['$event'])
-  // scrollDetection(e: any) {
-  //   this.scrollPosition = window.pageYOffset;
-  //   console.log(this.scrollPosition);
-  // }
+  @HostListener('window:scroll', ['$event'])
+  scrollDetection(e: any) {
+    this.scrollPosition = window.pageYOffset;
+    console.log(this.scrollPosition);
+  }
 
   constructor(
     public dialog: MatDialog

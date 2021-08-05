@@ -37,6 +37,7 @@ body {
 
     }
 
+
     &.mat-stepper-horizontal {
       background-color: transparent;
       .mat-step-header {
@@ -215,6 +216,13 @@ body {
     .mat-form-field-flex {
       border: 0.1vh solid #D62020;
       border-radius: 1.5vh !important;
+    }
+  }
+  .screen-1 {
+    span.mat-button-wrapper {
+      font-size: 2.02vh !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.015em;
     }
   }
   .custom-4 {

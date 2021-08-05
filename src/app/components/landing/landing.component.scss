@@ -165,7 +165,7 @@
             color: #FFFFFF;
             margin-top: 10px;
             margin-bottom: 20px;
-            font-family: Rubik, sans-serif !important;
+            font-family: Montserrat, sans-serif !important;
 
             // margin-left: 0px;
             // margin-left: -20px;
@@ -173,13 +173,13 @@
             // transition: margin-left 1s ease-in-out;
             // transition-delay: 1s;
 
-            // &.bold {
-            //   font-family: Montserrat;
-            //   font-weight: 900;
-            //   font-size: 60px;
-            //   line-height: 73px;
-            //   color: #FFFFFF;
-            // }
+            &.bold {
+              // font-family: Montserrat;
+              font-weight: 800;
+              // font-size: 60px;
+              // line-height: 73px;
+              // color: #FFFFFF;
+            }
           }
           > .sub-title-2 {
             // font-size: 18px;
@@ -1042,13 +1042,13 @@
   }
 
   .screen {
-    padding: 0 !important;
+    padding: 0;
     height: unset !important;
     > .screen-title {
       font-size: 3.52vh !important;
       margin: 0 !important;
       margin-bottom: 5.27vh !important;
-      width: 45.70vh !important;
+      width: 100%;
     }
 
     &.screen-8 {
@@ -1389,8 +1389,10 @@
     }
     &.screen-2 {
       align-items: center;
+      margin-top: 11.55vh;
+      padding: 0 3.61vh !important;
       > .service-cont {
-        width: 45.70vh;
+        width: 100%;
         flex-direction: column !important;
         > a {
           transition: none !important;
@@ -1463,28 +1465,41 @@
         }
       }
       > .main {
-        margin-top: -17.58vh;
-        height: 73.83vh;
-        margin-bottom: 10.55vh;
+        margin-top: -14.43vh;
+        height: auto;
+        margin-bottom: 0;
         > .cont-left {
-          width: 45.70vh;
-          padding: 0 2vh;
-          padding-top: 20vh;
+          width: 100%;
+          height: min-content !important;
+          padding: 0 4.62vh;
+          padding-top: 20.06vh;
+          padding-bottom: 12.99vh;
+          flex-grow: 1;
           > .title {
-            font-size: 4.99vh;
-            margin-bottom: 3.52vh;
+            font-size: 2.45vh;
+            margin-bottom: 2.89vh;
             margin-top: 0;
             letter-spacing: 0;
             line-height: 100%;
           }
           > .sub-title-2  {
-            font-size: 2.11vh;
-            line-height: 2.64vh;
+            font-size: 1.73vh;
+            line-height: 2.16vh;
             margin-bottom: 0;
             letter-spacing: 0;
           }
           .button-cont {
+            border-radius: 1.44vh;
+            overflow: hidden;
+            margin-top: 3.61vh;
+            width: 28.86vh;
+            > button {
+              width: 100%;
+              margin-top: 0;
+              height: 5.77vh;
+              background-color: #D62020;
 
+            }
 
             &.mobile {
               display: flex;

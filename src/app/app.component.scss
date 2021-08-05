@@ -1,5 +1,5 @@
 :host {
-  height: auto;
+  // height: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -37,8 +37,8 @@
     justify-content: space-between;
 
     &.show-bg {
-      background-color: rgb(8, 8, 8, 0.9);
-      border-bottom: 1px solid rgba(214, 32, 32, 0.3);
+      background-color: rgb(8, 8, 8, 0.9) !important;
+      border-bottom: 1px solid rgba(214, 32, 32, 0.3) !important;
     }
     .cont-tels {
       line-height: 1.5;
@@ -183,6 +183,7 @@
           box-shadow: rgb(0 0 0 / 8%) 0px 1px 4px 0px, rgb(0 0 0 / 11%) 0px 4px 6px 0px;
           transform: translate(0px, -3px);
           text-decoration: none;
+
         }
 
 
@@ -388,14 +389,18 @@
 }
 @media (orientation: portrait) {
   :host {
+    .desktop {
+      display: none !important;
+    }
+
     > .header {
-      height: 17.58vh;
+      height: 14.43vh;
       padding: 0 4.39vh;
       background-color: rgb(8, 8, 8, 0.6);
       border-bottom: 1px solid rgba(214, 32, 32, 0.3);
       > .cont-logo {
-        width: 10.55vh;
-        height: 10.55vh;
+        width: 8.66vh;
+        height: 8.66vh;
         order: 1 !important;
       }
       > .cont-menu {
@@ -405,11 +410,26 @@
         }
         > .cont-menu-icon {
           display: flex;
-          width: 4.39vh;
+          width: 3.61vh;
         }
       }
       > .cont-button {
         order: 2 !important;
+        width: 19.48vh;
+        height: 5.77vh;
+        border: 0.5vh solid #D62020;
+        border-radius: 1.44vh;
+        > button {
+          width: 100%;
+
+          background: transparent;
+          .inbutton {
+            > .cont-tels {
+              font-size: 1.44vh;
+              line-height: 1.73vh !important;
+            }
+          }
+        }
       }
     }
 

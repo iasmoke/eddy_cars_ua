@@ -1,4 +1,4 @@
-<div class="header show-bg">
+<div [class.show-bg]="scrollPosition > 0" class="header">
   <a class="cont-logo" [routerLink]="['/']">
     <img src="/assets/img/logo.png" class="logo" />
   </a>
@@ -30,7 +30,7 @@
   <div class="cont-button">
     <button class="custom custom-4" mat-raised-button color="primary" (click)="openTel()">
       <div class="inbutton">
-        <span class="material-icons">phone</span>
+        <span class="material-icons desktop">phone</span>
         <div class="cont-tels">
           (099) 559-35-39<br>
           (093) 231-36-73
