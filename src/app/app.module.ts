@@ -57,6 +57,7 @@ import * as echarts from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AuctionComponent } from './components/auction/auction.component';
+import { ModalStepperComponent } from './components/modal-stepper/modal-stepper.component';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { AuctionComponent } from './components/auction/auction.component';
     ModalTelsComponent,
     ReviewsComponent,
     AuctionComponent,
+    ModalStepperComponent,
 
   ],
   imports: [

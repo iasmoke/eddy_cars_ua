@@ -1,0 +1,52 @@
+<div class="cont-close" (click)="onNoClick()">
+    Закрыть
+</div>
+<div class="stepper desktop">
+    <ng-container *ngIf="!firstSubmit">
+      <div class="cont-title desktop">
+        Получить бесплатный подбор актуальных лотов с аукционов с просчетом их стоимости
+      </div>
+
+      <div class="cont-input">
+          <div class="input-title">Марка авто</div>
+        <mat-form-field class="custom custom-10">
+          <mat-label>Марка авто</mat-label>
+          <input matInput type="text" placeholder="Ford Focus" [(ngModel)]="mainForm.type">
+        </mat-form-field>
+      </div>
+      <div class="cont-input">
+        <div class="input-title">Год выпуска</div>
+        <mat-form-field class="custom custom-10">
+          <mat-label>Год выпуска</mat-label>
+          <input matInput type="text" placeholder="2019" [(ngModel)]="mainForm.year">
+        </mat-form-field>
+      </div>
+      <div class="cont-input">
+        <div class="input-title">Ориентировочный бюджет</div>
+        <mat-form-field class="custom custom-10">
+          <mat-label>Ориентировочный бюджет</mat-label>
+          <input matInput type="text" [(ngModel)]="mainForm.money">
+        </mat-form-field>
+      </div>
+      <div class="cont-input">
+        <div class="input-title">Контакт для связи *</div>
+        <mat-form-field class="custom custom-10">
+          <mat-label>Контакт для связи *</mat-label>
+          <input matInput type="text" [(ngModel)]="mainForm.contact">
+          
+        </mat-form-field>
+        <div class="input-title" *ngIf="firstError">Пожалуйста заполните это поле ^</div>
+      </div>
+      <div class="cont-input">
+        <div class="input-title">Ваш комментарий</div>
+        <mat-form-field class="custom custom-10">
+          <mat-label>Ваш комментарий</mat-label>
+          <input matInput type="text"  [(ngModel)]="mainForm.comment">
+        </mat-form-field>
+      </div>
+      <div class="cont-button">
+        <button class="custom" mat-button (click)="submitForm()">Получить подбор</button>
+      </div>
+    </ng-container>
+    <div *ngIf="firstSubmit" class="message">Спасибо за заявку! Наши менеджеры по подбору авто сформируют Вам подборку лучших вариантов с аукционов по Вашему запросу!</div>
+  </div>

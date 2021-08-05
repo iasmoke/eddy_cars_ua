@@ -23,11 +23,11 @@
         растаможка и ремонт<br>
         автомобилей из США под ключ
       </div>  
-      <!-- <div class="button-cont mobile">
-        <button class="custom-4" mat-raised-button color="primary">Получить подбор</button>
-      </div> -->
+      <div class="button-cont mobile">
+        <button class="custom-4" mat-raised-button color="primary" (click)="showStepper()">Получить подбор</button>
+      </div>
     </div>
-    <div class="stepper">
+    <div class="stepper desktop">
       <ng-container *ngIf="!firstSubmit">
         <div class="cont-title desktop">
           Получить бесплатный подбор актуальных лотов с аукционов с просчетом их стоимости
@@ -472,10 +472,10 @@
       <div class="cont-item">
         900+<br> довольных клиентов
       </div>
-      <div class="cont-item">
+      <div class="cont-item desktop">
         24/7<br>поддержка
       </div>
-      <div class="cont-ite7m">
+      <div class="cont-item desktop">
         400+<br>
         восстановленных авто
       </div>
@@ -487,7 +487,7 @@
   <div class="screen-title">
     Подписывайтесь на наш instagram
   </div>
-  <div class="screen-sub-title">
+  <div class="screen-sub-title desktop">
     и получайте больше актуальной информации об автомобилях, которые покупают наши клиенты!
   </div>
   <div class="cont-content">

@@ -162,6 +162,9 @@ body {
 }
 
 @media (orientation: portrait) {
+  .cdk-overlay-container {
+    z-index: 999999;
+  }
   .custom {
     &.mat-button {
       font-size: 1.76vh !important;

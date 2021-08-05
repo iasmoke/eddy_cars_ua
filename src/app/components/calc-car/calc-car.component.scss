@@ -325,6 +325,7 @@
       .screen-sub-title {
         margin-bottom: 5.27vh !important;
         width: 45.7vh !important;
+        font-size: 2vh  !important;
       }
       > .cont-calc {
         width: 45.70vh !important;
@@ -390,6 +391,10 @@
                   margin: 0 !important;
                   padding: 0 !important;
                   margin-bottom: 5.27vh !important;
+                  > span {
+                    font-size: 2vh !important;
+                    line-height: 2.1vh !important;
+                  }
                 }
                 > .value {
                   font-size: 3.87vh !important;

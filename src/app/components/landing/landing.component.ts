@@ -8,6 +8,7 @@ import { ModalCallComponent } from '../modal-call/modal-call.component';
 import { ModalNoticeComponent } from '../modal-notice/modal-notice.component';
 import { copart, iaai } from './landing.constants';
 import { FormsService } from 'src/app/services/forms.service';
+import { ModalStepperComponent } from '../modal-stepper/modal-stepper.component';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -499,5 +500,17 @@ export class LandingComponent implements OnInit, AfterViewInit {
     }
   }
 
+  showStepper() {
+    const dialogRef = this.dialog.open(ModalStepperComponent, {
+      width: 'auto',
+      data: {},
+      scrollStrategy: new NoopScrollStrategy()
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
+  }
   
 }
