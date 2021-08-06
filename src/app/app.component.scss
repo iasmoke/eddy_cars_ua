@@ -439,37 +439,41 @@
       margin-top: 5.27vh !important;
       margin-bottom: 5.27vh !important;
       align-items: center;
+
       > .cont-not-sure {
         width: 100%;
         padding: 0;
         flex-direction: column;
-        padding-top: 5.27vh !important;
-        padding-bottom: 5.27vh !important;
+        padding: 1.44vh 3.61vh 1.44vh 3.61vh !important;
         > * {
-          width: 45.70vh !important;
+          width: 100% !important;
           font-size: 3.52vh !important;
         }
         > .cont-button {
-          height: 7.03vh;
+          height: 5.77vh;
+          border-radius: 1.44vh !important;
+          overflow: hidden;
           > button {
-            height: 7.03vh;
+            height: 100%;
             width: 100%;
             padding: 0;
             justify-content: center;
             align-items: center;
-            border-radius: 1.76vh;
+
             // background-color: #1378f5;
             transition-property: background-color;
             transition-duration: 350ms;
             color: #fff;
-            font-size: 2.64vh;
+            font-size: 2.16vh !important;
             line-height: 100%;
             font-weight: 500;
             letter-spacing: 0;
           }
         }
         > .text {
-          margin-bottom: 2.64vh;
+          font-size: 2.89vh !important;
+          line-height: 3.46vh !important;
+          margin-bottom: 2.16vh;
           line-height: 100%;
           text-align: center;
         }
@@ -481,19 +485,22 @@
         display: flex;
         margin-top: 5.27vh !important;
         margin-bottom: 5.27vh !important;
-        width: 45.70vh !important;
+        width: 100% !important;
+        padding: 0 3.61vh !important;
         > .cont-upper {
           flex-direction: row;
           > .cont-img {
-            width: 10.55vh;
-            height: 10.55vh;
-            margin-right: 3.52vh;
+            width: 8.66vh;
+            height: 8.66vh;
+            margin: 0 !important;
             > img {
-              width: 100%;
+              width: 8.66vh;
+              height: 8.66vh;
             }
           }
 
           > .cont-right {
+            padding-left: 2.89vh;
             > .title {
               font-size: 3.52vh;
               color: #fff;

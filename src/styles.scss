@@ -176,7 +176,7 @@ body {
       background-color: #414141;
       border-radius: 1vh !important;
       height: 7.03vh !important;
-      font-size: 2.64vh;
+      font-size: 1.73vh;
       .mat-form-field-flex {
         padding: 0 !important;
         border-radius: 0 !important;
@@ -185,17 +185,19 @@ body {
         }
       }
       .mat-select-arrow {
-        border-left: 1.23vh solid transparent;
-        border-right: 1.23vh solid transparent;
-        border-top: 1.23vh solid;
-        margin: 0 1.23vh;
+        border-left: 0.72vh solid transparent;
+        border-right: 0.72vh solid transparent;
+        border-top: 0.72vh solid;
+        margin: 0;
       }
 
     }
     .mat-checkbox-inner-container {
-      width: 2.64vh !important;
-      height: 2.64vh !important;
-      margin: 0;
+      width: 2.16vh !important;
+      height: 2.16vh !important;
+      margin: 0 !important;
+      border-radius: 0.72vh !important;
+      overflow: hidden;
     }
 
   }
@@ -279,6 +281,19 @@ body {
       width: 133.3333333333%;
     }
 
+  }
+  .screen-7 {
+    .custom-10 {
+      height: 5.77vh !important;
+      overflow: hidden;
+      border: 0.14vh solid #D62020;
+      background-color: transparent;
+      border-radius: 1.4vh;
+      input {
+        font-size: 1.88vh !important;
+      }
+
+    }
   }
 }
 .mat-raised-button, .mat-button {

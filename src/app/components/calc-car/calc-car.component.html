@@ -1,6 +1,9 @@
 <div class="screen screen-4">
-  <div class="screen-title">
+  <div class="screen-title desktop">
     Расчитайте стоимость своего авто под ключ
+  </div>
+  <div class="screen-title mobile">
+    Калькулятор
   </div>
   <div class="screen-sub-title desktop">
     в нашем калькуляторе вы сможете рассчитать стоимость любого лота с аукционов с учетом всех расходов до постановки на учет
@@ -40,11 +43,11 @@
 
             <div class="input-label">Цена на аукционе, $</div>
             <div class="cont-input">
-              <div class="cont-input">
-                <mat-form-field class="custom">
-                  <input matInput type="number" name="costn" [(ngModel)]="costn" (ngModelChange)="calcCarsNew()">
-                </mat-form-field>
-              </div>
+
+              <mat-form-field class="custom">
+                <input matInput type="number" name="costn" [(ngModel)]="costn" (ngModelChange)="calcCarsNew()">
+              </mat-form-field>
+
             </div>
 
             <div class="input-label">Тип двигателя</div>
@@ -130,7 +133,10 @@
             *Для максимально точного рассчета таможенных пошлин, в графе «стоимость автомобиля» необходимо ввести сумму, равную стоимости авто + стоимости аукционного сбора + 1000$ морского фрахта.
           </div> -->
         </div>
-        <div class="cont-right">
+        <div class="cont-split mobile">
+          &nbsp;
+        </div>
+        <div class="cont-right" [class.show-all]="showMoreOne">
           <!-- <div class="row title">Результаты *</div> -->
           <!-- <div class="row sep">
             <div class="title">Цена лота</div>
@@ -169,18 +175,18 @@
             <div class="value">{{ twoFixed(company_services) }} $</div>
           </div>
 
-          <div class="row sep total">
-            <div class="title total">Итоговая стоимость: <br><span>(в Одессе за расстаможенный авто без ремонта)</span>
-              </div>
+          <div class="row sep total" [class.top-order]="showMoreOne">
+            <div class="title total">Итоговая стоимость: <br><span class="desktop">(в Одессе за расстаможенный авто без ремонта)</span></div>
+            <div class="cont-more" (click)="showMoreOne = !showMoreOne">Подробнее</div>
             <div class="value total">{{ twoFixed(summary_price) }} $</div>
           </div>
           <div class="row inlay" style="min-height:20px">
           </div>
-          <div class="row inlay" *ngIf="cert">
+          <div class="row inlay after" [style.display]="showMoreTwo ? 'flex !important' : 'none !important'" *ngIf="cert">
             <div class="title">Сертификация:</div>
             <div class="value">{{ twoFixed(certification) }} $</div>
           </div>
-          <div class="row inlay" *ngIf="cert">
+          <div class="row inlay after" [style.display]="showMoreTwo ? 'flex !important' : 'none !important'" *ngIf="cert">
             <div class="title">Постановка на учет:</div>
             <div class="value">{{ twoFixed(first_registration) }} $</div>
           </div>
@@ -188,9 +194,10 @@
             <div class="title">Пенсионный фонд:</div>
             <div class="value">0$</div>
           </div> -->
-          <div class="row sep total" *ngIf="cert || uchet">
-            <div class="title total">Итоговая стоимость: <br><span>(под ключ со всеми расходами без учета ремонта)</span></div>
-            <div class="value total">{{ twoFixed(bigSum([summary_price, certification, first_registration])) }} $</div>
+          <div class="row sep total" [class.second-order]="showMoreTwo" *ngIf="cert || uchet">
+            <div class="title total">Итоговая стоимость: <br><span class="desktop">(под ключ со всеми расходами без учета ремонта)</span></div>
+            <div class="cont-more" (click)="showMoreTwo = !showMoreTwo">Подробнее</div>
+            <div class="value total ">{{ twoFixed(bigSum([summary_price, certification, first_registration])) }} $</div>
           </div>
         </div>
       </div>

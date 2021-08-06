@@ -145,6 +145,8 @@ export class CalcCarComponent implements OnInit {
   brokers_pay: any = 0;
   first_registration: number = 0;
   summary_price: any = 0;
+  showMoreOne = false;
+  showMoreTwo = false;
 
   constructor(public dialog: MatDialog) {
     this.copart = copart;

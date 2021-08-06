@@ -94,7 +94,8 @@
     Услуги
   </div>
   <div class="service-cont">
-    <a class="item-service pop {{ 'delay-' + ((i + 1) * 100) }}" [class.move-right]="screenSecond" *ngFor="let item of service; let i = index;"  routerLink="/services" fragment="{{ item.fragment }}">
+    <a #row class="item-service pop {{ 'delay-' + ((i + 1) * 100) }}" [class.move-right]="screenSecond" *ngFor="let item of service; let i = index;" (click)="activeService = i">
+    <!-- <a #row class="item-service pop {{ 'delay-' + ((i + 1) * 100) }}" [class.move-right]="screenSecond" *ngFor="let item of service; let i = index;" routerLink="/services" fragment="{{ item.fragment }}"> -->
       <div class="img-service-cont">
         <img class="img-service" [src]="'assets/img/' + item.img" />
       </div>
@@ -102,7 +103,7 @@
         <div class="title-service">
           {{ item.title }}
         </div>
-        <div class="text-service">
+        <div class="text-service" [class.active]="activeService === i">
           <ng-container *ngFor="let text of item.text">
             {{ text }}<br>
           </ng-container>
@@ -449,16 +450,16 @@
     <div class="cont-content">
       <div class="cont-left">
         <!-- <img src="/assets/img/bmw-x6m-competition 1.png" /> -->
-        <div class="line">Профессиональный подбор и проверка авто опытными специалистами перед покупкой
+        <div class="line">• Профессиональный подбор и проверка авто опытными специалистами перед покупкой
         </div>
-        <div class="line">Сотрудничество со всеми крупными аукционными площадками США
+        <div class="line">• Сотрудничество со всеми крупными аукционными площадками США
         </div>
-        <div class="line">Максимально выгодные тарифы на логистику
+        <div class="line">• Максимально выгодные тарифы на логистику
         </div>
-        <div class="line">Оказание комплекса услуг «под ключ» - от момента подбора авто в США до постановки на
+        <div class="line">• Оказание комплекса услуг «под ключ» - от момента подбора авто в США до постановки на
           украинский учет
         </div>
-        <div class="line">Работа по договору, гарантии сохранности Вашего авто, материальная ответственность за груз
+        <div class="line">• Работа по договору, гарантии сохранности Вашего авто, материальная ответственность за груз
         </div>
       </div>
       <div class="cont-right">
@@ -466,12 +467,19 @@
       </div>
     </div>
     <div class="cont-bottom">
-      <div class="cont-item">
+      <div class="cont-item desktop">
         5+ <br>лет на рынке
       </div>
-      <div class="cont-item">
+      <div class="cont-item desktop">
         900+<br> довольных клиентов
       </div>
+      <div class="cont-item mobile">
+        <div class="title">5+ лет</div><div class="sub">на рынке</div>
+      </div>
+      <div class="cont-item mobile">
+        <div class="title">Более 500</div><div class="sub">клиентов</div>
+      </div>
+
       <div class="cont-item desktop">
         24/7<br>поддержка
       </div>
@@ -482,7 +490,6 @@
     </div>
   </div>
 </div>
-
 <div class="screen screen-10">
   <div class="screen-title">
     Подписывайтесь на наш instagram

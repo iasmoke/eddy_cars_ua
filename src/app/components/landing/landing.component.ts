@@ -38,6 +38,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
   ];
 
   auction = 1;
+  activeService = 0;
 
   engineTypes = [
     {
