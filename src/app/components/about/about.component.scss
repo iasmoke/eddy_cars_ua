@@ -144,5 +144,44 @@
     .big {
       margin-bottom: 1vh !important;
     }
+    > .cont-text {
+      padding: 3.61vh;
+      width: 100%;
+      max-width: 100%;
+      font-size: 1.73vh;
+      > h1 {
+        margin: 0;
+        margin-bottom: 1.73vh;
+      }
+      > h3 {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    > .cont-tiles {
+      padding: 3.61vh;
+      width: 100%;
+      max-width: 100%;
+      > .tiles-title {
+        padding: 0;
+        margin-bottom: 1.73vh;
+      }
+      > .tiles {
+        > .tile {
+          > .text {
+            font-size: 1.73vh;
+          }
+        }
+      }
+    }
+    > .cont-big-images {
+      padding: 3.61vh;
+      > .big {
+        width: 100%;
+        > .big-text {
+          font-size: 1.73vh;
+        }
+      }
+    }
   }
 }

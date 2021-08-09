@@ -176,7 +176,7 @@
           </div>
 
           <div class="row sep total" [class.top-order]="showMoreOne">
-            <div class="title total">Итоговая стоимость: <br><span class="desktop">(в Одессе за расстаможенный авто без ремонта)</span></div>
+            <div class="title total">Итоговая стоимость: <br><span>(в Одессе за расстаможенный авто без ремонта)</span></div>
             <div class="cont-more" (click)="showMoreOne = !showMoreOne">Подробнее</div>
             <div class="value total">{{ twoFixed(summary_price) }} $</div>
           </div>
@@ -195,7 +195,7 @@
             <div class="value">0$</div>
           </div> -->
           <div class="row sep total" [class.second-order]="showMoreTwo" *ngIf="cert || uchet">
-            <div class="title total">Итоговая стоимость: <br><span class="desktop">(под ключ со всеми расходами без учета ремонта)</span></div>
+            <div class="title total">Итоговая стоимость: <br><span>(под ключ со всеми расходами без учета ремонта)</span></div>
             <div class="cont-more" (click)="showMoreTwo = !showMoreTwo">Подробнее</div>
             <div class="value total ">{{ twoFixed(bigSum([summary_price, certification, first_registration])) }} $</div>
           </div>

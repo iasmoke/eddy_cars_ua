@@ -56,12 +56,12 @@
       margin: 20px;
       color: #FFFFFF;
     }
-    
+
   }
   .cont-button {
     margin-bottom: 20px;
   }
-  
+
 }
 h1 {
   color: #fff;
@@ -81,9 +81,21 @@ h1 {
     }
     .modal-cont {
       flex-direction: column;
-      .text {
+      > .text {
         width: 100%;
+        font-size: 2.73vh;
+        line-height: 3vh;
+        padding: 2.5vh;
+        > .title {
+          font-size: 2.73vh;
+          line-height: 3vh;
+        }
+        > .value {
+          font-size: 2.73vh;
+          line-height: 3vh;
+        }
       }
+
     }
     p {
       font-size: 1.76vh;
@@ -91,13 +103,22 @@ h1 {
       margin: 3.52vh 0;
       width: 45.70vh;
     }
-    button {
-      height: 7.03vh !important;
+    button.mat-button {
+      height: 4.91vh !important;
       width: 23.73vh;
       > .mat-button-wrapper {
-        font-size: 1.76vh !important;
+        font-size: 2.02vh !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.015em;
       }
     }
+  }
+
+  .cont-button {
+    margin: 2.5vh 0 !important;
+    height: 4.91vh !important;
+    border-radius: 1.44vh !important;
+    overflow: hidden;
   }
 
 }
