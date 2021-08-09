@@ -23,44 +23,46 @@
         растаможка и ремонт<br>
         автомобилей из США под ключ
       </div>
-      <div class="button-cont mobile">
-        <button class="custom-4" mat-raised-button color="primary" (click)="showStepper()">Получить подбор</button>
-      </div>
     </div>
-    <div class="stepper desktop">
+    <div class="stepper">
       <ng-container *ngIf="!firstSubmit">
         <div class="cont-title desktop">
           Получить бесплатный подбор актуальных лотов с аукционов с просчетом их стоимости
         </div>
 
         <div class="cont-input">
+          <div class="mobile">Марка авто</div>
           <mat-form-field class="custom custom-10">
-            <mat-label>Марка авто</mat-label>
+            <mat-label class="desktop">Марка авто</mat-label>
             <input matInput type="text" placeholder="Ford Focus" [(ngModel)]="mainForm.type">
           </mat-form-field>
         </div>
         <div class="cont-input">
+          <div class="mobile">Год выпуска</div>
           <mat-form-field class="custom custom-10">
-            <mat-label>Год выпуска</mat-label>
+            <mat-label class="desktop">Год выпуска</mat-label>
             <input matInput type="text" placeholder="2019" [(ngModel)]="mainForm.year">
           </mat-form-field>
         </div>
         <div class="cont-input">
+          <div class="mobile">Ориентировочный бюджет</div>
           <mat-form-field class="custom custom-10">
-            <mat-label>Ориентировочный бюджет</mat-label>
+            <mat-label class="desktop">Ориентировочный бюджет</mat-label>
             <input matInput type="text" [(ngModel)]="mainForm.money">
           </mat-form-field>
         </div>
         <div class="cont-input">
+          <div class="mobile">Контакт для связи *</div>
           <mat-form-field class="custom custom-10">
-            <mat-label>Контакт для связи *</mat-label>
+            <mat-label class="desktop">Контакт для связи *</mat-label>
             <input matInput type="text" [(ngModel)]="mainForm.contact">
-            <mat-hint *ngIf="firstError">Пожалуйста заполните это поле</mat-hint>
+            <mat-hint *ngIf="firstError">Пожалуйста заполните это поле ^</mat-hint>
           </mat-form-field>
         </div>
-        <div class="cont-input">
+        <div class="cont-input desktop">
+          <div class="mobile">Ваш комментарий</div>
           <mat-form-field class="custom custom-10">
-            <mat-label>Ваш комментарий</mat-label>
+            <mat-label class="desktop">Ваш комментарий</mat-label>
             <input matInput type="text"  [(ngModel)]="mainForm.comment">
           </mat-form-field>
         </div>

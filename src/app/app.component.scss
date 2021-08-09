@@ -395,7 +395,7 @@
 
     > .header {
       height: 14.43vh;
-      padding: 0 4.39vh;
+      padding: 0 3.61vh;
       background-color: rgb(8, 8, 8, 0.6);
       border-bottom: 1px solid rgba(214, 32, 32, 0.3);
       > .cont-logo {
@@ -407,10 +407,35 @@
         order: 3 !important;
         > .menu {
           display: none;
+          &.show {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 99;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding: 3.61vh;
+            padding-top: 11.11vh;
+            > .menu-item {
+              width: min-content;
+              font-size: 2.31vh !important;
+              line-height: 4.33vh !important;
+              font-weight: 400;
+              height: 4.33vh !important;
+              padding: 0 !important;
+              white-space: nowrap;
+            }
+          }
         }
         > .cont-menu-icon {
           display: flex;
           width: 3.61vh;
+          z-index: 999;
         }
       }
       > .cont-button {

@@ -91,7 +91,10 @@
           </div>
 
         </div>
-        <div class="cont-right">
+        <div class="cont-split mobile">
+          &nbsp;
+        </div>
+        <div class="cont-right"  [class.show-all]="showMoreOne">
           <!-- <div class="row title">Результаты *</div> -->
           <!-- <div class="row sep">
             <div class="title">Цена лота</div>
@@ -113,8 +116,9 @@
             <div class="title">Брокер / экспедитор / услуги порта</div>
             <div class="value">500 $</div>
           </div> -->
-          <div class="row sep total">
-            <div class="title total">Итого доставка в Украину<br><span>(в стоимость доставки включены все платежи, в том числе погрузка в США)</span></div>
+          <div class="row sep total" [class.top-order]="showMoreOne">
+            <div class="title total">Итого доставка в Украину<br><span class="desktop">(в стоимость доставки включены все платежи, в том числе погрузка в США)</span></div>
+            <div class="cont-more" (click)="showMoreOne = !showMoreOne">Подробнее</div>
             <div class="value total">{{ getSum([landPrice, portPrice]) }} $</div>
           </div>
         </div>

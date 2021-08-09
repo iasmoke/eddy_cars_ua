@@ -1294,7 +1294,7 @@
             padding: 0 1.76vh;
             line-height: 100%;
             border-left: none !important;
-            
+
             border-right: none;
             justify-content: center;
             padding-bottom: 0.72vh;
@@ -1420,7 +1420,7 @@
     }
     &.screen-2 {
       align-items: center;
-      margin-top: 11.55vh;
+      margin-top: 41.28vh;
       padding: 0 2.45vh 0 3.61vh !important;
       > .screen-title {
         margin-bottom: 2.60vh !important;
@@ -1468,7 +1468,7 @@
               font-weight: 800 !important;
               font-size: 2.89vh !important;
               line-height: 3.46vh !important;
-              
+
             }
             > .text-service {
               font-size: 1.73vh;
@@ -1477,7 +1477,7 @@
               transition: all 1s ease-in-out;
               max-height: 0;
               transition: max-height 0.5s ease-out, margin 0.5s ease-out;
-              
+
               &.active {
                 margin-top: 1.88vh !important;
                 max-height: 500px;
@@ -1532,12 +1532,13 @@
         margin-top: -14.43vh;
         height: auto;
         margin-bottom: 0;
+        position: relative;
         > .cont-left {
           width: 100%;
           height: min-content !important;
           padding: 0 4.62vh;
           padding-top: 20.06vh;
-          padding-bottom: 12.99vh;
+          padding-bottom: 22.37vh;
           flex-grow: 1;
           > .title {
             font-size: 2.45vh;
@@ -1575,11 +1576,39 @@
           background-position-x: 40%;
         }
         > .stepper {
+          position: absolute;
+          top: 40.55vh;
+          margin: 0 3.61vh;
+          padding: 2.60vh;
+          width: auto;
+          height: auto;
           // display: none;
-          width: 100%;
           > .cont-input {
             width: 100%;
             height: auto;
+            margin-bottom: 1.44vh;
+            padding: 0 !important;
+            > .mobile {
+              font-size: 1.73vh !important;
+              line-height: 3.03vh !important;
+              margin-bottom: 0.72vh;
+              color: white;
+              font-weight: 600;
+            }
+          }
+          > .cont-button {
+            width: 100%;
+            height: 4.91vh;
+            margin: 0 !important;
+            padding: 0 !important;
+            margin-top: 1.44vh !important;
+            overflow: hidden;
+            > button {
+              border-radius: 1.44vh !important;
+              font-size: 2.02vh !important;
+              line-height: 2.45vh !important;
+              height: 100%;
+            }
           }
         }
       }

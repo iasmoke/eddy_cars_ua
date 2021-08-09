@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'eddycars';
 
   scrollPosition = 0;
+  showMobileMenu = false;
 
   menu = [
     {

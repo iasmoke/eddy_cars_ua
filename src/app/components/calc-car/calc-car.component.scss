@@ -409,7 +409,7 @@
                 display: flex !important;
               }
             }
-            > .row { 
+            > .row {
               order: 2;
               &.after {
                 order: 4;
@@ -425,15 +425,15 @@
                 border: none !important;
                 padding: 0 !important;
                 margin-bottom: 3.46vh !important;
-                height: 2.02vh !important; 
-                min-height: 2.02vh !important; 
+                height: 2.02vh !important;
+                min-height: 2.02vh !important;
                 > * {
                   font-size: 1.73vh !important;
                   line-height: 2.02vh !important;
                   font-weight: 700 !important;
                 }
 
-              
+
               }
               &.sep {
                 padding: 0 !important;
@@ -487,7 +487,6 @@
                 }
               }
             }
-
           }
         }
       }

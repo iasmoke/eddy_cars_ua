@@ -53,6 +53,7 @@ export class CalcDeliveryComponent implements OnInit, AfterViewInit {
   landPrice = 0;
   location = '';
   deliveryPort = '';
+  showMoreOne = false;
 
   RESULT_DATA = [
     { type: 'Пошлина', base: '', rate: '', sum: '' },
@@ -396,7 +397,7 @@ export class CalcDeliveryComponent implements OnInit, AfterViewInit {
 
     console.log(this.auction_fee)
 
-    
+
 
     this.insuranceCost = this.insurance
       ? (this.costn + this.auction_fee) * 0.02

@@ -12,7 +12,115 @@ import { ViewportScroller } from '@angular/common';
 })
 export class ServicesComponent implements OnInit {
 
+  arrMenu = [
+    'Подбор',
+    'Проверка',
+    'Торги',
+    'Покупка',
+    'Доставка к Порту',
+    'Морской фрахт',
+    'Прибытие в Украину',
+    'Таможенное оформление',
+    'Доставка из Одессы',
+    'Ремонт',
+    'Сертификация',
+    'Регистрация'
+  ];
 
+  service = [
+    {
+      img: 'service-img-5.svg',
+      title: 'Подбор',
+      text: [
+        'Поиск лучших вариантов на аукционе под запрос клиента'
+      ],
+      fragment: 'podbor'
+    },
+    {
+      img: 'service-img-7.svg',
+      title: 'Проверка',
+      text: ['Изучение истории, проверка продавца, экспертная оценка, исключение  возможных рисков'],
+      fragment: 'proverka'
+    },
+    {
+      img: 'service-img-4.svg',
+      title: 'Покупка',
+      text: ['Просчет стоимости лота и всей расходной части, участие и победа в торгах'],
+      fragment: 'pokupka'
+    },
+    {
+      img: 'service-img-2.svg',
+      title: 'Доставка',
+      text: [
+        'Транспортировка на склад в США, фотоотчеты, подготовка необходимых документов, погрузка, отправка в Украину'
+      ],
+      fragment: 'dostavka'
+    },
+    {
+      img: 'service-img-8.svg',
+      title: 'Таможня',
+      text: ['Разгрузка контейнера и таможенное оформление автомобиля клиента в кратчайшие сроки'],
+      fragment: 'customs'
+    },
+    {
+      img: 'service-img-1.svg',
+      title: 'Ремонт',
+      text: [
+        'Подбор и доставка необходимых запчастей, организация процесса ремонта, контроль на всех этапах'
+      ],
+      fragment: 'remont'
+    },
+    {
+      img: 'service-img-6.svg',
+      title: 'Сертификация',
+      text: [
+        'Организация процесса сертификации в кратчайшие сроки и по выгодной цене'
+      ],
+      fragment: 'cert'
+    },
+    {
+      img: 'service-img-3.svg',
+      title: 'Постановка на учет',
+      text: [
+        'Регистрация транспортного средства клиента в сервисном центре и доставка в любую точку Украины'
+      ],
+      fragment: 'uchet'
+    },
+    {
+      img: 'service-img-9.png',
+      title: 'Авто в кредит',
+      text: [
+        'Возможность получения кредитных средств для покупки авто из США на срок до 7 лет'
+      ],
+      fragment: 'kredit'
+    },
+    {
+      img: 'service-img-9.png',
+      title: 'Авто в кредит',
+      text: [
+        'Возможность получения кредитных средств для покупки авто из США на срок до 7 лет'
+      ],
+      fragment: 'kredit'
+    },
+    {
+      img: 'service-img-9.png',
+      title: 'Авто в кредит',
+      text: [
+        'Возможность получения кредитных средств для покупки авто из США на срок до 7 лет'
+      ],
+      fragment: 'kredit'
+    },
+    {
+      img: 'service-img-9.png',
+      title: 'Авто в кредит',
+      text: [
+        'Возможность получения кредитных средств для покупки авто из США на срок до 7 лет'
+      ],
+      fragment: 'kredit'
+    }
+  ];
+
+  expand = null;
   currentSection: BehaviorSubject<string> = new BehaviorSubject('podbor');
   sections: string[] = ['podbor','proverka','torgi','pokupka','dostavka','freight','odessa','customs','address','remont','cert','uchet'];
   showId = 0;

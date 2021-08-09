@@ -1,31 +1,24 @@
 
-<div class="screen-title">
+<div class="screen-title desktop">
   Наши услуги
 </div>
-<div class="screen-sub-title">
+<div class="screen-title mobile">
+  Услуги
+</div>
+<div class="screen-sub-title desktop">
   информация по всем этапам приобретения автомобилей из США
 </div>
 <div class="bottom">
-  <div class="left">
+  <div class="left desktop">
     <div class="cont-menu">
-      <a [class.active]="showId === 0" (click)="showId = 0">Подбор</a>
-      <a [class.active]="showId === 1" (click)="showId = 1">Проверка</a>
-      <a [class.active]="showId === 2" (click)="showId = 2">Торги</a>
-      <a [class.active]="showId === 3" (click)="showId = 3">Покупка</a>
-      <a [class.active]="showId === 4" (click)="showId = 4">Доставка к Порту</a>
-      <a [class.active]="showId === 5" (click)="showId = 5">Морской фрахт</a>
-      <a [class.active]="showId === 6" (click)="showId = 6">Прибытие в Украину</a>
-      <a [class.active]="showId === 7" (click)="showId = 7">Таможенное оформление</a>
-      <a [class.active]="showId === 8" (click)="showId = 8">Доставка из Одессы</a>
-      <a [class.active]="showId === 9" (click)="showId = 9">Ремонт</a>
-      <a [class.active]="showId === 10" (click)="showId = 10">Сертификация</a>
-      <a [class.active]="showId === 11" (click)="showId = 11">Регистрация</a>
+      <a *ngFor="let item of arrMenu; let i = index" [class.active]="showId === i" (click)="showId = i" >{{ item }}</a>
     </div>
-
   </div>
 
   <div class="cont-articles">
-    <div *ngIf="showId === 0" id="podbor" class="podbor">
+    <div [class.expand]="expand === 0" [class.show]="showId === 0" id="podbor" class="podbor">
+      <div class="icon mobile"><img [src]="'/assets/img/' + service[0].img"/></div>
+      <div class="title mobile">{{arrMenu[0]}}</div>
       <p>В процессе подбора авто нами фиксируются все пожелания клиента, определяется круг поиска по маркам/моделям/комплектациям/пробегу желаемого автомобиля. Учитываются любые пожелания по цвету/объёму двигателя, отдельным опциям в авто.</p>
 
       <p>Утверждается оптимально приемлемый и выгодный для клиента бюджет на покупку.</p>
@@ -53,9 +46,12 @@
         Приоритетным для нас является запрос каждого конкретного клиента, его пожелания по предоставленным лотам и, бесспорно, последнее слово всегда остается за клиентом.
 
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 1" id="proverka">
+    <div [class.expand]="expand === 1" [class.show]="showId === 1" id="proverka">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[1].img"/></div>
+      <div class="title mobile">{{arrMenu[1]}}</div>
       <p>
         Сотрудниками нашей компании производится проверка всех лотов. В процессе проверки каждого лота мы определяем:
       </p>
@@ -73,9 +69,12 @@
         Наша задача исключить все риски и по итогу получить автомобиля в лучшем состоянии по максимально выгодной для клиента цене.
 
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 2" id="torgi">
+    <div [class.expand]="expand === 2" [class.show]="showId === 2" id="torgi">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[2].img"/></div>
+      <div class="title mobile">{{arrMenu[2]}}</div>
       <p>
         После определения лотов, за которые клиент хочет бороться на торгах, проведения всех проверок, получения выписки из базы истории транспортных средств CarFax, определения и согласования с клиентом крайних ставок, можно брать участие в торгах.
 
@@ -106,9 +105,12 @@
         <li>стоимость восстановительного ремонта</li>
         <li>рыночная стоимость аналогичного автомобиля в Украине.</li>
       </ul>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 3" id="pokupka">
+    <div [class.expand]="expand === 3" [class.show]="showId === 3" id="pokupka">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[3].img"/></div>
+      <div class="title mobile">{{arrMenu[3]}}</div>
 
       <p>
         После успешного проведения торгов и получения подтверждения от продавца, клиент становится обладателем выбранного авто.
@@ -122,9 +124,12 @@
         Наша компания сотрудничает с рядом проверенных банков, которые, при желании клиента, смогут максимально упростить процедуру оплаты для удобства и экономии времени.
 
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 4"  id="dostavka">
+    <div [class.expand]="expand === 4" [class.show]="showId === 4"  id="dostavka">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[4].img"/></div>
+      <div class="title mobile">{{arrMenu[4]}}</div>
 
       <p>
         Наша компания занимается организацией процесса доставки автомобиля с площадки аукциона до порта отправки в США.
@@ -135,15 +140,21 @@
         Любые издержки по стоянке берет на себя наша компания.
 
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 5" id="freight">
+    <div [class.expand]="expand === 5" [class.show]="showId === 5" id="freight">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[5].img"/></div>
+      <div class="title mobile">{{arrMenu[5]}}</div>
       <p>
         В порту отправки в США производится погрузка автомобиля в контейнер и загрузка судна. Далее судно отправляется в Украину, а клиенту предоставляется номер контейнера, и он имеет возможность отслеживать передвижение судна на сайте морской линии.
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 6" id="odessa">
+    <div [class.expand]="expand === 6" [class.show]="showId === 6" id="odessa">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[6].img"/></div>
+      <div class="title mobile">{{arrMenu[6]}}</div>
       <p>
         По прибытию в порт Одесса или Южный происходит разгрузка судна. После открытия контейнера производится фотоотчет автомобиля, который сразу отправляется клиенту.
 
@@ -152,9 +163,12 @@
         Наша компания осуществляет экспедирование и таможенное оформление авто клиента  в Одессе в кратчайшие сроки.
 
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 7" id="customs">
+    <div [class.expand]="expand === 7" [class.show]="showId === 7" id="customs">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[7].img"/></div>
+      <div class="title mobile">{{arrMenu[7]}}</div>
       <p>
         После оплаты таможенных пошлин, нашим брокером оформляются все необходимые документы. Клиент производит оплату таможенных платежей на реквизиты таможни посредством перевода денежных средств в гривне по Украине.
 
@@ -163,16 +177,22 @@
         В среднем срок оформления автомобиля 24 часа с момента оплаты таможенных платежей.
 
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 8" id="address">
+    <div [class.expand]="expand === 8" [class.show]="showId === 8" id="address">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[8].img"/></div>
+      <div class="title mobile">{{arrMenu[8]}}</div>
       <p>
         После того, как автомобиль прошел таможенную очистку и готов к выдаче, наша компания организовывает адресную доставку автомобиля в любую точку Украины. При выдаче автомобиля клиент получает автомобиль и все необходимые документы для дальнейшей сертификации и постановки на учет.
 
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 9" id="remont">
+    <div [class.expand]="expand ===9" [class.show]="showId === 9" id="remont">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[9].img"/></div>
+      <div class="title mobile">{{arrMenu[9]}}</div>
       <p>
         В рамках существующей в нашей компании услуги «под ключ», мы доставим авто из Одессы на партнерскую станцию технического обслуживания, произведем дефектовку автомобиля, предварительно согласуем и закажем необходимые комплектующие для восстановления автомобиля.
 
@@ -181,14 +201,19 @@
         Кроме классического набора рихтовочных и малярных работ по автомобилю, в рамках услуги «под ключ», мы сможем выполнить регламентные работы по техническому обслуживанию автомобиля, сделать химчистку салона, полировку автомобиля, замену резины и любые другие услуги по желанию клиента.
 
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 10" id="cert">
+    <div [class.expand]="expand === 10" [class.show]="showId === 10" id="cert">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[10].img"/></div>
+      <div class="title mobile">{{arrMenu[10]}}</div>
       <p>Перед постановкой автомобиля на учет, необходимо получить сертификат соответствия украинским стандартам. Наша компания без проблем сделает это вместо клиента в рамках услуги «под ключ».</p>
-
+      <div class="footer mobile">Читать полностью</div>
     </div>
 
-    <div *ngIf="showId === 11" id="uchet">
+    <div [class.expand]="expand === 11" [class.show]="showId === 11" id="uchet">
+      <div class="icon mobile"> <img [src]="'/assets/img/' + service[11].img"/></div>
+      <div class="title mobile">{{arrMenu[11]}}</div>
       <p>
         Финальным этапом покупки авто из США является регистрация транспортного средства в государственных органах Украины.
 
@@ -197,11 +222,12 @@
         В рамках услуги «под ключ» мы сможем произвести регистрацию самостоятельно и отдать автомобиль уже на украинских номерах.
 
       </p>
+      <div class="footer mobile">Читать полностью</div>
     </div>
   </div>
   <div class="bottom">
     <div class="faq">
-      <div class="title">
+      <div class="title desktop">
         Часто задаваемые вопросы
       </div>
       <div class="cont-items">

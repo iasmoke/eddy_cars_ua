@@ -111,6 +111,10 @@ body {
           font-weight: 600;
         }
 
+        &.error {
+          background-color: #ff000057;
+        }
+
         input {
           height: 50px;
           margin-bottom: 15px;
@@ -158,8 +162,6 @@ body {
       display: none;
     }
   }
-
-
 }
 
 @media (orientation: portrait) {
@@ -257,6 +259,7 @@ body {
       display: none;
     }
 
+
     input {
       margin: 0 !important;
       border: none !important;
@@ -281,6 +284,32 @@ body {
       width: 133.3333333333%;
     }
 
+  }
+  .screen-1 {
+    .custom-10 {
+      height: 4.33vh !important;
+      * {
+        font-size: 1.88vh !important;
+      }
+      input {
+        font-size: 1.88vh !important;
+        &::placeholder {
+          font-size: 1.88vh !important;
+        }
+      }
+      .mat-form-field-subscript-wrapper {
+        margin-top: 1.76vh;
+      }
+      .mat-hint {
+        font-size: 1.26vh !important;
+        // margin: 0.76vh 0;
+      }
+      .mat-form-field-label-wrapper {
+        display: flex;
+        font-size: 1.73vh !important;
+        line-height: 3.03vh !important;
+      }
+    }
   }
   .screen-7 {
     .custom-10 {
