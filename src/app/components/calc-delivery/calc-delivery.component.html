@@ -118,7 +118,7 @@
           </div> -->
           <div class="row sep total" [class.top-order]="showMoreOne">
             <div class="title total">Итого доставка в Украину<br><span>(в стоимость доставки включены все платежи, в том числе погрузка в США)</span></div>
-            <div class="cont-more" (click)="showMoreOne = !showMoreOne">Подробнее</div>
+            <div class="cont-more mobile" (click)="showMoreOne = !showMoreOne">Подробнее</div>
             <div class="value total">{{ getSum([landPrice, portPrice]) }} $</div>
           </div>
         </div>

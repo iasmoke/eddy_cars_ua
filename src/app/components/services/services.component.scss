@@ -158,6 +158,7 @@
       }
       > div {
         display: none;
+        flex-direction: column;
         &.show {
           display: flex !important;
         }

@@ -452,11 +452,8 @@ export class CalcCarComponent implements OnInit {
       this.auction_fee,
       this.insuranceCost,
       this.delivery_price,
-      this.customs_duty,
-      this.excise,
-      this.nds,
-      this.customs_broker,
-      this.car_transporter,
+      this.brokerage,
+      this.brokers_pay,
       this.company_services
     ]);
   }

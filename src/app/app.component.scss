@@ -11,6 +11,10 @@
     transition: all 0.2s ease-in-out;
   }
 
+  .mobile {
+    display: none;
+  }
+
   background-color: #080808;
   display: flex;
   flex-direction: column;
@@ -392,7 +396,9 @@
     .desktop {
       display: none !important;
     }
-
+    .mobile {
+      display: flex !important;
+    }
     > .header {
       height: 14.43vh;
       padding: 0 3.61vh;

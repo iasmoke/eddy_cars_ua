@@ -142,19 +142,19 @@
             <div class="title">Цена лота</div>
             <div class="value total">0$</div>
           </div> -->
-          <div class="row inlay">
+          <div class="row inlay" [class.show-mobile]="showMoreOne">
             <div class="title">Цена лота:</div>
             <div class="value">{{ costn }} $</div>
           </div>
-          <div class="row inlay">
+          <div class="row inlay" [class.show-mobile]="showMoreOne">
             <div class="title">Сборы аукциона:</div>
             <div class="value">{{ twoFixed(auction_fee) }} $</div>
           </div>
-          <div class="row inlay">
+          <div class="row inlay" [class.show-mobile]="showMoreOne">
             <div class="title">Доставка по суше / морю:</div>
             <div class="value">{{ delivery_price }} $</div>
           </div>
-          <div class="row inlay" *ngIf="insurance">
+          <div class="row inlay" *ngIf="insurance" [class.show-mobile]="showMoreOne">
             <div class="title">Страховка груза:</div>
             <div class="value">{{ twoFixed(insuranceCost) }} $</div>
           </div>
@@ -162,31 +162,31 @@
             <div class="title">Брокер / экспедитор / услуги порта :</div>
             <div class="value">0$</div>
           </div> -->
-          <div class="row inlay">
+          <div class="row inlay" [class.show-mobile]="showMoreOne">
             <div class="title">Брокер / экспедитор / услуги порта:</div>
             <div class="value">{{ brokerage }} $</div>
           </div>
-          <div class="row inlay">
+          <div class="row inlay" [class.show-mobile]="showMoreOne">
             <div class="title">Таможенные платежи:</div>
             <div class="value">{{ twoFixed(brokers_pay) }} $</div>
           </div>
-          <div class="row inlay">
+          <div class="row inlay" [class.show-mobile]="showMoreOne">
             <div class="title">Услуги компании:</div>
             <div class="value">{{ twoFixed(company_services) }} $</div>
           </div>
 
           <div class="row sep total" [class.top-order]="showMoreOne">
             <div class="title total">Итоговая стоимость: <br><span>(в Одессе за расстаможенный авто без ремонта)</span></div>
-            <div class="cont-more" (click)="showMoreOne = !showMoreOne">Подробнее</div>
+            <div class="cont-more mobile" (click)="showMoreOne = !showMoreOne">Подробнее</div>
             <div class="value total">{{ twoFixed(summary_price) }} $</div>
           </div>
           <div class="row inlay" style="min-height:20px">
           </div>
-          <div class="row inlay after" [style.display]="showMoreTwo ? 'flex !important' : 'none !important'" *ngIf="cert">
+          <div class="row inlay after" *ngIf="cert" [class.show-mobile]="showMoreTwo">
             <div class="title">Сертификация:</div>
             <div class="value">{{ twoFixed(certification) }} $</div>
           </div>
-          <div class="row inlay after" [style.display]="showMoreTwo ? 'flex !important' : 'none !important'" *ngIf="cert">
+          <div class="row inlay after" *ngIf="cert" [class.show-mobile]="showMoreTwo">
             <div class="title">Постановка на учет:</div>
             <div class="value">{{ twoFixed(first_registration) }} $</div>
           </div>
@@ -196,7 +196,7 @@
           </div> -->
           <div class="row sep total" [class.second-order]="showMoreTwo" *ngIf="cert || uchet">
             <div class="title total">Итоговая стоимость: <br><span>(под ключ со всеми расходами без учета ремонта)</span></div>
-            <div class="cont-more" (click)="showMoreTwo = !showMoreTwo">Подробнее</div>
+            <div class="cont-more mobile" (click)="showMoreTwo = !showMoreTwo">Подробнее</div>
             <div class="value total ">{{ twoFixed(bigSum([summary_price, certification, first_registration])) }} $</div>
           </div>
         </div>

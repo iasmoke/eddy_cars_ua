@@ -404,13 +404,14 @@
           > .cont-right {
             padding: 0 !important;
 
-            &.show-all {
-              > .row.inlay {
-                display: flex !important;
-              }
-            }
+            // &.show-all {
+            //   > .row.inlay {
+            //     display: flex !important;
+            //   }
+            // }
             > .row {
               order: 2;
+
               &.after {
                 order: 4;
               }
@@ -421,7 +422,7 @@
                 order: 1 !important;
               }
               &.inlay {
-                display: none !important;
+                display: none;
                 border: none !important;
                 padding: 0 !important;
                 margin-bottom: 3.46vh !important;
@@ -432,7 +433,9 @@
                   line-height: 2.02vh !important;
                   font-weight: 700 !important;
                 }
-
+                &.show-mobile {
+                  display: flex;
+                }
 
               }
               &.sep {
