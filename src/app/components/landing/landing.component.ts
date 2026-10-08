@@ -253,6 +253,12 @@ export class LandingComponent implements OnInit, AfterViewInit {
   screenFirst = false;
   screenSecond = false;
 
+  public center: google.maps.LatLngLiteral = { lat: 48.50236968470973, lng: 35.06383641088003 };
+  public zoom = 17;
+  public mapOptions: google.maps.MapOptions = {
+    mapTypeId: 'roadmap'
+  };
+
   @HostListener('window:scroll', ['$event'])
   scrollDetection() {
     this.scrollPosition = (window.pageYOffset + (window.innerHeight / 2));

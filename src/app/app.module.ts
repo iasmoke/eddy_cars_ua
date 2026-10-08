@@ -39,11 +39,8 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatBadgeModule } from '@angular/material/badge';
-
 import { HttpClientModule } from '@angular/common/http';
 import { ModalNoticeComponent } from './components/modal-notice/modal-notice.component';
-
-import { AgmCoreModule, LAZY_MAPS_API_CONFIG } from '@agm/core';
 import { ServicesComponent } from './components/services/services.component';
 import { ModalCallComponent } from './components/modal-call/modal-call.component';
 import { AboutComponent } from './components/about/about.component';
@@ -58,6 +55,7 @@ import {RouterModule} from '@angular/router';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AuctionComponent } from './components/auction/auction.component';
 import { ModalStepperComponent } from './components/modal-stepper/modal-stepper.component';
+import {GoogleMapsModule} from "@angular/google-maps";
 
 
 @NgModule({
@@ -115,11 +113,8 @@ import { ModalStepperComponent } from './components/modal-stepper/modal-stepper.
     HttpClientModule,
     ReactiveFormsModule,
     ClipboardModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD4s6qg_wpiw5LIMWSk7y8D-d6QY-xCzDE'
-    })
+    GoogleMapsModule
   ],
-  entryComponents: [],
   providers: [],
   bootstrap: [AppComponent]
 })
