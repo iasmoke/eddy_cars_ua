@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormsService } from 'src/app/services/forms.service';
 
 @Component({
@@ -29,9 +29,7 @@ export class ModalStepperComponent implements OnInit {
   submitForm() {
     if (this.mainForm.contact) {
       this.firstSubmit = true;
-      this.serviceForms.postMainForm(this.mainForm).subscribe(_ => {
-        console.log(_);
-      })
+      this.serviceForms.postMainForm(this.mainForm).subscribe();
     } else {
       console.log('error');
       this.firstError = true;

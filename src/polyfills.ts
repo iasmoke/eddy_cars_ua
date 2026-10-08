@@ -63,3 +63,6 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+/// <reference types="google.maps" />
+/// <reference types="google.maps.visualization" />

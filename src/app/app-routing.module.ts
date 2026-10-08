@@ -49,7 +49,6 @@ const routes: Routes = [
     anchorScrolling: 'enabled',
     preloadingStrategy: PreloadAllModules,
     scrollPositionRestoration: 'enabled',
-    relativeLinkResolution: 'legacy',
     scrollOffset: [0, 64], // [x, y] - adjust scroll offset
     onSameUrlNavigation: 'reload'
 })],

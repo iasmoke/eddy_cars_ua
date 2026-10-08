@@ -594,9 +594,16 @@
       </div>
       <div class="cont-side">
         <div class="img-cont">
-          <agm-map [latitude]="48.50236968470973" [longitude]="35.06383641088003" [mapTypeId]="'roadmap'" [zoom]='17'>
-            <agm-marker [latitude]="48.50236968470973" [longitude]="35.06383641088003"></agm-marker>
-          </agm-map>
+          <google-map
+            [center]="center"
+            [zoom]="zoom"
+            [options]="mapOptions"
+            height="400px"
+            width="100%">
+
+            <map-marker [position]="center"></map-marker>
+
+          </google-map>
         </div>
       </div>
     </div>
