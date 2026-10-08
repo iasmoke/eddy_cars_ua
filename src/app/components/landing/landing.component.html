@@ -19,15 +19,15 @@
         с выгодой до -30%
       </div> -->
       <div class="sub-title-2 move" [class.move-right]="screenFirst">
-        Подбор, покупка, доставка,<br>
-        растаможка и ремонт<br>
-        автомобилей из США под ключ
+        Підбір, купівля, доставка,<br>
+        розмитнення та ремонт<br>
+        автомобілів із США під ключ
       </div>
     </div>
     <div class="stepper">
       <ng-container *ngIf="!firstSubmit">
         <div class="cont-title desktop">
-          Получить бесплатный подбор актуальных лотов с аукционов с просчетом их стоимости
+          Отримати безкоштовний підбір актуальних лотів з аукціонів
         </div>
 
         <div class="cont-input">
@@ -38,39 +38,39 @@
           </mat-form-field>
         </div>
         <div class="cont-input">
-          <div class="mobile">Год выпуска</div>
+          <div class="mobile">Рiк випуску</div>
           <mat-form-field class="custom custom-10">
-            <mat-label class="desktop">Год выпуска</mat-label>
+            <mat-label class="desktop">Рiк випуску</mat-label>
             <input matInput type="text" placeholder="2019" [(ngModel)]="mainForm.year">
           </mat-form-field>
         </div>
         <div class="cont-input">
-          <div class="mobile">Ориентировочный бюджет</div>
+          <div class="mobile">Орієнтовний бюджет</div>
           <mat-form-field class="custom custom-10">
-            <mat-label class="desktop">Ориентировочный бюджет</mat-label>
+            <mat-label class="desktop">Орієнтовний бюджет</mat-label>
             <input matInput type="text" [(ngModel)]="mainForm.money">
           </mat-form-field>
         </div>
         <div class="cont-input">
-          <div class="mobile">Контакт для связи *</div>
+          <div class="mobile">Контакт для зв'язку *</div>
           <mat-form-field class="custom custom-10">
-            <mat-label class="desktop">Контакт для связи *</mat-label>
+            <mat-label class="desktop">Контакт для зв'язку *</mat-label>
             <input matInput type="text" [(ngModel)]="mainForm.contact">
-            <mat-hint *ngIf="firstError">Пожалуйста заполните это поле ^</mat-hint>
+            <mat-hint *ngIf="firstError">Будь ласка, заповніть це поле ^</mat-hint>
           </mat-form-field>
         </div>
         <div class="cont-input desktop">
-          <div class="mobile">Ваш комментарий</div>
+          <div class="mobile">Ваш коментар</div>
           <mat-form-field class="custom custom-10">
-            <mat-label class="desktop">Ваш комментарий</mat-label>
+            <mat-label class="desktop">Ваш коментар</mat-label>
             <input matInput type="text"  [(ngModel)]="mainForm.comment">
           </mat-form-field>
         </div>
         <div class="cont-button">
-          <button class="custom" mat-button (click)="submitForm()">Получить подбор</button>
+          <button class="custom" mat-button (click)="submitForm()">Отримати підбір</button>
         </div>
       </ng-container>
-      <div *ngIf="firstSubmit" class="message">Спасибо за заявку! Наши менеджеры по подбору авто сформируют Вам подборку лучших вариантов с аукционов по Вашему запросу!</div>
+      <div *ngIf="firstSubmit" class="message">Дякую за заявку! Наші менеджери з підбору авто сформують Вам вибір кращих варіантів з аукціонів за Вашим запитом!</div>
     </div>
     <!-- <div class="cont-left"> -->
       <!-- <div class="blurred">&nbsp;</div> -->
@@ -93,7 +93,7 @@
 </div>
 <div class="screen screen-2">
   <div class="screen-title mobile">
-    Услуги
+    Підбір
   </div>
   <div class="service-cont">
     <a #row class="item-service pop {{ 'delay-' + ((i + 1) * 100) }}" [class.move-right]="screenSecond" *ngFor="let item of service; let i = index;" (click)="activeService = i">
@@ -446,22 +446,21 @@
 </div>
 <div class="screen screen-5">
   <div class="screen-title mobile">
-    Немного о нас
+    Про нас
   </div>
   <div class="screen-cont">
     <div class="cont-content">
       <div class="cont-left">
         <!-- <img src="/assets/img/bmw-x6m-competition 1.png" /> -->
-        <div class="line">• Профессиональный подбор и проверка авто опытными специалистами перед покупкой
+        <div class="line">• Професійний підбір та перевірка авто досвідченими фахівцями перед придбанням
         </div>
-        <div class="line">• Сотрудничество со всеми крупными аукционными площадками США
+        <div class="line">• Співпраця з усіма великими аукціонними майданчиками США
         </div>
-        <div class="line">• Максимально выгодные тарифы на логистику
+        <div class="line">• Максимально вигідні тарифи на логістику
         </div>
-        <div class="line">• Оказание комплекса услуг «под ключ» - от момента подбора авто в США до постановки на
-          украинский учет
+        <div class="line">• Надання комплексу послуг "під ключ" - від моменту підбору авто в США до постановки на український облік
         </div>
-        <div class="line">• Работа по договору, гарантии сохранности Вашего авто, материальная ответственность за груз
+        <div class="line">• Робота за договором, гарантії безпеки Вашого авто, матеріальна відповідальність за вантаж
         </div>
       </div>
       <div class="cont-right">
@@ -470,10 +469,10 @@
     </div>
     <div class="cont-bottom">
       <div class="cont-item desktop">
-        5+ <br>лет на рынке
+        5+ <br>років на ринку
       </div>
       <div class="cont-item desktop">
-        900+<br> довольных клиентов
+        900+<br> задоволених клієнтів
       </div>
       <div class="cont-item mobile">
         <div class="title">5+ лет</div><div class="sub">на рынке</div>
@@ -483,21 +482,21 @@
       </div>
 
       <div class="cont-item desktop">
-        24/7<br>поддержка
+        24/7<br>підтримка
       </div>
       <div class="cont-item desktop">
         400+<br>
-        восстановленных авто
+        відновлених авто
       </div>
     </div>
   </div>
 </div>
 <div class="screen screen-10">
   <div class="screen-title">
-    Подписывайтесь на наш instagram
+    Підписуйтесь на наш instagram
   </div>
   <div class="screen-sub-title desktop">
-    и получайте больше актуальной информации об автомобилях, которые покупают наши клиенты!
+    та отримуйте більше актуальної інформації про автомобілі, які купують наші клієнти!
   </div>
   <div class="cont-content">
     <!-- <div class="cont-mobile mobile">
@@ -546,17 +545,17 @@
     <div class="cont-left">
       <ng-container *ngIf="showAfterCall">
         <div class="screen-title">
-          Спасибо за обращение!
+          Дякую за звернення!
         </div>
         <div class="screen-sub-title">
-          Менеджер по подбору авто свяжется с Вами в ближайшее время!
+          Менеджер з підбору авто зв'яжеться з Вами найближчим часом!
         </div>
 
       </ng-container>
 
       <ng-container *ngIf="!showAfterCall">
         <div class="screen-title">
-          Заказать звонок
+          Замовити дзвінок
         </div>
         <div class="cont-side">
           <!-- <div class="cont-input">
@@ -573,7 +572,7 @@
           </div> -->
           <div class="cont-input">
             <mat-form-field class="custom custom-10">
-              <mat-label>Имя</mat-label>
+              <mat-label>Iм'я</mat-label>
               <input matInput type="text" placeholder="Имя" [(ngModel)]="callbackForm.name">
             </mat-form-field>
           </div>
@@ -581,17 +580,17 @@
             <mat-form-field class="custom custom-10">
               <mat-label>Телефон *</mat-label>
               <input matInput type="text" placeholder="Телефон" [(ngModel)]="callbackForm.tel">
-              <mat-hint *ngIf="callbackError">Пожалуйста заполните это поле</mat-hint>
+              <mat-hint *ngIf="callbackError">Будь ласка, заповніть це поле</mat-hint>
             </mat-form-field>
           </div>
-          <button class="custom" mat-button color="primary"  (click)="submitCallback()">Заказать звонок</button>
+          <button class="custom" mat-button color="primary"  (click)="submitCallback()">Замовити дзвінок</button>
         </div>
       </ng-container>
 
     </div>
     <div class="cont-right">
       <div class="screen-title mobile">
-        Как нас найти
+        Як нас знайти
       </div>
       <div class="cont-side">
         <div class="img-cont">

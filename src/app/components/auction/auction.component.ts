@@ -39,25 +39,25 @@ export class AuctionComponent implements OnInit {
     }  ,
     {
       alias: 'hb',
-      text: 'Цена',
+      text: 'Ціна',
       values: [],
       chosen: 0
     }  ,
     {
       alias: 'lcy',
-      text: 'Год выпуска',
+      text: 'Рік випуску',
       values: [],
       chosen: 0
     }  ,
     {
       alias: 'orr',
-      text: 'Пробег',
+      text: 'Пробіг',
       values: [],
       chosen: 0
     }  ,
     {
       alias: 'ft',
-      text: 'Топливо',
+      text: 'Паливо',
       values: [],
       chosen: 0
     }  ,
@@ -69,7 +69,7 @@ export class AuctionComponent implements OnInit {
     // } ,
     {
       alias: 'dd',
-      text: 'Повреждения',
+      text: 'Пошкодження',
       values: [],
       chosen: 0
     }
@@ -81,7 +81,7 @@ export class AuctionComponent implements OnInit {
 
   ngOnInit(): void {
     this.dbs.postGetAuction().pipe(take(1), map(_ => JSON.parse(_))).subscribe(_postGetAuction => {
-      console.log(_postGetAuction);
+      // console.log(_postGetAuction);
 
       this.dataSource =  new MatTableDataSource(_postGetAuction.data.results.content);
       this.dataSource.filterPredicate = this.createFilter();

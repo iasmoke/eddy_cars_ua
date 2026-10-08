@@ -1,13 +1,13 @@
 <div class="screen screen-12">
   <div class="screen-title">
-    Аукцион
+    Аукціон
   </div>
   <div class="screen-sub-title">
-    Подберите авто вашей мечты сами!
+    Підберіть авто вашої мрії самі!
   </div>
   <div class="cont-list">
     <div class="cont-filter">
-        <div class="filter-title">Параметры авто</div>
+        <div class="filter-title">Параметри авто</div>
         <div class="item-body">
           <div class="body-item" *ngFor="let item of filters">
             <div class="item-label">
@@ -41,13 +41,13 @@
               </div>
               <div class="item-right">
                 <div class="title">{{ element.ld }}</div>
-                <div class="sub-title">Дата аукциона: {{ getDate(element.ad) }}</div>
+                <div class="sub-title">Рік випуску: {{ getDate(element.ad) }}</div>
                 <div class="cont-stats">
                   <div class="stats-item">
                     <div class="item-img">
                       <img src="/assets/img/car-icon-1.svg"/>
                     </div>
-                    <div class="item-text">{{ element.orr }} миль</div>
+                    <div class="item-text">{{ element.orr }} мiль</div>
                   </div>
                   <div class="stats-item">
                     <div class="item-img">
@@ -75,8 +75,8 @@
                   </div>
                 </div>
                 <div class="button-abs">
-                  <div class="current-bid">Текущая ставка {{ element.hb }}$</div>
-                  <button mat-button class="custom">Подробнее</button>
+                  <div class="current-bid">Поточна ставка {{ element.hb }}$</div>
+                  <button mat-button class="custom">Детальніше</button>
                 </div>
               </div>
             </div>

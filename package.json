@@ -24,9 +24,7 @@
     "@angular/router": "~12.0.5",
     "@types/googlemaps": "^3.43.3",
     "big.js": "^6.1.1",
-    "echarts": "^5.1.2",
     "material-design-icons": "^3.0.1",
-    "ngx-echarts": "^7.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -36,7 +34,6 @@
     "@angular/cli": "~12.0.5",
     "@angular/compiler-cli": "~12.0.5",
     "@types/big.js": "^6.1.0",
-    "@types/echarts": "^4.9.8",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",

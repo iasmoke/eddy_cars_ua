@@ -17,21 +17,21 @@ export class AppComponent {
 
   menu = [
     {
-      text: 'Главная',
+      text: 'Головна',
       link: '/',
       children: []
     },
     {
-      text: 'Услуги',
+      text: 'Послуги',
       link: 'services',
       children: []
     },
     {
-      text: 'Калькуляторы',
+      text: 'Калькулятори',
       link: '',
       children: [
         {
-          text: 'Калькулятор под ключ',
+          text: 'Калькулятор під ключ',
           link: 'calc-all-inclusive'
         },
         {
@@ -39,24 +39,24 @@ export class AppComponent {
           link: 'calc-delivery'
         },
         {
-          text: 'Калькулятор таможенных платежей',
+          text: 'Калькулятор митних платежів',
           link: 'calc-customs'
         }
       ]
     },
     {
-      text: 'О компании',
+      text: 'Про компанію',
       link: 'about',
       children: []
     },
     {
-      text: 'Отзывы',
+      text: 'Відгуки',
       link: 'reviews',
       children: []
     },
     {
-      text: 'Аукцион',
-      subtext: '(скоро)',
+      text: 'Аукціон',
+      subtext: '(незабаром)',
       link: 'auction',
       children: []
     }

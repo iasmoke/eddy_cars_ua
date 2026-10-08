@@ -2,8 +2,8 @@
   <div class="screen-title">
     Калькулятор доставки
   </div>
-  <div class="cont-maps">
-    <div echarts id="main" class="demo-chart"></div>
+  <!-- <div class="cont-maps"> -->
+    <!-- <div echarts id="main" class="demo-chart"></div> -->
     <!-- <div class="map-1">
       <img src="/assets/img/europe-1.svg"/>
     </div>
@@ -14,7 +14,7 @@
       <img src="/assets/img/line-1.svg"/>
     </div>
     <div class="state" *ngIf="state === 'texas'" [style.top]="getLoc('texas').top" [style.left]="getLoc('texas').left"></div> -->
-  </div>
+  <!-- </div> -->
   <div class="cont-calc">
     <!-- <div class="cont-tabs">
       <div class="tab active">
@@ -37,7 +37,7 @@
       <div class="body-inputs">
         <div class="cont-left">
           <div class="inputs">
-            <div class="input-label">Аукцион</div>
+            <div class="input-label">Аукціон</div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
                 <mat-select name="volume" [(ngModel)]="auction">
@@ -48,7 +48,7 @@
               </mat-form-field>
             </div>
 
-            <div class="input-label">Локация</div>
+            <div class="input-label">Локація</div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
                 <!-- <mat-label>Обьем двигателя куб.дм</mat-label> -->
@@ -60,10 +60,10 @@
               </mat-form-field>
             </div>
 
-            <div class="input-label">Порт отправки</div>
+            <div class="input-label">Порт відправки</div>
             <div class="cont-input">
-              <mat-form-field class="custom" appearance="fill" >
-                <mat-select name="volume" [(ngModel)]="port" (ngModelChange)="getFreight(port)" >
+              <mat-form-field class="custom" appearance="fill">
+                <mat-select name="volume" [(ngModel)]="port" (ngModelChange)="getFreight(port)">
                   <mat-option *ngFor="let item of getUnique()" [value]="item.port">
                     {{ item.port }}
                   </mat-option>
@@ -87,25 +87,26 @@
           </div>
 
           <div class="cont-notice">
-            *В случае, если авто находится за пределами площадки аукциона (sublot), при транспортировке по США может взыматься дополнительная плата
+            *У разі, якщо авто знаходиться за межами майданчика аукціону (sublot), під час транспортування по США може
+            стягуватися додаткова плата
           </div>
 
         </div>
         <div class="cont-split mobile">
           &nbsp;
         </div>
-        <div class="cont-right"  [class.show-all]="showMoreOne">
+        <div class="cont-right" [class.show-all]="showMoreOne">
           <!-- <div class="row title">Результаты *</div> -->
           <!-- <div class="row sep">
             <div class="title">Цена лота</div>
             <div class="value total">0$</div>
           </div> -->
           <div class="row inlay">
-            <div class="title">Доставка по суше</div>
+            <div class="title">Доставка по суші</div>
             <div class="value">{{ landPrice }} $</div>
           </div>
           <div class="row inlay">
-            <div class="title">Морской фрахт</div>
+            <div class="title">Морський фрахт</div>
             <div class="value">{{ portPrice }} $</div>
           </div>
           <!-- <div class="row inlay">
@@ -117,15 +118,13 @@
             <div class="value">500 $</div>
           </div> -->
           <div class="row sep total" [class.top-order]="showMoreOne">
-            <div class="title total">Итого доставка в Украину<br><span>(в стоимость доставки включены все платежи, в том числе погрузка в США)</span></div>
-            <div class="cont-more mobile" (click)="showMoreOne = !showMoreOne">Подробнее</div>
+            <div class="title total">Разом доставка в Україну<br><span>(у вартість доставки включено всі платежі, в тому
+                числі завантаження в США)</span></div>
+            <div class="cont-more mobile" (click)="showMoreOne = !showMoreOne">Бiльше</div>
             <div class="value total">{{ getSum([landPrice, portPrice]) }} $</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
-
 </div>
