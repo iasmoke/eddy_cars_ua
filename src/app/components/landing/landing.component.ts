@@ -17,10 +17,10 @@ import { ModalStepperComponent } from '../modal-stepper/modal-stepper.component'
 export class LandingComponent implements OnInit, AfterViewInit {
 
   RESULT_DATA = [
-    {type: 'Пошлина',  base: '', rate: '', sum: '' },
-    {type: 'Акциз',    base: '', rate: '', sum: '' },
-    {type: 'НДС',      base: '', rate: '', sum: '' },
-    {type: 'ВСЕГО',    base: '', rate: '', sum: '' }
+    { type: 'Пошлина', base: '', rate: '', sum: '' },
+    { type: 'Акциз', base: '', rate: '', sum: '' },
+    { type: 'НДС', base: '', rate: '', sum: '' },
+    { type: 'ВСЕГО', base: '', rate: '', sum: '' }
   ];
 
   mainForm: any = {};
@@ -69,22 +69,22 @@ export class LandingComponent implements OnInit, AfterViewInit {
   dataSource = this.RESULT_DATA;
 
   yearsProd = [
+    { value: 1, text: '2023' },
+    { value: 1, text: '2022' },
     { value: 1, text: '2021' },
-    { value: 1, text: '2020' },
-    { value: 1, text: '2019' },
-    { value: 2, text: '2018' },
-    { value: 3, text: '2017' },
-    { value: 4, text: '2016' },
-    { value: 5, text: '2015' },
-    { value: 6, text: '2014' },
-    { value: 7, text: '2013' },
-    { value: 8, text: '2012' },
-    { value: 9, text: '2011' },
-    { value: 10, text: '2010' },
-    { value: 11, text: '2009' },
-    { value: 12, text: '2008' },
-    { value: 13, text: '2007' },
-    { value: 14, text: '2006' },
+    { value: 2, text: '2020' },
+    { value: 3, text: '2019' },
+    { value: 4, text: '2018' },
+    { value: 5, text: '2017' },
+    { value: 6, text: '2016' },
+    { value: 7, text: '2015' },
+    { value: 8, text: '2014' },
+    { value: 9, text: '2013' },
+    { value: 10, text: '2012' },
+    { value: 11, text: '2011' },
+    { value: 12, text: '2010' },
+    { value: 13, text: '2009' },
+    { value: 14, text: '2008' },
     { value: 15, text: 'Старше' }
   ];
 
@@ -143,65 +143,67 @@ export class LandingComponent implements OnInit, AfterViewInit {
   years = [
     2019,
     2020,
-    2021
+    2021,
+    2022,
+    2023,
   ];
 
   service = [
     {
       img: 'service-img-5.svg',
-      title: 'Подбор',
+      title: 'Підбір',
       text: [
-        'Поиск лучших вариантов на аукционе под запрос клиента'
+        'Пошук найкращих варіантів на аукціоні під запит клієнта'
       ],
       fragment: 'podbor'
     },
     {
       img: 'service-img-7.svg',
-      title: 'Проверка',
-      text: ['Изучение истории, проверка продавца, экспертная оценка, исключение  возможных рисков'],
+      title: 'Перевірка',
+      text: ['Вивчення історії, перевірка продавця, експертна оцінка, виключення можливих ризиків'],
       fragment: 'proverka'
     },
     {
       img: 'service-img-4.svg',
-      title: 'Покупка',
-      text: ['Просчет стоимости лота и всей расходной части, участие и победа в торгах'],
+      title: 'Придбання',
+      text: ['Розрахунок вартості лоту та всієї витратної частини, участь та перемога у торгах'],
       fragment: 'pokupka'
     },
     {
       img: 'service-img-2.svg',
       title: 'Доставка',
       text: [
-        'Транспортировка на склад в США, фотоотчеты, подготовка необходимых документов, погрузка, отправка в Украину'
+        'Транспортування на склад у США, фотозвіти, підготовка необхідних документів, погрузка, відправка в Україну'
       ],
       fragment: 'dostavka'
     },
     {
       img: 'service-img-8.svg',
-      title: 'Таможня',
-      text: ['Разгрузка контейнера и таможенное оформление автомобиля клиента в кратчайшие сроки'],
+      title: 'Розмитнення',
+      text: ['Розвантаження контейнера та митне оформлення автомобіля клієнта у найкоротші терміни'],
       fragment: 'customs'
     },
     {
       img: 'service-img-1.svg',
       title: 'Ремонт',
       text: [
-        'Подбор и доставка необходимых запчастей, организация процесса ремонта, контроль на всех этапах'
+        'Підбір та доставка необхідних запчастин, організація процесу ремонту, контроль на всіх етапах'
       ],
       fragment: 'remont'
     },
     {
       img: 'service-img-6.svg',
-      title: 'Сертификация',
+      title: 'Сертифікація',
       text: [
-        'Организация процесса сертификации в кратчайшие сроки и по выгодной цене'
+        'Організація процесу сертифікації в найкоротші терміни та за вигідною ціною'
       ],
       fragment: 'cert'
     },
     {
       img: 'service-img-3.svg',
-      title: 'Постановка на учет',
+      title: 'Постановка на облік',
       text: [
-        'Регистрация транспортного средства клиента в сервисном центре и доставка в любую точку Украины'
+        'Реєстрація транспортного засобу клієнта в сервісному центрі та доставка до будь-якої точки України'
       ],
       fragment: 'uchet'
     },
@@ -209,7 +211,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
       img: 'service-img-9.png',
       title: 'Авто в кредит',
       text: [
-        'Возможность получения кредитных средств для покупки авто из США на срок до 7 лет'
+        'Можливість отримання кредитних коштів для покупки авто зі США терміном до 7 років'
       ],
       fragment: 'kredit'
     }
@@ -301,14 +303,14 @@ export class LandingComponent implements OnInit, AfterViewInit {
       }
     });
 
-    interval(3000 / two).pipe(take(1),takeUntil(stop$)).subscribe(r => {
+    interval(3000 / two).pipe(take(1), takeUntil(stop$)).subscribe(r => {
       this.counterTwo += 1;
       if (this.counterTwo === two) {
         stop$.next(true);
       }
     });
 
-    interval(3000 / three).pipe(take(1),takeUntil(stop$)).subscribe(r => {
+    interval(3000 / three).pipe(take(1), takeUntil(stop$)).subscribe(r => {
       this.counterThree += 1;
       if (this.counterThree === three) {
         stop$.next(true);
@@ -378,7 +380,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(ModalCallComponent, {
       width: '610px',
-      data: {name: 'wer', animal: 'wer'},
+      data: { name: 'wer', animal: 'wer' },
       scrollStrategy: new NoopScrollStrategy()
     });
 
@@ -472,7 +474,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
       this.totalMessage = 'Итого, на таможню нужно заплатить ' + sum2.toFixed(2) + ' ' + cur + ' по курсу НБУ на день оформления';
 
       console.log(this.RESULT_DATA);
-    } catch(e) {
+    } catch (e) {
       console.log(e);
     }
   }
@@ -513,5 +515,5 @@ export class LandingComponent implements OnInit, AfterViewInit {
       // this.animal = result;
     });
   }
-  
+
 }

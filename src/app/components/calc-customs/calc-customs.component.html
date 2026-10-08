@@ -1,6 +1,6 @@
 <div class="screen screen-4">
   <div class="screen-title">
-    Калькулятор таможенных платежей
+    Калькулятор митних платежів
   </div>
   <div class="cont-calc">
     <!-- <div class="cont-tabs">
@@ -24,7 +24,7 @@
       <div class="body-inputs">
         <div class="cont-left">
           <div class="inputs">
-            <div class="input-label">Стоимость автомобиля</div>
+            <div class="input-label">Вартість автомобіля</div>
             <div class="cont-input">
               <div class="cont-input">
                 <mat-form-field class="custom">
@@ -33,11 +33,11 @@
               </div>
             </div>
 
-            <div class="input-label">{{ engineType === 3 ? 'Ёмкость аккумулятора, кВт.ч' : 'Обьем двигателя, л' }}</div>
+            <div class="input-label">{{ engineType === 3 ? 'Ємність аккумулятору, кВт.ч' : 'Об`єм двигуна, л' }}</div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
                 <ng-container *ngIf="engineType === 3">
-                  <input matInput type="number" name="amountn"  [(ngModel)]="amountn" (ngModelChange)="calcCarsNew()">
+                  <input matInput type="number" name="amountn" [(ngModel)]="amountn" (ngModelChange)="calcCarsNew()">
                 </ng-container>
                 <ng-container *ngIf="engineType !== 3">
                   <mat-select name="amountn" [(ngModel)]="amountn" (ngModelChange)="calcCarsNew()">
@@ -50,7 +50,7 @@
               </mat-form-field>
             </div>
 
-            <div class="input-label">Тип двигателя</div>
+            <div class="input-label">Тип двигуна </div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
                 <mat-select name="volume" [(ngModel)]="engineType" (ngModelChange)="calcCarsNew()">
@@ -61,7 +61,7 @@
               </mat-form-field>
             </div>
 
-            <div class="input-label">Год выпуска</div>
+            <div class="input-label">Рік випуску</div>
             <div class="cont-input">
               <mat-form-field class="custom" appearance="fill">
                 <mat-select name="year" [(ngModel)]="yearn" (ngModelChange)="calcCarsNew()">
@@ -76,8 +76,8 @@
             <!-- <button class="custom" mat-raised-button color="primary">Рассчитать</button> -->
           </div>
           <div class="cont-notice">
-            *Для максимально точного рассчета таможенных пошлин, в графе «стоимость автомобиля» необходимо ввести
-            сумму, равную стоимости авто + стоимости аукционного сбора + 1000$ морского фрахта.
+            *Для максимально точного розрахунку митних зборів, у графі "вартість автомобіля" необхідно ввести суму, що
+            дорівнює вартості авто + вартості аукціонного збору + 1000$ морського фрахту.
           </div>
         </div>
         <div class="cont-right">
@@ -87,15 +87,15 @@
             <div class="value total">0$</div>
           </div> -->
           <div class="row inlay">
-            <div class="title">НДС :</div>
+            <div class="title">ПДВ :</div>
             <div class="value">{{ bigSum([nds]) }} $</div>
           </div>
           <div class="row inlay">
-            <div class="title">Пошлина :</div>
+            <div class="title">Мито :</div>
             <div class="value">{{ bigSum([customs_duty]) }} $</div>
           </div>
           <div class="row inlay">
-            <div class="title">Акцизный сбор :</div>
+            <div class="title">Акцизний збір :</div>
             <div class="value">{{ bigSum([excise]) }} $</div>
           </div>
           <!-- <div class="row inlay">
@@ -103,7 +103,7 @@
             <div class="value">? $</div>
           </div> -->
           <div class="row sep total">
-            <div class="title total">Всего таможенных платежей :
+            <div class="title total">Усього митних платежів :
             </div>
             <div class="value total">{{ bigSum([nds, customs_duty, excise]) }} $</div>
           </div>

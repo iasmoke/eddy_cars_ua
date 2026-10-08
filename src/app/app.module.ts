@@ -53,8 +53,8 @@ import { CalcCustomsComponent } from './components/calc-customs/calc-customs.com
 import { ModalTelsComponent } from './components/modal-tels/modal-tels.component';
 import {RouterModule} from '@angular/router';
 
-import * as echarts from 'echarts';
-import { NgxEchartsModule } from 'ngx-echarts';
+// import * as echarts from 'echarts';
+// import { NgxEchartsModule } from 'ngx-echarts';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { AuctionComponent } from './components/auction/auction.component';
 import { ModalStepperComponent } from './components/modal-stepper/modal-stepper.component';
