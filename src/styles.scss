@@ -14,7 +14,7 @@ body {
   a {
     text-decoration-color: transparent !important;
   }
-  .mat-mdc-form-field, .mat-mdc-form-field {
+  .mat-mdc-form-field {
     * {
       color:rgba(255, 255, 255, 0.9) !important;
     }
@@ -58,7 +58,7 @@ body {
       height: 40px;
       width: 285px;
       font-weight: bold;
-      background-color: #D62020;
+      background-color:black;
       border-radius: 10px;
       color:rgba(255, 255, 255, 0.9);
       justify-content: center;
@@ -84,16 +84,16 @@ body {
         background-color: #D62020;
       }
     }
-    &.mat-mdc-form-field, .mat-mdc-form-field {
+    &.mat-mdc-form-field {
       // background-color: #414141;
       // border-radius: 1.5vh !important;
-      .mat-mdc-form-field-wrapper, {
+      .mat-mdc-form-field-wrapper {
         padding: 0;
       }
       .mat-mdc-form-field-infix {
         border: none;
       }
-      .mat-select-arrow-wrapper {
+      .mat-mdc-select-arrow-wrapper {
         transform: none;
       }
       .mat-mdc-form-field-flex {
@@ -325,6 +325,103 @@ body {
     }
   }
 }
+
 .mat-raised-button, .mat-button {
   border-radius: 8px !important;
 }
+
+.mat-mdc-form-field {
+  /* Переменные фона и цвета */
+  --mdc-filled-text-field-container-color: transparent;
+  --mdc-outlined-text-field-outline-color: transparent;
+  --mdc-outlined-text-field-hover-outline-color: transparent;
+  --mdc-outlined-text-field-disabled-outline-color: transparent;
+  --mdc-filled-text-field-focus-active-indicator-color: transparent;
+  --mdc-filled-text-field-caret-color: transparent;
+  --mdc-filled-text-field-focus-label-text-color: transparent;
+  --mat-form-field-hover-state-layer-opacity: 0;
+  --mat-form-field-focus-state-layer-opacity: 0;
+  .mat-mdc-form-field-bottom-align::before {
+    content: "";
+    display: none;
+    height: 16px;
+  }
+
+  /* Для Chrome, Safari, Edge, Opera */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    filter: invert(0.8); /* Інвертує світлі стрілочки в темні */
+    cursor: pointer;
+  }
+
+  .mdc-line-ripple::before, .mdc-line-ripple::after {
+    display: none;
+  }
+
+  /* Радиус скругления границ (Border Radius) */
+  --mdc-shape-small: 12px;
+  --mdc-outlined-text-field-focus-outline-color: transparent;
+
+  /* Якщо потрібно змінити товщину рамки при фокусі (за замовчуванням 2px, робимо 1px чи 0): */
+  --mdc-outlined-text-field-focus-outline-width: 0px;
+}
+
+.mat-mdc-option .mat-pseudo-checkbox {
+  display: none;
+}
+
+.cdk-overlay-container {
+  --mat-option-selected-state-label-text-color: #D62020;
+}
+
+.mat-mdc-select-panel {
+  background-color: rgba(30, 30, 30, 0.75) !important; /* Темный полупрозрачный фон */
+  backdrop-filter: blur(10px); /* Эффект красивого размытия (Glassmorphism) */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Легкая прозрачная рамка */
+  border-radius: 10px !important;
+
+  &::-webkit-scrollbar {
+    width: 6px; /* Тонкая аккуратная полоса */
+  }
+
+  /* 2. Фон дорожки (трека) */
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Прозрачный фон, чтобы не выделялся белый блок */
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* 3. Сам бегунок (ползунок) */
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный светлый бегунок */
+    border-radius: 4px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4); /* Подсветка при наведении */
+    }
+  }
+
+  /* 4. Для Firefox (стандартное свойство) */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Делаем прозрачным фон у самих элементов списка (mat-option) */
+.mat-mdc-option {
+  background: transparent !important;
+  color: #ffffff !important; /* Белый цвет текста */
+
+  /* Подсветка элементов при наведении */
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Выбранный элемент */
+  &.mdc-list-item--selected {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    .mdc-list-item__primary-text {
+      color: #ff5252 !important; /* Цвет текста активного элемента (например, красный) */
+    }
+  }
+}
+
+
