@@ -14,7 +14,7 @@ body {
   a {
     text-decoration-color: transparent !important;
   }
-  .mat-form-field {
+  .mat-mdc-form-field {
     * {
       color:rgba(255, 255, 255, 0.9) !important;
     }
@@ -58,7 +58,7 @@ body {
       height: 40px;
       width: 285px;
       font-weight: bold;
-      background-color: #D62020;
+      background-color:black;
       border-radius: 10px;
       color:rgba(255, 255, 255, 0.9);
       justify-content: center;
@@ -84,29 +84,29 @@ body {
         background-color: #D62020;
       }
     }
-    &.mat-form-field {
+    &.mat-mdc-form-field {
       // background-color: #414141;
       // border-radius: 1.5vh !important;
-      .mat-form-field-wrapper {
+      .mat-mdc-form-field-wrapper {
         padding: 0;
       }
-      .mat-form-field-infix {
+      .mat-mdc-form-field-infix {
         border: none;
       }
-      .mat-select-arrow-wrapper {
+      .mat-mdc-select-arrow-wrapper {
         transform: none;
       }
-      .mat-form-field-flex {
+      .mat-mdc-form-field-flex {
         padding-right: 0;
         padding-left: 0;
       }
-      .mat-form-field-flex {
+      .mat-mdc-form-field-flex {
         background-color: transparent !important;
       }
       &.custom-10 {
         // background-color: #414141 !important;
 
-        .mat-form-field-label-wrapper {
+        .mat-mdc-form-field-label-wrapper {
           font-size: 16px;
           font-weight: 600;
         }
@@ -138,7 +138,7 @@ body {
           }
         }
 
-        .mat-form-field-label {
+        .mat-mdc-form-field-label {
           transform: translateY(-1.28125em) scale(.75) perspective(100px) translateZ(.001px);
           -ms-transform: translateY(-1.28125em) scale(.75);
           width: 133.3333333333%;
@@ -153,11 +153,11 @@ body {
     mat-label {
       color: rgba(255, 255, 255, 0.9) !important;
     }
-    .mat-form-field-underline {
+    .mat-mdc-form-field-underline {
       background-color: #D62020 !important;
       display: none;
     }
-    .mat-form-field-appearance-legacy .mat-form-field-underline {
+    .mat-mdc-form-field-appearance-legacy .mat-mdc-form-field-underline {
       background-color: #D62020 !important;
       display: none;
     }
@@ -173,16 +173,16 @@ body {
       font-size: 1.76vh !important;
     }
 
-    &.mat-form-field {
+    &.mat-mdc-form-field {
       justify-content: center !important;
       background-color: #414141;
       border-radius: 1vh !important;
       height: 7.03vh !important;
       font-size: 1.73vh;
-      .mat-form-field-flex {
+      .mat-mdc-form-field-flex {
         padding: 0 !important;
         border-radius: 0 !important;
-        > .mat-form-field-infix {
+        > .mat-mdc-form-field-infix {
           padding: 0 !important;
         }
       }
@@ -211,13 +211,13 @@ body {
     mat-label {
       color: rgba(255, 255, 255, 0.9) !important;
     }
-    .mat-form-field-underline span.mat-form-field-ripple {
+    .mat-mdc-form-field-underline span.mat-mdc-form-field-ripple {
       background-color: #D62020 !important;
     }
-    .mat-form-field-appearance-legacy .mat-form-field-underline {
+    .mat-mdc-form-field-appearance-legacy .mat-mdc-form-field-underline {
       background-color: #D62020 !important;
     }
-    .mat-form-field-flex {
+    .mat-mdc-form-field-flex {
       border: 0.1vh solid #D62020;
       border-radius: 1.5vh !important;
     }
@@ -255,7 +255,7 @@ body {
   .custom-10 {
     // background-color: #414141 !important;
 
-    .mat-form-field-label-wrapper {
+    .mat-mdc-form-field-label-wrapper {
       display: none;
     }
 
@@ -278,7 +278,7 @@ body {
       font-size: 2.64vh !important;
     }
 
-    .mat-form-field-label {
+    .mat-mdc-form-field-label {
       transform: translateY(-1.28125em) scale(.75) perspective(100px) translateZ(.001px);
       -ms-transform: translateY(-1.28125em) scale(.75);
       width: 133.3333333333%;
@@ -297,14 +297,14 @@ body {
           font-size: 1.88vh !important;
         }
       }
-      .mat-form-field-subscript-wrapper {
+      .mat-mdc-form-field-subscript-wrapper {
         margin-top: 1.76vh;
       }
       .mat-hint {
         font-size: 1.26vh !important;
         // margin: 0.76vh 0;
       }
-      .mat-form-field-label-wrapper {
+      .mat-mdc-form-field-label-wrapper {
         display: flex;
         font-size: 1.73vh !important;
         line-height: 3.03vh !important;
@@ -325,6 +325,103 @@ body {
     }
   }
 }
+
 .mat-raised-button, .mat-button {
   border-radius: 8px !important;
 }
+
+.mat-mdc-form-field {
+  /* Переменные фона и цвета */
+  --mdc-filled-text-field-container-color: transparent;
+  --mdc-outlined-text-field-outline-color: transparent;
+  --mdc-outlined-text-field-hover-outline-color: transparent;
+  --mdc-outlined-text-field-disabled-outline-color: transparent;
+  --mdc-filled-text-field-focus-active-indicator-color: transparent;
+  --mdc-filled-text-field-caret-color: transparent;
+  --mdc-filled-text-field-focus-label-text-color: transparent;
+  --mat-form-field-hover-state-layer-opacity: 0;
+  --mat-form-field-focus-state-layer-opacity: 0;
+  .mat-mdc-form-field-bottom-align::before {
+    content: "";
+    display: none;
+    height: 16px;
+  }
+
+  /* Для Chrome, Safari, Edge, Opera */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    filter: invert(0.8); /* Інвертує світлі стрілочки в темні */
+    cursor: pointer;
+  }
+
+  .mdc-line-ripple::before, .mdc-line-ripple::after {
+    display: none;
+  }
+
+  /* Радиус скругления границ (Border Radius) */
+  --mdc-shape-small: 12px;
+  --mdc-outlined-text-field-focus-outline-color: transparent;
+
+  /* Якщо потрібно змінити товщину рамки при фокусі (за замовчуванням 2px, робимо 1px чи 0): */
+  --mdc-outlined-text-field-focus-outline-width: 0px;
+}
+
+.mat-mdc-option .mat-pseudo-checkbox {
+  display: none;
+}
+
+.cdk-overlay-container {
+  --mat-option-selected-state-label-text-color: #D62020;
+}
+
+.mat-mdc-select-panel {
+  background-color: rgba(30, 30, 30, 0.75) !important; /* Темный полупрозрачный фон */
+  backdrop-filter: blur(10px); /* Эффект красивого размытия (Glassmorphism) */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Легкая прозрачная рамка */
+  border-radius: 10px !important;
+
+  &::-webkit-scrollbar {
+    width: 6px; /* Тонкая аккуратная полоса */
+  }
+
+  /* 2. Фон дорожки (трека) */
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Прозрачный фон, чтобы не выделялся белый блок */
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* 3. Сам бегунок (ползунок) */
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный светлый бегунок */
+    border-radius: 4px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4); /* Подсветка при наведении */
+    }
+  }
+
+  /* 4. Для Firefox (стандартное свойство) */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Делаем прозрачным фон у самих элементов списка (mat-option) */
+.mat-mdc-option {
+  background: transparent !important;
+  color: #ffffff !important; /* Белый цвет текста */
+
+  /* Подсветка элементов при наведении */
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Выбранный элемент */
+  &.mdc-list-item--selected {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    .mdc-list-item__primary-text {
+      color: #ff5252 !important; /* Цвет текста активного элемента (например, красный) */
+    }
+  }
+}
+
+

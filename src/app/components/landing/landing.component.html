@@ -32,28 +32,28 @@
 
         <div class="cont-input">
           <div class="mobile">Марка авто</div>
-          <mat-form-field class="custom custom-10">
+          <mat-form-field class="custom custom-10" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
             <mat-label class="desktop">Марка авто</mat-label>
             <input matInput type="text" placeholder="Ford Focus" [(ngModel)]="mainForm.type">
           </mat-form-field>
         </div>
         <div class="cont-input">
           <div class="mobile">Рiк випуску</div>
-          <mat-form-field class="custom custom-10">
+          <mat-form-field class="custom custom-10" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
             <mat-label class="desktop">Рiк випуску</mat-label>
             <input matInput type="text" placeholder="2019" [(ngModel)]="mainForm.year">
           </mat-form-field>
         </div>
         <div class="cont-input">
           <div class="mobile">Орієнтовний бюджет</div>
-          <mat-form-field class="custom custom-10">
+          <mat-form-field class="custom custom-10" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
             <mat-label class="desktop">Орієнтовний бюджет</mat-label>
             <input matInput type="text" [(ngModel)]="mainForm.money">
           </mat-form-field>
         </div>
         <div class="cont-input">
           <div class="mobile">Контакт для зв'язку *</div>
-          <mat-form-field class="custom custom-10">
+          <mat-form-field class="custom custom-10" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
             <mat-label class="desktop">Контакт для зв'язку *</mat-label>
             <input matInput type="text" [(ngModel)]="mainForm.contact">
             <mat-hint *ngIf="firstError">Будь ласка, заповніть це поле ^</mat-hint>
@@ -61,7 +61,7 @@
         </div>
         <div class="cont-input desktop">
           <div class="mobile">Ваш коментар</div>
-          <mat-form-field class="custom custom-10">
+          <mat-form-field class="custom custom-10" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
             <mat-label class="desktop">Ваш коментар</mat-label>
             <input matInput type="text"  [(ngModel)]="mainForm.comment">
           </mat-form-field>
@@ -143,7 +143,7 @@
             Какой год автомобиля?
           </div>
           <div class="cont-input">
-            <mat-form-field class="custom">
+            <mat-form-field class="custom" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
               <!-- <mat-label>Какой год автомобиля?</mat-label> -->
               <input matInput formControlName="secondCtrl">
             </mat-form-field>
@@ -179,7 +179,7 @@
             Оставьте ваш номер телефона
           </div>
           <div class="cont-input">
-            <mat-form-field class="custom">
+            <mat-form-field class="custom" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
               <!-- <mat-label>Оставьте ваш номер телефона</mat-label> -->
               <input matInput formControlName="firstCtrl">
             </mat-form-field>
@@ -197,7 +197,7 @@
             Куда Вам лучше отправить подборку актуальных автомобилей?
           </div>
           <div class="cont-input">
-            <mat-form-field class="custom">
+            <mat-form-field class="custom" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
               <!-- <mat-label>Куда Вам лучше отправить подборку актуальных автомобилей?</mat-label> -->
               <input matInput formControlName="firstCtrl">
             </mat-form-field>
@@ -267,8 +267,8 @@
           <div class="inputs">
             <div class="input-label">Аукцион</div>
             <div class="cont-input">
-              <mat-form-field class="custom" appearance="fill">
-                <mat-select name="volume" [(ngModel)]="auction" (ngModelChange)="calcCars()">
+              <mat-form-field class="custom" appearance="fill" subscriptSizing="dynamic" floatLabel="always">
+                <mat-select name="volume" [(ngModel)]="auction" (ngModelChange)="calcCars()" panelWidth="">
                   <mat-option *ngFor="let item of auctions" [value]="item.value">
                     {{ item.text }}
                   </mat-option>
@@ -278,14 +278,14 @@
 
             <div class="input-label">Цена на аукционе, $</div>
             <div class="cont-input">
-              <mat-form-field class="custom">
+              <mat-form-field class="custom" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
                 <input matInput type="number" name="costn" [(ngModel)]="costn"  (ngModelChange)="calcCars()">
               </mat-form-field>
             </div>
 
             <div class="input-label">Тип двигателя</div>
             <div class="cont-input">
-              <mat-form-field class="custom" appearance="fill">
+              <mat-form-field class="custom" floatLabel="always" appearance="fill" subscriptSizing="dynamic">
                 <mat-select name="volume" [(ngModel)]="engineType" (ngModelChange)="calcCars()">
                   <mat-option *ngFor="let item of engineTypes" [value]="item.value">
                     {{ item.text }}
@@ -296,7 +296,7 @@
 
             <div class="input-label">{{ engineType === 3 ? 'Ёмкость аккумулятора, кВт.ч' : 'Обьем двигателя, см3' }}</div>
             <div class="cont-input">
-              <mat-form-field class="custom" appearance="fill">
+              <mat-form-field class="custom" floatLabel="always" appearance="fill" subscriptSizing="dynamic">
                 <ng-container *ngIf="engineType === 3">
                   <input matInput type="number" name="amountn"  [(ngModel)]="amountn" (ngModelChange)="calcCars()">
                 </ng-container>
@@ -313,7 +313,7 @@
 
             <div class="input-label">Год выпуска</div>
             <div class="cont-input">
-              <mat-form-field class="custom" appearance="fill">
+              <mat-form-field class="custom" floatLabel="always" appearance="fill" subscriptSizing="dynamic">
                 <mat-select name="year"  [(ngModel)]="yearn" (ngModelChange)="calcCars()">
                   <mat-option *ngFor="let item of yearsProd" [value]="item.value" >
                     {{ item.text }}
@@ -324,7 +324,7 @@
 
             <div class="input-label">Местоположение аукциона</div>
             <div class="cont-input">
-              <mat-form-field class="custom" appearance="fill" >
+              <mat-form-field class="custom" floatLabel="always" appearance="fill" subscriptSizing="dynamic">
                 <mat-select name="volume" [(ngModel)]="state" (ngModelChange)="getFreight(state)" >
                   <mat-option *ngFor="let item of getUnique(auction === 1 ? copart : iaai)" [value]="item">
                     {{ item }}
@@ -571,13 +571,13 @@
             </mat-form-field>
           </div> -->
           <div class="cont-input">
-            <mat-form-field class="custom custom-10">
+            <mat-form-field class="custom custom-10" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
               <mat-label>Iм'я</mat-label>
               <input matInput type="text" placeholder="Имя" [(ngModel)]="callbackForm.name">
             </mat-form-field>
           </div>
           <div class="cont-input">
-            <mat-form-field class="custom custom-10">
+            <mat-form-field class="custom custom-10" floatLabel="always" appearance="outline" subscriptSizing="dynamic">
               <mat-label>Телефон *</mat-label>
               <input matInput type="text" placeholder="Телефон" [(ngModel)]="callbackForm.tel">
               <mat-hint *ngIf="callbackError">Будь ласка, заповніть це поле</mat-hint>
